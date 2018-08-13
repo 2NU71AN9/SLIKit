@@ -55,11 +55,11 @@ class SLTools {
     static func evaluationInAppStore() {
         let urlString = "itms-apps://itunes.apple.com/app/id你的appid"
         let url = URL(string: urlString)
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-        } else {
-            UIApplication.shared.openURL(url!)
-        }
+//        if #available(iOS 10.0, *) {
+//            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+//        } else {
+        UIApplication.shared.openURL(url!)
+//        }
     }
     
     
