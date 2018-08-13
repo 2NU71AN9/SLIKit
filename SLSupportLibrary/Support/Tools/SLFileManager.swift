@@ -8,17 +8,17 @@
 
 import UIKit
 
-class SLFileManager {
+public class SLFileManager {
 
     // 获取缓存大小
-    static func access2Cache() -> String {
+    public static func access2Cache() -> String {
         return String(format: "%.2fM", SLFileManager.forderSizeAtPath(NSHomeDirectory()))
     }
     
     /// 删除缓存
     ///
     /// - Parameter competion: 完成闭包
-    static func cleanCache(competion:() -> Void) {
+    public static func cleanCache(competion:() -> Void) {
         SLFileManager.deleteFolder(path: NSHomeDirectory() + "/Documents")
         SLFileManager.deleteFolder(path: NSHomeDirectory() + "/Library")
         SLFileManager.deleteFolder(path: NSHomeDirectory() + "/tmp")
@@ -30,7 +30,7 @@ class SLFileManager {
     ///
     /// - Parameter folderPath: 路径
     /// - Returns: 文件大小
-    static func forderSizeAtPath(_ folderPath:String) -> Double {
+    public static func forderSizeAtPath(_ folderPath:String) -> Double {
         let manage = FileManager.default
         if !manage.fileExists(atPath: folderPath) {
             return 0
@@ -48,7 +48,7 @@ class SLFileManager {
     ///
     /// - Parameter path: 路径
     /// - Returns: 文件大小
-    static func returnFileSize(path:String) -> Double {
+    public static func returnFileSize(path:String) -> Double {
         let manager = FileManager.default
         var fileSize:Double = 0
         do {
@@ -65,7 +65,7 @@ class SLFileManager {
     /// 删除路径下的所有文件
     ///
     /// - Parameter path: 路径
-    static func deleteFolder(path: String) {
+    public static func deleteFolder(path: String) {
         let manage = FileManager.default
         if !manage.fileExists(atPath: path) {
         }
@@ -79,7 +79,7 @@ class SLFileManager {
     /// 删除单个文件
     ///
     /// - Parameter path: 路径
-    static func deleteFile(path: String) {
+    public static func deleteFile(path: String) {
         let manage = FileManager.default
         do {
             try manage.removeItem(atPath: path)

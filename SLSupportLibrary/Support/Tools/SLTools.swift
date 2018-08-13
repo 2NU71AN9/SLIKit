@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class SLTools {
+public class SLTools {
     
     /// 拨打电话
     ///
     /// - Parameter number: 电话号码
-    static func callWithNumber(_ number: String?) {
+    public static func callWithNumber(_ number: String?) {
         guard let number = number,
             let url = URL(string: "tel:\(number)"),
             let cur_vc = cur_visible_vc else { return }
@@ -25,7 +25,7 @@ class SLTools {
     
     
     /// 获取本机IP
-    static func getIPAddress() -> String? {
+    public static func getIPAddress() -> String? {
         var addresses = [String]()
         var ifaddr : UnsafeMutablePointer<ifaddrs>? = nil
         if getifaddrs(&ifaddr) == 0 {
@@ -52,7 +52,7 @@ class SLTools {
     
     
     /// 前往App Store进行评价
-    static func evaluationInAppStore() {
+    public static func evaluationInAppStore() {
         let urlString = "itms-apps://itunes.apple.com/app/id你的appid"
         let url = URL(string: urlString)
         UIApplication.shared.openURL(url!)

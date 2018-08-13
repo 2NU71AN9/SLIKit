@@ -26,8 +26,8 @@ public extension UITextField {
     }
 }
 
-class SLNoPasteTextField: UITextField {
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+public class SLNoPasteTextField: UITextField {
+    override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         switch action {
         case #selector(paste(_:)):
             return false //粘贴

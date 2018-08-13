@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension UserDefaults {
+public extension UserDefaults {
     
     /// 保存自定义的对象,需要对象实现解归档
     ///

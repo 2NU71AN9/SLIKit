@@ -12,19 +12,19 @@ import pop
 
 extension SLAlertView {
     /// 弹出1个按钮的提示框
-    static func showSingleAlert(text: String, actionTitle: String, action: (() -> Void)?) {
+    public static func showSingleAlert(text: String, actionTitle: String, action: (() -> Void)?) {
         let slertView = SLAlertView(text: text, firstTitle: actionTitle, secondTitle: nil, firstAction: action, secondAction: nil)
         UIApplication.shared.keyWindow?.addSubview(slertView)
     }
     
     /// 弹出2个按钮的提示框
-    static func showChoiceAlert(text: String, firstTitle: String, secondTitle: String, firstAction: (() -> Void)?, secondAction: (() -> Void)?) {
+    public static func showChoiceAlert(text: String, firstTitle: String, secondTitle: String, firstAction: (() -> Void)?, secondAction: (() -> Void)?) {
         let slertView = SLAlertView(text: text, firstTitle: firstTitle, secondTitle: secondTitle, firstAction: firstAction, secondAction: secondAction)
         UIApplication.shared.keyWindow?.addSubview(slertView)
     }
 }
 
-class SLAlertView: UIView {
+public class SLAlertView: UIView {
     
     private let alertView = UIView().then {
         $0.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
@@ -75,7 +75,7 @@ class SLAlertView: UIView {
         }).disposed(by: bag)
     }
     
-    override func willMove(toSuperview newSuperview: UIView?) {
+    override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         newSuperview?.endEditing(true)
         let bgAnmi = POPSpringAnimation(propertyNamed: kPOPViewAlpha)
@@ -84,7 +84,7 @@ class SLAlertView: UIView {
         pop_add(bgAnmi, forKey: nil)
     }
     
-    override func didMoveToSuperview() {
+    override public func didMoveToSuperview() {
         super.didMoveToSuperview()
         alertView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
@@ -122,7 +122,7 @@ class SLAlertView: UIView {
         }
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
