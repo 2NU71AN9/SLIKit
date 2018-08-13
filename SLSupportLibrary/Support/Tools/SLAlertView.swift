@@ -30,7 +30,10 @@ public class SLAlertView: UIView {
         $0.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     private let titleImageView = UIImageView().then {
-        $0.image = UIImage(named: "balloon")
+        let path = Bundle(for: SLAlertView.self).resourcePath! + "/Support.bundle"
+        let CABundle = Bundle(path: path)!
+        let image = UIImage(named: "balloon", in:  CABundle, compatibleWith: nil)
+        $0.image = image
     }
     private let infoLabel = UILabel().then {
         $0.textAlignment = .center

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120EF04D2121825F004EFF6D /* Support.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 120EF04C2121825F004EFF6D /* Support.bundle */; };
 		125F435F211C1F2E00607C9E /* SLColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F435E211C1F2E00607C9E /* SLColorExtension.swift */; };
 		125F4361211C1FF600607C9E /* SLUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4360211C1FF600607C9E /* SLUserDefaultsExtension.swift */; };
 		125F4363211C201900607C9E /* SLDictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4362211C201900607C9E /* SLDictionaryExtension.swift */; };
@@ -16,8 +17,6 @@
 		125F436C211C292200607C9E /* SLTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F436B211C292200607C9E /* SLTools.swift */; };
 		125F4370211C307900607C9E /* SLFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F436F211C307900607C9E /* SLFileManager.swift */; };
 		125F4372211C312A00607C9E /* SLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4371211C312A00607C9E /* SLAlertView.swift */; };
-		125F4376211C31F600607C9E /* balloon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 125F4374211C31F600607C9E /* balloon@3x.png */; };
-		125F4377211C31F600607C9E /* balloon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 125F4375211C31F600607C9E /* balloon@2x.png */; };
 		12C95736211C1AEB00CE9434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C95735211C1AEB00CE9434 /* AppDelegate.swift */; };
 		12C95738211C1AEB00CE9434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C95737211C1AEB00CE9434 /* ViewController.swift */; };
 		12C9573B211C1AEB00CE9434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C95739211C1AEB00CE9434 /* Main.storyboard */; };
@@ -38,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		04657857CBEDD32BD058127B /* Pods_SLSupportLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLSupportLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		120EF04C2121825F004EFF6D /* Support.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Support.bundle; sourceTree = "<group>"; };
 		125F435E211C1F2E00607C9E /* SLColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLColorExtension.swift; sourceTree = "<group>"; };
 		125F4360211C1FF600607C9E /* SLUserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLUserDefaultsExtension.swift; sourceTree = "<group>"; };
 		125F4362211C201900607C9E /* SLDictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLDictionaryExtension.swift; sourceTree = "<group>"; };
@@ -47,8 +47,6 @@
 		125F436B211C292200607C9E /* SLTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLTools.swift; sourceTree = "<group>"; };
 		125F436F211C307900607C9E /* SLFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFileManager.swift; sourceTree = "<group>"; };
 		125F4371211C312A00607C9E /* SLAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLAlertView.swift; sourceTree = "<group>"; };
-		125F4374211C31F600607C9E /* balloon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "balloon@3x.png"; sourceTree = "<group>"; };
-		125F4375211C31F600607C9E /* balloon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "balloon@2x.png"; sourceTree = "<group>"; };
 		12C95732211C1AEB00CE9434 /* SLSupportLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLSupportLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C95735211C1AEB00CE9434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12C95737211C1AEB00CE9434 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,15 +96,6 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
-		125F4373211C31B500607C9E /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				125F4375211C31F600607C9E /* balloon@2x.png */,
-				125F4374211C31F600607C9E /* balloon@3x.png */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
 		12C95729211C1AEB00CE9434 = {
 			isa = PBXGroup;
 			children = (
@@ -142,7 +131,6 @@
 		12C95747211C1B3C00CE9434 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				125F4373211C31B500607C9E /* Resource */,
 				125F4364211C20E300607C9E /* Constant */,
 				12C95748211C1B3C00CE9434 /* Tools */,
 				12C95749211C1B3C00CE9434 /* Extensions */,
@@ -154,6 +142,7 @@
 		12C95748211C1B3C00CE9434 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				120EF04C2121825F004EFF6D /* Support.bundle */,
 				125F436B211C292200607C9E /* SLTools.swift */,
 				125F436F211C307900607C9E /* SLFileManager.swift */,
 				125F4371211C312A00607C9E /* SLAlertView.swift */,
@@ -261,9 +250,8 @@
 			files = (
 				12C95740211C1AEC00CE9434 /* LaunchScreen.storyboard in Resources */,
 				12C9573D211C1AEC00CE9434 /* Assets.xcassets in Resources */,
-				125F4377211C31F600607C9E /* balloon@2x.png in Resources */,
 				12C9573B211C1AEB00CE9434 /* Main.storyboard in Resources */,
-				125F4376211C31F600607C9E /* balloon@3x.png in Resources */,
+				120EF04D2121825F004EFF6D /* Support.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
