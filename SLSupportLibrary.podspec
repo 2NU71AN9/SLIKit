@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SLSupportLibrary"
-  s.version      = "1.0.4"
+  s.version      = "1.0.5"
   s.swift_version  = "4.1"
   s.summary      = "开发常用"
   s.description  = "开发中常用的扩展和工具"
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/2NU71AN9/SLSupportLibrary.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
   s.source_files  =  "SLSupportLibrary/Support/**/*.{h,m,swift}" #需要托管的源代码路径
-  a.resources    = "SLSupportLibrary/Support/**/*.bundle"
+  s.resources    = "SLSupportLibrary/Support/**/*.bundle"
   s.requires_arc = true #是否支持ARC
   s.dependency "RxSwift"
   s.dependency "RxCocoa"
