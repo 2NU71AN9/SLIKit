@@ -21,7 +21,7 @@ public var SCREEN_BOUNS: CGRect { return UIScreen.main.bounds }
 /// 屏幕中心点
 public var SCREEN_CENTER: CGPoint { return CGPoint(x: SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2) }
 /// 是否是iPhoneX
-public var isiPhoneX: Bool { return UIScreen.main.bounds.height == 812 }
+public var isiPhoneX: Bool { return UIApplication.shared.statusBarFrame.height == 44 }
 /// 电池栏高度 普通20 iPhoneX 40
 public let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
 /// 导航栏高度 普通64 iPhoneX 84
