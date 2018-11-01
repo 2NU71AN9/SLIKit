@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 去空
 postfix operator ~~
 public postfix func ~~(a: String?)            -> String            { return a == nil ? "" : a! }
 public postfix func ~~(a: Int?)               -> Int               { return a == nil ? 0 : a! }
@@ -26,3 +27,10 @@ public postfix func ~~(a: [String: Any]?)     -> [String: Any]     { return a ==
 public postfix func ~~(a: [String: String]?)  -> [String: String]  { return a == nil ? [:] : a! }
 public postfix func ~~(a: UIViewController?)  -> UIViewController  { return a == nil ? UIViewController() : a! }
 public postfix func ~~(a: UIView?)  -> UIView  { return a == nil ? UIView() : a! }
+
+/// 字典相加
+public func += <KeyType, ValueType> ( left: inout Dictionary<KeyType, ValueType>, right: Dictionary<KeyType, ValueType>) {
+    for (k, v) in right {
+        left.updateValue(v, forKey: k)
+    }
+}
