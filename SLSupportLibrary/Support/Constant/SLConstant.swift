@@ -27,7 +27,9 @@ public let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
 /// 导航栏高度 普通64 iPhoneX 84
 public let naviCtrHeight: CGFloat = statusBarHeight + 44
 /// tabBar高度 普通49 iPhoneX 83
-public let tabBarHeight:CGFloat = isiPhoneX ? 83 : 49
+public let tabBarHeight: CGFloat = bottomHeight + 49
+/// 底部留空高度 普通0 iPhoneX 34
+public let bottomHeight: CGFloat = isiPhoneX ? 34 : 0
 
 
 // MARK: - =============获取当前显示的控制器=============

@@ -18,7 +18,7 @@ public extension UILabel {
     ///   - value: value 越大,划线越粗
     func sl_centerLineText(text: String, value: Int = 2) {
         let arrText = NSMutableAttributedString(string: text)
-        arrText.addAttribute(NSAttributedStringKey.strikethroughStyle, value:value, range:  NSMakeRange(0, arrText.length))
+        arrText.addAttribute(NSAttributedString.Key.strikethroughStyle, value:value, range:  NSMakeRange(0, arrText.length))
         attributedText = arrText
     }
 }

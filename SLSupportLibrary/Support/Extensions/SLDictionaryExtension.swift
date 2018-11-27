@@ -11,8 +11,8 @@ import Foundation
 public extension Dictionary {
     /// 添加可选值
     func sl_addOptional(_ item: [String: Any?]) -> Dictionary {
-        guard let keys = Array(item.keys) as? [String],
-            var dict = self as? [String: Any] else {
+        let keys = Array(item.keys) as [String]
+        guard var dict = self as? [String: Any] else {
                 return self
         }
         for key in keys {

@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "SLSupportLibrary"
-  s.version      = "1.0.5"
-  s.swift_version  = "4.1"
+  s.version      = "1.0.6"
+  s.swift_version  = "4.2"
   s.summary      = "开发常用"
   s.description  = "开发中常用的扩展和工具"
   s.homepage     = "https://github.com/2NU71AN9/SLSupportLibrary" #项目主页，不是git地址

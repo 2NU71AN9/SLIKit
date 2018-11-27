@@ -33,7 +33,7 @@ public extension UIButton {
     ///   - state: 状态
     ///   - space: 图片与文字间距
     ///   - position: 图片的位置
-    func sl_setPosition(title: String?, image: UIImage?, state: UIControlState = .normal, space: CGFloat = 10, position: ImagePosition = .left) {
+    func sl_setPosition(title: String?, image: UIImage?, state: UIControl.State = .normal, space: CGFloat = 10, position: ImagePosition = .left) {
         
         imageView?.contentMode = .center
         setImage(image, for: state)
@@ -53,7 +53,7 @@ public extension UIButton {
         
         guard let imageSize = imageView?.frame.size,
             let titleFont = titleLabel?.font else { return }
-        let titleSize = title.size(withAttributes: [NSAttributedStringKey.font: titleFont])
+        let titleSize = title.size(withAttributes: [NSAttributedString.Key.font: titleFont])
         
         var titleInsets: UIEdgeInsets
         var imageInsets: UIEdgeInsets
@@ -84,7 +84,7 @@ public extension UIButton {
 
 public extension UIButton {
     /// 设置文字和文字颜色
-    func sl_setTitleWithTitleColor(title: String, color: UIColor, state: UIControlState = .normal) {
+    func sl_setTitleWithTitleColor(title: String, color: UIColor, state: UIControl.State = .normal) {
         setTitle(title, for: state)
         setTitleColor(color, for: state)
     }

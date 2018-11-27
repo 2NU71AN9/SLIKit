@@ -44,7 +44,7 @@ public extension String {
     }
     
     /// 获取字符串长度
-    var sl_length: Int { return (self as NSString).length }
+    var sl_length: Int { return count }
     
     /// 去掉空格
     var sl_noSpace: String {

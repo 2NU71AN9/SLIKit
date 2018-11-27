@@ -475,7 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QLD65ZTPSF;
+				DEVELOPMENT_TEAM = M2CXXJLYVV;
 				INFOPLIST_FILE = SLSupportLibrary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -484,7 +484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SL.SLSupportLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -495,7 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QLD65ZTPSF;
+				DEVELOPMENT_TEAM = M2CXXJLYVV;
 				INFOPLIST_FILE = SLSupportLibrary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -504,7 +504,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SL.SLSupportLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

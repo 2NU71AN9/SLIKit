@@ -15,12 +15,10 @@ public extension UITextField {
     
     /// 限制输入框的可输入的最大长度
     func sl_maxCount(_ count: Int) {
-        _ = rx.text.orEmpty
+        _ = rx.textInput.text.orEmpty
             .subscribe(onNext: {[weak self] (text) in
-                if text.sl_length > count {
-                    var str = text
-                    str.removeLast()
-                    self?.text = str
+                if text.count > count {
+                    self?.text = String(text.prefix(count))
                 }
             })
     }

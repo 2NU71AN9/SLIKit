@@ -10,8 +10,19 @@ import Foundation
 import UIKit
 import Then
 import SnapKit
+import RxSwift
 
 public extension UITextView {
+    
+    /// 限制输入框的可输入的最大长度
+    func sl_maxCount(_ count: Int) {
+        _ = rx.textInput.text.orEmpty
+            .subscribe(onNext: {[weak self] (text) in
+                if text.count > count {
+                    self?.text = String(text.prefix(count))
+                }
+            })
+    }
     
     /// 设置textView的placeholer,在设置完textview的frame,textAlignment,font后使用
     ///

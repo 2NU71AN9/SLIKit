@@ -25,8 +25,10 @@ public postfix func ~~(a: [String]?)          -> [String]          { return a ==
 public postfix func ~~(a: [Int]?)             -> [Int]             { return a == nil ? [] : a! }
 public postfix func ~~(a: [String: Any]?)     -> [String: Any]     { return a == nil ? [:] : a! }
 public postfix func ~~(a: [String: String]?)  -> [String: String]  { return a == nil ? [:] : a! }
-public postfix func ~~(a: UIViewController?)  -> UIViewController  { return a == nil ? UIViewController() : a! }
-public postfix func ~~(a: UIView?)  -> UIView  { return a == nil ? UIView() : a! }
+
+public postfix func ~~<T: NSObject>(a: T?) -> T {
+    return a == nil ? T.init() : a!
+}
 
 /// 字典相加
 public func += <KeyType, ValueType> ( left: inout Dictionary<KeyType, ValueType>, right: Dictionary<KeyType, ValueType>) {
