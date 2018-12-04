@@ -103,12 +103,22 @@ public extension UIView {
 
 public extension UIView {
     //返回该view所在VC
-    public func sl_viewController() -> UIViewController? {
+    public func sl_superVC() -> UIViewController? {
         for view in sequence(first: self.superview, next: { $0?.superview }) {
             if let responder = view?.next {
                 if responder.isKind(of: UIViewController.self){
                     return responder as? UIViewController
                 }
+            }
+        }
+        return nil
+    }
+    
+    //返回该view所在的父view
+    public func sl_superView<T: UIView>(of: T.Type) -> T? {
+        for view in sequence(first: self.superview, next: { $0?.superview }) {
+            if let father = view as? T {
+                return father
             }
         }
         return nil
