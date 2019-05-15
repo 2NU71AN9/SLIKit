@@ -52,9 +52,9 @@ public class SLTools {
     
     
     /// 前往App Store进行评价
-    public static func evaluationInAppStore() {
-        let urlString = "itms-apps://itunes.apple.com/app/id你的appid"
+    public static func evaluationInAppStore(appid: String) {
+        let urlString = "https://itunes.apple.com/cn/app/id" + appid + "?mt=12"
         let url = URL(string: urlString)
-        UIApplication.shared.openURL(url!)
+        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
 }

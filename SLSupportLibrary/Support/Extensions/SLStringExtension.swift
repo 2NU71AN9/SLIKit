@@ -100,7 +100,7 @@ extension String {
             let tmp = self
             var s = ""
             var e = ""
-            for (idx, item) in tmp.characters.enumerated() {
+            for (idx, item) in tmp.enumerated() {
                 if (idx < start) {
                     s += "\(item)"
                 }
@@ -123,7 +123,7 @@ extension String {
 //            tmp.enumerateSubstrings(in: tmp.startIndex ..< tmp.index(tmp.startIndex, offsetBy: tmp.count)) { (str, inx, inx2, stop) in
 //
 //            }
-            for (idx, item) in tmp.characters.enumerated() {
+            for (idx, item) in tmp.enumerated() {
                 if idx == index {
                     self += "\(newValue)"
                 } else {
