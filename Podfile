@@ -8,5 +8,6 @@ pod 'RxCocoa'
 pod 'Then'
 pod 'SnapKit'
 pod 'pop'
+pod 'HandyJSON'
 
 end

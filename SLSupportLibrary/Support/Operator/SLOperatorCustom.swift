@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HandyJSON
 
 /// 去空
 postfix operator ~~
@@ -25,9 +26,11 @@ public postfix func ~~(a: [String]?)          -> [String]          { return a ==
 public postfix func ~~(a: [Int]?)             -> [Int]             { return a == nil ? [] : a! }
 public postfix func ~~(a: [String: Any]?)     -> [String: Any]     { return a == nil ? [:] : a! }
 public postfix func ~~(a: [String: String]?)  -> [String: String]  { return a == nil ? [:] : a! }
-
 public postfix func ~~<T: NSObject>(a: T?) -> T {
     return a == nil ? T.init() : a!
+}
+public postfix func ~~<T: HandyJSON>(a: T?) -> T {
+    return a == nil ? T.deserialize(from: "")! : a!
 }
 
 /// 字典相加
