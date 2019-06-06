@@ -18,7 +18,7 @@ public extension String {
     
     /// 判断字符串是否是手机号
     var sl_isPhone: Bool {
-        let regex = "^1[3|4|5|7|8][0-9]{9}$"
+        let regex = "^1[3|4|5|6|7|8|9][0-9]{9}$"
         let test: NSPredicate = NSPredicate(format: "SELF MATCHES %@", regex)
         return test.evaluate(with: self)
     }
