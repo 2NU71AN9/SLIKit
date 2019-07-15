@@ -32,6 +32,7 @@
 		12C9575C211C1DBE00CE9434 /* SLIntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9575B211C1DBE00CE9434 /* SLIntExtension.swift */; };
 		12C9575E211C1DC900CE9434 /* SLDoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9575D211C1DC900CE9434 /* SLDoubleExtension.swift */; };
 		12C95760211C1E9800CE9434 /* SLDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9575F211C1E9800CE9434 /* SLDateExtension.swift */; };
+		184612EF22DC5066002E9922 /* SLUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184612EE22DC5066002E9922 /* SLUIImageExtension.swift */; };
 		C35E7CB0746C42582D272A50 /* Pods_SLSupportLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04657857CBEDD32BD058127B /* Pods_SLSupportLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		12C9575B211C1DBE00CE9434 /* SLIntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLIntExtension.swift; sourceTree = "<group>"; };
 		12C9575D211C1DC900CE9434 /* SLDoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLDoubleExtension.swift; sourceTree = "<group>"; };
 		12C9575F211C1E9800CE9434 /* SLDateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLDateExtension.swift; sourceTree = "<group>"; };
+		184612EE22DC5066002E9922 /* SLUIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLUIImageExtension.swift; sourceTree = "<group>"; };
 		1A3D0840CD9300BB2728E5E3 /* Pods-SLSupportLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLSupportLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLSupportLibrary/Pods-SLSupportLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		3190976C6290C41C3E0B670C /* Pods-SLSupportLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLSupportLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLSupportLibrary/Pods-SLSupportLibrary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +169,7 @@
 				125F435E211C1F2E00607C9E /* SLColorExtension.swift */,
 				125F4360211C1FF600607C9E /* SLUserDefaultsExtension.swift */,
 				125F4362211C201900607C9E /* SLDictionaryExtension.swift */,
+				184612EE22DC5066002E9922 /* SLUIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				12C9575C211C1DBE00CE9434 /* SLIntExtension.swift in Sources */,
 				12C95756211C1C8A00CE9434 /* UILabelExtension.swift in Sources */,
 				12C9575E211C1DC900CE9434 /* SLDoubleExtension.swift in Sources */,
+				184612EF22DC5066002E9922 /* SLUIImageExtension.swift in Sources */,
 				125F4372211C312A00607C9E /* SLAlertView.swift in Sources */,
 				125F4361211C1FF600607C9E /* SLUserDefaultsExtension.swift in Sources */,
 				12C95758211C1C9800CE9434 /* SLStringExtension.swift in Sources */,

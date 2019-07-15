@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension String {
     /// 判断字符串是否是身份证
@@ -85,6 +86,26 @@ public extension String {
         dateFormatter.dateFormat = "yyyy-MM"
         return dateFormatter.date(from: self)
     }
+    
+    func sl_string2Image() -> UIImage? {
+        var str = self
+        // 1、判断用户传过来的base64的字符串是否是以data开口的，如果是以data开头的，那么就获取字符串中的base代码，然后在转换，如果不是以data开头的，那么就直接转换
+        if str.hasPrefix("data:image") {
+            guard let newBase64String = str.components(separatedBy: ",").last else {
+                return nil
+            }
+            str = newBase64String
+        }
+        // 2、将处理好的base64String代码转换成Data
+        guard let imgNSData = Data(base64Encoded: str, options: Data.Base64DecodingOptions()) else {
+            return nil
+        }
+        // 3、将Data的图片，转换成UIImage
+        guard let codeImage = UIImage(data: imgNSData) else {
+            return nil
+        }
+        return codeImage
+    }
 }
 
 extension String {
@@ -131,5 +152,31 @@ extension String {
                 }
             }
         }
+    }
+    
+    /// 获取指定位置和大小的字符串
+    ///
+    /// - Parameters:
+    ///   - start: 起始位置
+    ///   - length: 长度
+    /// - Returns: 字符串
+    func subString(start: Int, length: Int = -1) -> String? {
+        if count < start + length { return nil }
+        var len = length
+        if len == -1 {
+            len = count - start
+        }
+        let st = index(self.startIndex, offsetBy:start)
+        let en = index(st, offsetBy:len)
+        let range = st ..< en
+        
+        return String(self[range])
+    }
+    
+    /// 获取指定位置的字符串
+    func subStringFor(index: Int) -> String? {
+        if count <= index { return nil }
+        let index = self.index(startIndex, offsetBy: index)
+        return String(self[index])
     }
 }
