@@ -12,15 +12,17 @@ public class SLFileManager {
 
     // 获取缓存大小
     public static func access2Cache() -> String {
-        return String(format: "%.2fM", SLFileManager.forderSizeAtPath(NSHomeDirectory()))
+        let cache1 = SLFileManager.forderSizeAtPath(NSHomeDirectory() + "/Library" + "/Caches")
+        let cache2 = SLFileManager.forderSizeAtPath(NSHomeDirectory() + "/tmp")
+        return String(format: "%.2fM", cache1 + cache2)
     }
     
     /// 删除缓存
     ///
     /// - Parameter competion: 完成闭包
     public static func cleanCache(competion:() -> Void) {
-        SLFileManager.deleteFolder(path: NSHomeDirectory() + "/Documents")
-        SLFileManager.deleteFolder(path: NSHomeDirectory() + "/Library")
+//        SLFileManager.deleteFolder(path: NSHomeDirectory() + "/Documents")
+        SLFileManager.deleteFolder(path: NSHomeDirectory() + "/Library" + "/Caches")
         SLFileManager.deleteFolder(path: NSHomeDirectory() + "/tmp")
         competion()
     }

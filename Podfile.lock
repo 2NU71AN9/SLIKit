@@ -19,7 +19,7 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - HandyJSON
     - pop
     - RxCocoa
@@ -39,4 +39,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: b00fcd67f3deb7356849502dc84d2ad27e3357ff
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.9.1
