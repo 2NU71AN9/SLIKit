@@ -60,7 +60,7 @@ public extension UITextField {
             return bag!
         }
         set {
-            objc_setAssociatedObject(self, UITextField.maxCountBagKey, disposeBag, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, UITextField.maxCountBagKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }
@@ -98,7 +98,7 @@ public extension UITextField {
             return bag!
         }
         set {
-            objc_setAssociatedObject(self, UITextField.pointCountBagKey, pointDisposeBag, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, UITextField.pointCountBagKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     

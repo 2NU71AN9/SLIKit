@@ -8,89 +8,17 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
-// MARK: - frame
+// MARK: -
 public extension UIView {
-    
-    /// 获取frame的x
-    var sl_x: CGFloat { return frame.origin.x }
-    
-    /// 获取frame的y
-    var sl_y: CGFloat { return frame.origin.y }
-    
-    /// 获取frame的宽度
-    var sl_width: CGFloat { return frame.size.width }
-    
-    /// 获取frame的高度
-    var sl_height: CGFloat { return frame.size.height }
-    
-    /// 获取frame的maxX
-    var sl_MaxX: CGFloat { return sl_x + sl_width }
-    
-    /// 获取frame的maxY
-    var sl_MaxY: CGFloat { return sl_y + sl_height }
     
     /// 在屏幕上的位置,相对于屏幕,不是相对于SuperView
     var sl_frameOnScreen: CGRect {
         let window = UIApplication.shared.windows[0]
         let rect = self.convert(bounds, to: window)
         return rect
-    }
-    
-    /// 设置frame的x
-    ///
-    /// - Parameter x: x
-    func sl_x(x: CGFloat) { frame.origin.x = x }
-    
-    /// 设置frame的y
-    ///
-    /// - Parameter y: y
-    func sl_y(y: CGFloat) { frame.origin.y = y }
-    
-    /// 设置frame的宽度
-    ///
-    /// - Parameter width: 宽
-    func sl_width(width: CGFloat) { frame.size.width = width }
-    
-    /// 设置frame的高度
-    ///
-    /// - Parameter height: 高
-    func sl_height(height: CGFloat) { frame.size.height = height }
-}
-
-// MARK: -
-public extension UIView {
-    
-    /// 裁切圆角
-    ///
-    /// - Parameter radius: 弧度
-    func sl_clip(radius: CGFloat) {
-        layer.cornerRadius = radius
-        clipsToBounds = true
-    }
-    
-    /// 设置阴影
-    ///
-    /// - Parameters:
-    ///   - color: 颜色
-    ///   - opacity: 透明度
-    ///   - offset: 偏移量
-    func sl_setShadow(color: UIColor, opacity: Float, offset: CGSize = CGSize(width: 0, height: 0)) {
-        layer.shadowColor = color.cgColor
-        layer.shadowOpacity = opacity
-        layer.shadowOffset = offset
-    }
-    
-    /// 设置边框
-    ///
-    /// - Parameters:
-    ///   - width: 边框宽度
-    ///   - color: 边框颜色
-    ///   - radius: 弧度
-    func sl_setBorder(width: CGFloat, color: UIColor, radius: CGFloat) {
-        layer.borderWidth = width
-        layer.borderColor = color.cgColor
-        sl_clip(radius: radius)
     }
     
     /// 从xib加载view
@@ -123,4 +51,260 @@ public extension UIView {
         }
         return nil
     }
+}
+
+public extension UIView {
+    
+    func removeAllSubviews() {
+        while subviews.count > 0 {
+            subviews.last?.removeFromSuperview()
+        }
+    }
+    
+    func addTarget(target: Any?, action: Selector?) {
+        isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: target, action: action)
+        addGestureRecognizer(tap)
+    }
+    
+    func tap() -> ControlEvent<UITapGestureRecognizer> {
+        isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer()
+        addGestureRecognizer(tap)
+        return tap.rx.event
+    }
+    
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+    static var nibName: String {
+        return String(describing: self)
+    }
+    
+    func makeCardShadow(_ cornerRadius: CGFloat = 5, opacity: Float = 1) {
+        layer.cornerRadius = cornerRadius
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.21).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 0)
+        layer.shadowOpacity = opacity
+        layer.shadowRadius = cornerRadius
+    }
+    
+    func makeGradientColor(_ colors: [CGColor], locations: [NSNumber], startPoint: CGPoint, endPoint: CGPoint) {
+        let bgLayer = CAGradientLayer()
+        bgLayer.colors = colors
+        bgLayer.locations = locations
+        bgLayer.frame = bounds
+        bgLayer.startPoint = startPoint
+        bgLayer.endPoint = endPoint
+        layer.addSublayer(bgLayer)
+    }
+    
+    /// 截图
+     func screenShot() -> UIImage? {
+         guard frame.size.height > 0 && frame.size.width > 0 else {
+             return nil
+         }
+         UIGraphicsBeginImageContextWithOptions(frame.size, false, 0)
+         layer.render(in: UIGraphicsGetCurrentContext()!)
+         let image = UIGraphicsGetImageFromCurrentImageContext()
+         UIGraphicsEndImageContext()
+         return image
+     }
+    
+    var size: CGSize {
+        get {
+            return self.frame.size
+        }
+        set {
+            self.width = newValue.width
+            self.height = newValue.height
+        }
+    }
+      
+    var width: CGFloat {
+        get {
+            return self.frame.size.width
+        }
+        set {
+            self.frame.size.width = newValue
+        }
+    }
+      
+    var height: CGFloat {
+        get {
+            return self.frame.size.height
+        }
+        set {
+            self.frame.size.height = newValue
+        }
+    }
+}
+
+
+// MARK: - 描边、圆角等
+public extension UIView {
+    
+    @IBInspectable
+    /// Border color of view; also inspectable from Storyboard.
+    var kBorderColor: UIColor? {
+        set {
+            guard let color = newValue else { return }
+            self.layer.borderColor = color.cgColor
+        }
+        get {
+            guard let color = layer.borderColor else {
+                return nil
+            }
+            return UIColor(cgColor: color)
+        }
+    }
+    
+    @IBInspectable
+    /// Border width of view; also inspectable from Storyboard.
+    var kBorderWidth: CGFloat {
+        set {
+            self.layer.borderWidth = newValue
+        }
+        get {
+            return self.layer.borderWidth
+        }
+    }
+    
+    @IBInspectable
+    /// Corner radius of view; also inspectable from Storyboard.
+    var kCornerRadius: CGFloat {
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+        get {
+            return layer.cornerRadius
+        }
+    }
+    
+    @IBInspectable
+    /// Corner radius of view; also inspectable from Storyboard.
+    var kCornerRadiusNotClip: CGFloat {
+        set {
+            layer.cornerRadius = newValue
+        }
+        get {
+            return layer.cornerRadius
+        }
+    }
+    
+    @IBInspectable
+    /// Should the corner be as circle
+    var kCircleCorner: Bool {
+        set {
+            kCornerRadius = newValue ? min(bounds.size.height, bounds.size.width) / 2 : kCornerRadius
+        }
+        get {
+            return min(bounds.size.height, bounds.size.width) / 2 == kCornerRadius
+        }
+    }
+    
+    @IBInspectable
+    /// Should the corner be as circle
+    var kCircleCornerNotClip: Bool {
+        set {
+            kCornerRadiusNotClip = newValue ? min(bounds.size.height, bounds.size.width) / 2 : kCornerRadiusNotClip
+        }
+        get {
+            return min(bounds.size.height, bounds.size.width) / 2 == kCornerRadiusNotClip
+        }
+    }
+    
+    @IBInspectable
+    /// Shadow color of view; also inspectable from Storyboard.
+    var kShadowColor: UIColor? {
+        get {
+            guard let color = layer.shadowColor else {
+                return nil
+            }
+            return UIColor(cgColor: color)
+        }
+        set {
+            layer.shadowColor = newValue?.cgColor
+        }
+    }
+    
+    @IBInspectable
+    /// Shadow offset of view; also inspectable from Storyboard.
+    var kShadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
+        }
+        set {
+            layer.shadowOffset = newValue
+        }
+    }
+    
+    @IBInspectable
+    /// Shadow opacity of view; also inspectable from Storyboard.
+    var kShadowOpacity: Double {
+        get {
+            return Double(layer.shadowOpacity)
+        }
+        set {
+            layer.shadowOpacity = Float(newValue)
+        }
+    }
+    
+    @IBInspectable
+    /// Shadow radius of view; also inspectable from Storyboard.
+    var kShadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue
+        }
+    }
+    
+//    @IBInspectable
+//    /// Shadow path of view; also inspectable from Storyboard.
+//    public var kShadowPath: CGPath? {
+//        get {
+//            return layer.shadowPath
+//        }
+//        set {
+//            layer.shadowPath = newValue
+//        }
+//    }
+//
+//    @IBInspectable
+//    /// Should shadow rasterize of view; also inspectable from Storyboard.
+//    /// cache the rendered shadow so that it doesn't need to be redrawn
+//    public var shadowShouldRasterize: Bool {
+//        get {
+//            return layer.shouldRasterize
+//        }
+//        set {
+//            layer.shouldRasterize = newValue
+//        }
+//    }
+//
+//    @IBInspectable
+//    /// Should shadow rasterize of view; also inspectable from Storyboard.
+//    /// cache the rendered shadow so that it doesn't need to be redrawn
+//    public var shadowRasterizationScale: CGFloat {
+//        get {
+//            return layer.rasterizationScale
+//        }
+//        set {
+//            layer.rasterizationScale = newValue
+//        }
+//    }
+//
+//    @IBInspectable
+//    /// Corner radius of view; also inspectable from Storyboard.
+//    public var maskToBounds: Bool {
+//        get {
+//            return layer.masksToBounds
+//        }
+//        set {
+//            layer.masksToBounds = newValue
+//        }
+//    }
 }
