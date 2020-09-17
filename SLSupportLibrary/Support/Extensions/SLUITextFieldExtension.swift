@@ -63,6 +63,16 @@ public extension UITextField {
             objc_setAssociatedObject(self, UITextField.maxCountBagKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
+    
+    @IBInspectable
+    var maxCount: Int {
+        get {
+            return sl_maxCount ?? 0
+        }
+        set {
+            sl_maxCount = newValue
+        }
+    }
 }
 
 

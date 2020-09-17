@@ -31,7 +31,7 @@ public extension UICollectionView {
     }
 }
 
-extension UIScrollView {
+public extension UIScrollView {
     func set_refreshHeader(_ ignoredTop: CGFloat = 0, _ refresh: @escaping () -> Void) {
         let header = MJRefreshNormalHeader(refreshingBlock: refresh)
         header.ignoredScrollViewContentInsetTop = ignoredTop
