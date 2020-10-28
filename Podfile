@@ -12,5 +12,7 @@ pod 'HandyJSON'
 pod 'MJRefresh'
 pod 'PKHUD'
 pod 'SwiftDate'
+pod 'JXPhotoBrowser'
+pod 'Kingfisher'
 
 end

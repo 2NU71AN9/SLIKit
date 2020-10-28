@@ -308,3 +308,51 @@ public extension UIView {
 //        }
 //    }
 }
+
+public extension UIImageView {
+    private static let browseEnableKey = UnsafeRawPointer(bitPattern:"browseEnableKey".hashValue)!
+    private static let browseTapKey = UnsafeRawPointer(bitPattern:"browseTapKey".hashValue)!
+
+    var browseEnable: Bool {
+        get {
+            return objc_getAssociatedObject(self, UIImageView.browseEnableKey) as? Bool ?? false
+        }
+        set {
+            objc_setAssociatedObject(self, UIImageView.browseEnableKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            if newValue {
+                isUserInteractionEnabled = true
+                let tap = browseTap ?? UITapGestureRecognizer(target: self, action: #selector(showImageBrowse))
+                addGestureRecognizer(tap)
+                browseTap = tap
+            } else if let tap = browseTap {
+                self.removeGestureRecognizer(tap)
+            }
+        }
+    }
+    private var browseTap: UITapGestureRecognizer? {
+        get {
+            return objc_getAssociatedObject(self, UIImageView.browseTapKey) as? UITapGestureRecognizer
+        }
+        set {
+            if let newValue = newValue {
+                objc_setAssociatedObject(self, UIImageView.browseTapKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+        }
+    }
+    
+    @IBInspectable
+    var browse: Bool {
+        set {
+            browseEnable = newValue
+        }
+        get {
+            return browseEnable
+        }
+    }
+    
+    @objc private func showImageBrowse() {
+        if browseEnable, let image = image {
+            SLImageBrower.browser([image]).show()
+        }
+    }
+}
