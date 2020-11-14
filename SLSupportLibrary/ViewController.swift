@@ -16,6 +16,37 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let str: ColorString = "asdfd\(message: "Red", color: .red, font: label.font)\(message: "Green", color: .green, font: label.font)\(message: "Blue", color: .blue, font: label.font)"
         label.attributedText = str.value
+        
+        var array = Array {
+            1
+            2
+            3
+            4
+            5
+        }
+        array.append {
+            6
+            7
+            8
+            9
+            10
+        }
+        print(array)
     }
 }
 
+@_functionBuilder public struct ArrayBuilder {
+    public static func buildBlock<T>(_ items: T...) -> [T] {
+        items
+    }
+}
+
+public extension Array {
+    init(@ArrayBuilder _ builder: () -> Self) {
+        self = builder()
+    }
+    
+    mutating func append(@ArrayBuilder _ builder: () -> Self) {
+        self.append(contentsOf: builder())
+    }
+}
