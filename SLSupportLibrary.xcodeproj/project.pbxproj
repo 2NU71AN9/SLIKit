@@ -34,6 +34,7 @@
 		12C95760211C1E9800CE9434 /* SLDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9575F211C1E9800CE9434 /* SLDateExtension.swift */; };
 		184612EF22DC5066002E9922 /* SLUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184612EE22DC5066002E9922 /* SLUIImageExtension.swift */; };
 		C35E7CB0746C42582D272A50 /* Pods_SLSupportLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04657857CBEDD32BD058127B /* Pods_SLSupportLibrary.framework */; };
+		D20AE765255FDAA2000A8635 /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AE764255FDAA2000A8635 /* StringInterpolation.swift */; };
 		D21AC9A724E11A3F00DF4F2F /* Ex_ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9A624E11A3F00DF4F2F /* Ex_ScrollView.swift */; };
 		D21AC9A924E11B7D00DF4F2F /* Ex_Navi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9A824E11B7D00DF4F2F /* Ex_Navi.swift */; };
 		D21AC9AB24E11BB800DF4F2F /* Ex_HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9AA24E11BB800DF4F2F /* Ex_HUD.swift */; };
@@ -73,6 +74,7 @@
 		184612EE22DC5066002E9922 /* SLUIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLUIImageExtension.swift; sourceTree = "<group>"; };
 		1A3D0840CD9300BB2728E5E3 /* Pods-SLSupportLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLSupportLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLSupportLibrary/Pods-SLSupportLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		3190976C6290C41C3E0B670C /* Pods-SLSupportLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLSupportLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLSupportLibrary/Pods-SLSupportLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		D20AE764255FDAA2000A8635 /* StringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
 		D21AC9A624E11A3F00DF4F2F /* Ex_ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ScrollView.swift; sourceTree = "<group>"; };
 		D21AC9A824E11B7D00DF4F2F /* Ex_Navi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_Navi.swift; sourceTree = "<group>"; };
 		D21AC9AA24E11BB800DF4F2F /* Ex_HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_HUD.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				12C9574B211C1B7C00CE9434 /* SLOperatorCustom.swift */,
+				D20AE764255FDAA2000A8635 /* StringInterpolation.swift */,
 			);
 			path = Operator;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				125F436C211C292200607C9E /* SLTools.swift in Sources */,
 				125F435F211C1F2E00607C9E /* SLColorExtension.swift in Sources */,
 				12C95760211C1E9800CE9434 /* SLDateExtension.swift in Sources */,
+				D20AE765255FDAA2000A8635 /* StringInterpolation.swift in Sources */,
 				125F4366211C20F200607C9E /* SLConstant.swift in Sources */,
 				125F4368211C21AD00607C9E /* SLCGFloatExtension.swift in Sources */,
 				D21AC9A724E11A3F00DF4F2F /* Ex_ScrollView.swift in Sources */,
