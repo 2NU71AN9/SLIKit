@@ -16,13 +16,9 @@ public class SLTools {
     /// - Parameter number: 电话号码
     public static func callWithNumber(_ number: String?) {
         guard let number = number,
-            let url = URL(string: "tel:\(number)"),
-            let cur_vc = cur_visible_vc else { return }
-        callView.loadRequest(URLRequest(url: url))
-        cur_vc.view.addSubview(callView)
+            let url = URL(string: "tel:\(number)") else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
-    static let callView = UIWebView()
-    
     
     /// 获取本机IP
     public static func getIPAddress() -> String? {
