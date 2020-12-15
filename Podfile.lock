@@ -31,12 +31,11 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - HandyJSON
     - pop
     - RxCocoa
     - RxRelay
-    - RxSwift
     - SnapKit
     - Then
   trunk:
@@ -44,6 +43,7 @@ SPEC REPOS:
     - Kingfisher
     - MJRefresh
     - PKHUD
+    - RxSwift
     - SwiftDate
 
 SPEC CHECKSUMS:
@@ -62,4 +62,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: a6b6d7ac9e6fe5c25cc398120c4557d7a8e8731f
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
