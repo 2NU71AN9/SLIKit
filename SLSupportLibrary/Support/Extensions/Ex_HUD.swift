@@ -9,6 +9,16 @@
 import UIKit
 import PKHUD
 
+public class SLHUD {
+    public static func showToast(_ title: String?, delay: TimeInterval = 1.5, completion: ((Bool) -> Void)? = nil) {
+        guard let title = title else { return }
+        HUD.showToast(title, delay: delay, completion: completion)
+    }
+    public static func showFlashToast(_ title: String?, msg: String? = nil, delay: TimeInterval = 1.5, completion: ((Bool) -> Void)? = nil) {
+        HUD.showFlashToast(title, msg: msg, delay: delay, completion: completion)
+    }
+}
+
 public extension HUD {
     static func showToast(_ title: String?, delay: TimeInterval = 1.5, completion: ((Bool) -> Void)? = nil) {
         guard let title = title else { return }

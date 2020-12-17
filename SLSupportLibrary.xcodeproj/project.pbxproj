@@ -40,6 +40,8 @@
 		D21AC9AB24E11BB800DF4F2F /* Ex_HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9AA24E11BB800DF4F2F /* Ex_HUD.swift */; };
 		D21AC9AD24E11D7900DF4F2F /* Ex_Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9AC24E11D7900DF4F2F /* Ex_Rx.swift */; };
 		D2E669B425494C74005EDD5D /* SLImageBrower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E669B325494C74005EDD5D /* SLImageBrower.swift */; };
+		D2F4E814258B52EA007510FB /* Ex_SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4E813258B52EA007510FB /* Ex_SnapKit.swift */; };
+		D2F4E817258B52FE007510FB /* Ex_UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4E816258B52FE007510FB /* Ex_UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		D21AC9AA24E11BB800DF4F2F /* Ex_HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_HUD.swift; sourceTree = "<group>"; };
 		D21AC9AC24E11D7900DF4F2F /* Ex_Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_Rx.swift; sourceTree = "<group>"; };
 		D2E669B325494C74005EDD5D /* SLImageBrower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLImageBrower.swift; sourceTree = "<group>"; };
+		D2F4E813258B52EA007510FB /* Ex_SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_SnapKit.swift; sourceTree = "<group>"; };
+		D2F4E816258B52FE007510FB /* Ex_UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_UIAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,8 @@
 				D21AC9A824E11B7D00DF4F2F /* Ex_Navi.swift */,
 				D21AC9AA24E11BB800DF4F2F /* Ex_HUD.swift */,
 				D21AC9AC24E11D7900DF4F2F /* Ex_Rx.swift */,
+				D2F4E813258B52EA007510FB /* Ex_SnapKit.swift */,
+				D2F4E816258B52FE007510FB /* Ex_UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = SL;
 				TargetAttributes = {
 					12C95731211C1AEB00CE9434 = {
@@ -321,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F4E814258B52EA007510FB /* Ex_SnapKit.swift in Sources */,
 				125F436A211C25AD00607C9E /* SLUITextViewExtension.swift in Sources */,
 				12C95754211C1C7C00CE9434 /* SLUIButtonExtension.swift in Sources */,
 				D21AC9AD24E11D7900DF4F2F /* Ex_Rx.swift in Sources */,
@@ -331,6 +338,7 @@
 				D20AE765255FDAA2000A8635 /* StringInterpolation.swift in Sources */,
 				125F4366211C20F200607C9E /* SLConstant.swift in Sources */,
 				125F4368211C21AD00607C9E /* SLCGFloatExtension.swift in Sources */,
+				D2F4E817258B52FE007510FB /* Ex_UIAlertController.swift in Sources */,
 				D21AC9A724E11A3F00DF4F2F /* Ex_ScrollView.swift in Sources */,
 				12C95750211C1C5900CE9434 /* SLUITextFieldExtension.swift in Sources */,
 				D21AC9A924E11B7D00DF4F2F /* Ex_Navi.swift in Sources */,
@@ -400,6 +408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -425,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,6 +469,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -479,7 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -496,12 +506,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2CXXJLYVV;
 				INFOPLIST_FILE = SLSupportLibrary/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SL.SLSupportLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -517,12 +527,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M2CXXJLYVV;
 				INFOPLIST_FILE = SLSupportLibrary/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SL.SLSupportLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
