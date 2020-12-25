@@ -12,9 +12,4 @@ import UIKit
 public extension Int {
     /// Int -> String
     var sl_2String: String { return String(describing: self) }
-    
-    /// 屏幕宽度
-    var W: CGFloat { return SCREEN_WIDTH/375*CGFloat(self) }
-    /// 屏幕高度
-    var H: CGFloat { return SCREEN_HEIGHT/667*CGFloat(self) }
 }

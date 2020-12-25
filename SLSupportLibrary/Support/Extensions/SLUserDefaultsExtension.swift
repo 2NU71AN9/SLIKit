@@ -15,7 +15,7 @@ public extension UserDefaults {
     /// - Parameters:
     ///   - object: 要保存的对象
     ///   - key: key
-    func sl_saveCustomObject(_ object: NSCoding, key: String) {
+    final func sl_saveCustomObject(_ object: NSCoding, key: String) {
         let encodedObject = NSKeyedArchiver.archivedData(withRootObject: object)
         self.set(encodedObject, forKey: key)
         self.synchronize()
@@ -27,7 +27,7 @@ public extension UserDefaults {
     ///   - type: 对象类型
     ///   - key: key
     /// - Returns: 对象
-    func sl_getCustomObject<T>(type: T.Type, forKey key: String) -> T? {
+    final func sl_getCustomObject<T>(type: T.Type, forKey key: String) -> T? {
         
         let decodedObject = self.object(forKey: key) as? Data
         if let decoded = decodedObject {

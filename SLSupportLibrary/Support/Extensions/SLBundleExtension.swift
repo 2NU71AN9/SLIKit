@@ -10,5 +10,5 @@ import Foundation
 
 public extension Bundle {
     /// 命名空间
-    var namespace: String { return infoDictionary?["CFBundleName"] as? String ?? "" }
+    var namespace: String? { return infoDictionary?["CFBundleName"] as? String }
 }

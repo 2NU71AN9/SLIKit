@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+/// 没有复制,粘贴,选择等的输入框
 public class SLNoPasteTextField: UITextField {
     override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         switch action {
@@ -32,6 +33,7 @@ public extension UITextField {
     private static let maxCountKey = UnsafeRawPointer(bitPattern:"maxCountKey".hashValue)!
     private static let maxCountBagKey = UnsafeRawPointer(bitPattern:"maxCountBagKey".hashValue)!
     
+    /// 最大字符数
     var sl_maxCount: Int? {
         get {
             return objc_getAssociatedObject(self, UITextField.maxCountKey) as? Int
@@ -64,6 +66,7 @@ public extension UITextField {
         }
     }
     
+    /// 最大字符数
     @IBInspectable
     var maxCount: Int {
         get {

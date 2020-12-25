@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import SwiftDate
 
+let dateFormatter = DateFormatter()
+
 public extension String {
     /// 判断字符串是否是身份证
     var sl_isID: Bool {
@@ -191,13 +193,13 @@ public extension String {
         return string.replacingOccurrences(of: " ", with: "")
     }
     
+    
     /// 时间戳 转 0000-00-00 00:00:00
     ///
     /// - Parameter timeStamp: 时间戳
     /// - Returns: 年月日时分秒
     var sl_timeStamp2Data: String {
         let timeSta: TimeInterval = (self as NSString).doubleValue
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = Date(timeIntervalSince1970: timeSta)
         return dateFormatter.string(from: date)
@@ -205,7 +207,6 @@ public extension String {
     
     /// 月份转时间Date
     var sl_stringMonth2Date: Date? {
-        let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = "yyyy-MM"
         return dateFormatter.date(from: self)
@@ -258,7 +259,7 @@ public extension String {
     }
 }
 
-extension String {
+public extension String {
     
     /// 通过下标访问或赋值
     subscript(start:Int, length:Int) -> String {

@@ -13,10 +13,10 @@ public extension UIImage {
     /// 保存图片到相册
     ///
     /// - Parameter complete: 成功或失败
-    func sl_save2PhotoAlbum() {
+    final func sl_save2PhotoAlbum() {
         UIImageWriteToSavedPhotosAlbum(self, self, #selector(saveImage(image:didFinishSavingWithError:contextInfo:)), nil)
     }
-    @objc private func saveImage(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
+    @objc final private func saveImage(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
         if error != nil{
             print("保存失败")
         }else{

@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UINavigationController {
-    func removeAllCenterVC() {
+    final func removeAllCenterVC() {
         if let first = viewControllers.first,
             let last = viewControllers.last {
             viewControllers = [first, last]

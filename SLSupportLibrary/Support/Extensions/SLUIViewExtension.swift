@@ -81,7 +81,8 @@ public extension UIView {
         return String(describing: self)
     }
     
-    func makeCardShadow(_ cornerRadius: CGFloat = 5, opacity: Float = 1) {
+    /// 设置阴影
+    func sl_makeCardShadow(_ cornerRadius: CGFloat = 5, opacity: Float = 1) {
         layer.cornerRadius = cornerRadius
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.21).cgColor
         layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -89,7 +90,8 @@ public extension UIView {
         layer.shadowRadius = cornerRadius
     }
     
-    func makeGradientColor(_ colors: [CGColor], locations: [NSNumber], startPoint: CGPoint, endPoint: CGPoint) {
+    /// 设置颜色渐变
+    func sl_makeGradientColor(_ colors: [CGColor], locations: [NSNumber], startPoint: CGPoint, endPoint: CGPoint) {
         let bgLayer = CAGradientLayer()
         bgLayer.colors = colors
         bgLayer.locations = locations
@@ -100,7 +102,7 @@ public extension UIView {
     }
     
     /// 截图
-     func screenShot() -> UIImage? {
+     func sl_screenShot() -> UIImage? {
          guard frame.size.height > 0 && frame.size.width > 0 else {
              return nil
          }
@@ -262,51 +264,51 @@ public extension UIView {
         }
     }
     
-//    @IBInspectable
-//    /// Shadow path of view; also inspectable from Storyboard.
-//    public var kShadowPath: CGPath? {
-//        get {
-//            return layer.shadowPath
-//        }
-//        set {
-//            layer.shadowPath = newValue
-//        }
-//    }
-//
-//    @IBInspectable
-//    /// Should shadow rasterize of view; also inspectable from Storyboard.
-//    /// cache the rendered shadow so that it doesn't need to be redrawn
-//    public var shadowShouldRasterize: Bool {
-//        get {
-//            return layer.shouldRasterize
-//        }
-//        set {
-//            layer.shouldRasterize = newValue
-//        }
-//    }
-//
-//    @IBInspectable
-//    /// Should shadow rasterize of view; also inspectable from Storyboard.
-//    /// cache the rendered shadow so that it doesn't need to be redrawn
-//    public var shadowRasterizationScale: CGFloat {
-//        get {
-//            return layer.rasterizationScale
-//        }
-//        set {
-//            layer.rasterizationScale = newValue
-//        }
-//    }
-//
-//    @IBInspectable
-//    /// Corner radius of view; also inspectable from Storyboard.
-//    public var maskToBounds: Bool {
-//        get {
-//            return layer.masksToBounds
-//        }
-//        set {
-//            layer.masksToBounds = newValue
-//        }
-//    }
+    @IBInspectable
+    /// Shadow path of view; also inspectable from Storyboard.
+    var kShadowPath: CGPath? {
+        get {
+            return layer.shadowPath
+        }
+        set {
+            layer.shadowPath = newValue
+        }
+    }
+
+    @IBInspectable
+    /// Should shadow rasterize of view; also inspectable from Storyboard.
+    /// cache the rendered shadow so that it doesn't need to be redrawn
+    var shadowShouldRasterize: Bool {
+        get {
+            return layer.shouldRasterize
+        }
+        set {
+            layer.shouldRasterize = newValue
+        }
+    }
+
+    @IBInspectable
+    /// Should shadow rasterize of view; also inspectable from Storyboard.
+    /// cache the rendered shadow so that it doesn't need to be redrawn
+    var shadowRasterizationScale: CGFloat {
+        get {
+            return layer.rasterizationScale
+        }
+        set {
+            layer.rasterizationScale = newValue
+        }
+    }
+
+    @IBInspectable
+    /// Corner radius of view; also inspectable from Storyboard.
+    var maskToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }
+        set {
+            layer.masksToBounds = newValue
+        }
+    }
 }
 
 public extension UIImageView {

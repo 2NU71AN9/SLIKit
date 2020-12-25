@@ -12,19 +12,19 @@ import RxCocoa
 
 public extension Observable {
     /// 不要直接穿闭方法, 会不释放
-    func subscribeTo(_ method: @escaping (Any?) -> Any?) -> Disposable {
+    final func subscribeTo(_ method: @escaping (Any?) -> Any?) -> Disposable {
         return subscribe(onNext: { (element) in
             _ = method(element)
         })
     }
     /// 不要直接穿闭方法, 会不释放
-    func subscribeTo(_ method: @escaping (Any?) -> Void) -> Disposable {
+    final func subscribeTo(_ method: @escaping (Any?) -> Void) -> Disposable {
         return subscribe(onNext: { (element) in
             _ = method(element)
         })
     }
     /// 不要直接穿闭方法, 会不释放
-    func subscribeTo(_ method: @escaping () -> Void) -> Disposable {
+    final func subscribeTo(_ method: @escaping () -> Void) -> Disposable {
         return subscribe(onNext: { (_) in
             method()
         })

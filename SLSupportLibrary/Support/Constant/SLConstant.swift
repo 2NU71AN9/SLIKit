@@ -21,14 +21,14 @@ public var SCREEN_BOUNS: CGRect { return UIScreen.main.bounds }
 /// 屏幕中心点
 public var SCREEN_CENTER: CGPoint { return CGPoint(x: SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2) }
 /// 是否是iPhoneX
-public var isiPhoneX: Bool { return UIApplication.shared.statusBarFrame.height == 44 }
-/// 电池栏高度 普通20 iPhoneX 40
+public var isiPhoneX: Bool { return UIApplication.shared.statusBarFrame.height > 20 }
+/// 电池栏高度
 public let statusBarHeight: CGFloat = UIApplication.shared.statusBarFrame.height
-/// 导航栏高度 普通64 iPhoneX 84
+/// 导航栏高度
 public let naviCtrHeight: CGFloat = statusBarHeight + 44
 /// tabBar高度 普通49 iPhoneX 83
 public let tabBarHeight: CGFloat = bottomHeight + 49
-/// 底部留空高度 普通0 iPhoneX 34
+/// 底部SafeArea高度 普通0 iPhoneX 34
 public let bottomHeight: CGFloat = isiPhoneX ? 34 : 0
 
 
@@ -48,7 +48,3 @@ public weak var cur_visible_vc: UIViewController? {
     }
     return vc
 }
-
-// MARK: - =============常用颜色=============
-/// 白灰色
-public let whiteGrayColor = UIColor.sl_hexColor(hex: 0xefeff4)
