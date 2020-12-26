@@ -14,7 +14,7 @@ public struct RunTime {
     ///   - target: 被交换的方法名
     ///   - replace: 用于交换的方法名
     ///   - classType: 所属类型
-    static func exchangeMethod(target: String,
+    public static func exchangeMethod(target: String,
                                replace: String,
                                class classType: AnyClass) {
         exchangeMethod(selector: Selector(target),
@@ -27,7 +27,7 @@ public struct RunTime {
     ///   - selector: 被交换的方法
     ///   - replace: 用于交换的方法
     ///   - classType: 所属类型
-    static func exchangeMethod(selector: Selector,
+    public static func exchangeMethod(selector: Selector,
                                replace: Selector,
                                class classType: AnyClass) {
         let select1 = selector
@@ -52,7 +52,7 @@ public struct RunTime {
     ///
     /// - Parameter classType: 所属类型
     /// - Returns: 方法列表
-    static func methods(from classType: AnyClass) -> [Method] {
+    public static func methods(from classType: AnyClass) -> [Method] {
         var methodNum: UInt32 = 0
         var list = [Method]()
         let methods = class_copyMethodList(classType, &methodNum)
@@ -69,7 +69,7 @@ public struct RunTime {
     ///
     /// - Parameter classType: 所属类型
     /// - Returns: 属性列表
-    static func properties(from classType: AnyClass) -> [objc_property_t] {
+    public static func properties(from classType: AnyClass) -> [objc_property_t] {
         var propNum: UInt32 = 0
         let properties = class_copyPropertyList(classType, &propNum)
         var list = [objc_property_t]()
@@ -86,7 +86,7 @@ public struct RunTime {
     ///
     /// - Parameter classType: 类型
     /// - Returns: 成员变量
-    static func ivars(from classType: AnyClass) -> [Ivar] {
+    public static func ivars(from classType: AnyClass) -> [Ivar] {
         var ivarNum: UInt32 = 0
         let ivars = class_copyIvarList(classType, &ivarNum)
         var list = [Ivar]()
