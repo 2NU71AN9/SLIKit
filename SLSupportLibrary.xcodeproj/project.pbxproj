@@ -79,6 +79,8 @@
 		3190976C6290C41C3E0B670C /* Pods-SLSupportLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLSupportLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLSupportLibrary/Pods-SLSupportLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		D20506482595CB1200053794 /* Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runtime.swift; sourceTree = "<group>"; };
 		D20AE764255FDAA2000A8635 /* StringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
+		D20FFD76259C2E5A0036C11E /* SLSupportLibrary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SLSupportLibrary.entitlements; sourceTree = "<group>"; };
+		D20FFD78259C55220036C11E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D21AC9A624E11A3F00DF4F2F /* Ex_ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_ScrollView.swift; sourceTree = "<group>"; };
 		D21AC9A824E11B7D00DF4F2F /* Ex_Navi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_Navi.swift; sourceTree = "<group>"; };
 		D21AC9AA24E11BB800DF4F2F /* Ex_HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_HUD.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		10AD39DA0364C94C8DF7B368 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D20FFD78259C55220036C11E /* SystemConfiguration.framework */,
 				04657857CBEDD32BD058127B /* Pods_SLSupportLibrary.framework */,
 			);
 			name = Frameworks;
@@ -137,6 +140,7 @@
 		12C95734211C1AEB00CE9434 /* SLSupportLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				D20FFD76259C2E5A0036C11E /* SLSupportLibrary.entitlements */,
 				12C95747211C1B3C00CE9434 /* Support */,
 				12C95735211C1AEB00CE9434 /* AppDelegate.swift */,
 				12C95737211C1AEB00CE9434 /* ViewController.swift */,
@@ -507,16 +511,17 @@
 			baseConfigurationReference = 1A3D0840CD9300BB2728E5E3 /* Pods-SLSupportLibrary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SLSupportLibrary/SLSupportLibrary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2CXXJLYVV;
+				DEVELOPMENT_TEAM = WK29BGA7MZ;
 				INFOPLIST_FILE = SLSupportLibrary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SL.SLSupportLibrary;
+				MARKETING_VERSION = 1.1.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SL.SLSupportLibrary1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -528,16 +533,17 @@
 			baseConfigurationReference = 3190976C6290C41C3E0B670C /* Pods-SLSupportLibrary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SLSupportLibrary/SLSupportLibrary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M2CXXJLYVV;
+				DEVELOPMENT_TEAM = WK29BGA7MZ;
 				INFOPLIST_FILE = SLSupportLibrary/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SL.SLSupportLibrary;
+				MARKETING_VERSION = 1.1.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SL.SLSupportLibrary1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
