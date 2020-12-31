@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import pop
+import Then
 
 extension SLAlertView {
     /// 弹出1个按钮的提示框

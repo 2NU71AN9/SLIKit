@@ -84,7 +84,7 @@ public class SLTools {
     
     /// 获取连接wifi的名字和mac地址, 需要定位权限和添加Access WiFi information
     public static func getWifiNameWithMac() -> (String?, String?) {
-        let interfaces:NSArray = CNCopySupportedInterfaces()!
+        guard let interfaces: NSArray = CNCopySupportedInterfaces() else { return (nil, nil) }
         var ssid: String?
         var mac: String?
         for sub in interfaces {

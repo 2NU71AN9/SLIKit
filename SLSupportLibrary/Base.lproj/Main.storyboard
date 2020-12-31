@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,11 +23,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6BE-lv-J0M" customClass="SLEditView" customModule="SLSupportLibrary" customModuleProvider="target">
+                                <rect key="frame" x="20" y="64" width="374" height="42.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="123"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value="123123"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowType">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="textFieldStyle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="line" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6BE-lv-J0M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4tt-eG-ee9"/>
                             <constraint firstItem="UP5-bE-QpC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DZs-fv-9O7"/>
+                            <constraint firstItem="6BE-lv-J0M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="FR9-qL-6pX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6BE-lv-J0M" secondAttribute="trailing" constant="20" id="GEG-3c-EBQ"/>
                             <constraint firstItem="UP5-bE-QpC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dfX-ie-cji"/>
                         </constraints>
                     </view>
@@ -39,4 +59,9 @@
             <point key="canvasLocation" x="-170" y="126"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

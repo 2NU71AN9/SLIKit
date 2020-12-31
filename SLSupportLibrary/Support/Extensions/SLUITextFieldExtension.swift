@@ -42,12 +42,14 @@ public extension UITextField {
             if let maxCount = newValue {
                 objc_setAssociatedObject(self, UITextField.maxCountKey, maxCount, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
                 disposeBag = DisposeBag()
-                rx.textInput.text.orEmpty
-                    .subscribe(onNext: {[weak self] (text) in
-                        if text.count > maxCount {
-                            self?.text = String(text.prefix(maxCount))
-                        }
-                    }).disposed(by: disposeBag)
+                if maxCount > 0 {
+                    rx.textInput.text.orEmpty
+                        .subscribe(onNext: {[weak self] (text) in
+                            if text.count > maxCount {
+                                self?.text = String(text.prefix(maxCount))
+                            }
+                        }).disposed(by: disposeBag)
+                }
             }
         }
     }

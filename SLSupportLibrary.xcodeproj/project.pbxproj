@@ -13,7 +13,6 @@
 		125F4363211C201900607C9E /* SLDictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4362211C201900607C9E /* SLDictionaryExtension.swift */; };
 		125F4366211C20F200607C9E /* SLConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4365211C20F200607C9E /* SLConstant.swift */; };
 		125F4368211C21AD00607C9E /* SLCGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4367211C21AD00607C9E /* SLCGFloatExtension.swift */; };
-		125F436A211C25AD00607C9E /* SLUITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4369211C25AD00607C9E /* SLUITextViewExtension.swift */; };
 		125F436C211C292200607C9E /* SLTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F436B211C292200607C9E /* SLTools.swift */; };
 		125F4370211C307900607C9E /* SLFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F436F211C307900607C9E /* SLFileManager.swift */; };
 		125F4372211C312A00607C9E /* SLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4371211C312A00607C9E /* SLAlertView.swift */; };
@@ -34,12 +33,16 @@
 		12C95760211C1E9800CE9434 /* SLDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9575F211C1E9800CE9434 /* SLDateExtension.swift */; };
 		184612EF22DC5066002E9922 /* SLUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184612EE22DC5066002E9922 /* SLUIImageExtension.swift */; };
 		C35E7CB0746C42582D272A50 /* Pods_SLSupportLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04657857CBEDD32BD058127B /* Pods_SLSupportLibrary.framework */; };
+		D201FF59259DD1B20039C89E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D201FF58259DD1B20039C89E /* R.generated.swift */; };
 		D20506492595CB1200053794 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20506482595CB1200053794 /* Runtime.swift */; };
 		D20AE765255FDAA2000A8635 /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20AE764255FDAA2000A8635 /* StringInterpolation.swift */; };
 		D21AC9A724E11A3F00DF4F2F /* Ex_ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9A624E11A3F00DF4F2F /* Ex_ScrollView.swift */; };
 		D21AC9A924E11B7D00DF4F2F /* Ex_Navi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9A824E11B7D00DF4F2F /* Ex_Navi.swift */; };
 		D21AC9AB24E11BB800DF4F2F /* Ex_HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9AA24E11BB800DF4F2F /* Ex_HUD.swift */; };
 		D21AC9AD24E11D7900DF4F2F /* Ex_Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21AC9AC24E11D7900DF4F2F /* Ex_Rx.swift */; };
+		D24BECAC259DC9E3002A6FD7 /* SLEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24BECAB259DC9E3002A6FD7 /* SLEditView.swift */; };
+		D24BECAF259DC9EB002A6FD7 /* SLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24BECAE259DC9EB002A6FD7 /* SLLineView.swift */; };
+		D24BECC2259DCBDE002A6FD7 /* SLFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24BECC1259DCBDE002A6FD7 /* SLFont.swift */; };
 		D2E669B425494C74005EDD5D /* SLImageBrower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E669B325494C74005EDD5D /* SLImageBrower.swift */; };
 		D2F4E814258B52EA007510FB /* Ex_SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4E813258B52EA007510FB /* Ex_SnapKit.swift */; };
 		D2F4E817258B52FE007510FB /* Ex_UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4E816258B52FE007510FB /* Ex_UIAlertController.swift */; };
@@ -53,7 +56,6 @@
 		125F4362211C201900607C9E /* SLDictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLDictionaryExtension.swift; sourceTree = "<group>"; };
 		125F4365211C20F200607C9E /* SLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLConstant.swift; sourceTree = "<group>"; };
 		125F4367211C21AD00607C9E /* SLCGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLCGFloatExtension.swift; sourceTree = "<group>"; };
-		125F4369211C25AD00607C9E /* SLUITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLUITextViewExtension.swift; sourceTree = "<group>"; };
 		125F436B211C292200607C9E /* SLTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLTools.swift; sourceTree = "<group>"; };
 		125F436F211C307900607C9E /* SLFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFileManager.swift; sourceTree = "<group>"; };
 		125F4371211C312A00607C9E /* SLAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLAlertView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		184612EE22DC5066002E9922 /* SLUIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLUIImageExtension.swift; sourceTree = "<group>"; };
 		1A3D0840CD9300BB2728E5E3 /* Pods-SLSupportLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLSupportLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SLSupportLibrary/Pods-SLSupportLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		3190976C6290C41C3E0B670C /* Pods-SLSupportLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLSupportLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-SLSupportLibrary/Pods-SLSupportLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		D201FF58259DD1B20039C89E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D20506482595CB1200053794 /* Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runtime.swift; sourceTree = "<group>"; };
 		D20AE764255FDAA2000A8635 /* StringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
 		D20FFD76259C2E5A0036C11E /* SLSupportLibrary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SLSupportLibrary.entitlements; sourceTree = "<group>"; };
@@ -85,6 +88,9 @@
 		D21AC9A824E11B7D00DF4F2F /* Ex_Navi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_Navi.swift; sourceTree = "<group>"; };
 		D21AC9AA24E11BB800DF4F2F /* Ex_HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_HUD.swift; sourceTree = "<group>"; };
 		D21AC9AC24E11D7900DF4F2F /* Ex_Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_Rx.swift; sourceTree = "<group>"; };
+		D24BECAB259DC9E3002A6FD7 /* SLEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLEditView.swift; sourceTree = "<group>"; };
+		D24BECAE259DC9EB002A6FD7 /* SLLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLLineView.swift; sourceTree = "<group>"; };
+		D24BECC1259DCBDE002A6FD7 /* SLFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFont.swift; sourceTree = "<group>"; };
 		D2E669B325494C74005EDD5D /* SLImageBrower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLImageBrower.swift; sourceTree = "<group>"; };
 		D2F4E813258B52EA007510FB /* Ex_SnapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_SnapKit.swift; sourceTree = "<group>"; };
 		D2F4E816258B52FE007510FB /* Ex_UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex_UIAlertController.swift; sourceTree = "<group>"; };
@@ -114,7 +120,9 @@
 		125F4364211C20E300607C9E /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				D201FF58259DD1B20039C89E /* R.generated.swift */,
 				125F4365211C20F200607C9E /* SLConstant.swift */,
+				D24BECC1259DCBDE002A6FD7 /* SLFont.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -172,6 +180,8 @@
 				125F4371211C312A00607C9E /* SLAlertView.swift */,
 				D2E669B325494C74005EDD5D /* SLImageBrower.swift */,
 				D20506482595CB1200053794 /* Runtime.swift */,
+				D24BECAB259DC9E3002A6FD7 /* SLEditView.swift */,
+				D24BECAE259DC9EB002A6FD7 /* SLLineView.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -181,7 +191,6 @@
 			children = (
 				12C9574D211C1C4000CE9434 /* SLUIViewExtension.swift */,
 				12C9574F211C1C5900CE9434 /* SLUITextFieldExtension.swift */,
-				125F4369211C25AD00607C9E /* SLUITextViewExtension.swift */,
 				12C95753211C1C7C00CE9434 /* SLUIButtonExtension.swift */,
 				12C95755211C1C8A00CE9434 /* UILabelExtension.swift */,
 				12C95757211C1C9800CE9434 /* SLStringExtension.swift */,
@@ -230,6 +239,7 @@
 			buildConfigurationList = 12C95744211C1AEC00CE9434 /* Build configuration list for PBXNativeTarget "SLSupportLibrary" */;
 			buildPhases = (
 				51FFD0BD3E61DDCF0684B57C /* [CP] Check Pods Manifest.lock */,
+				D201FF55259DD1070039C89E /* ShellScript */,
 				12C9572E211C1AEB00CE9434 /* Sources */,
 				12C9572F211C1AEB00CE9434 /* Frameworks */,
 				12C95730211C1AEB00CE9434 /* Resources */,
@@ -327,6 +337,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SLSupportLibrary/Pods-SLSupportLibrary-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D201FF55259DD1070039C89E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/SLSupportLibrary/Support/Constant/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/SLSupportLibrary/Support/Constant/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -335,7 +364,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F4E814258B52EA007510FB /* Ex_SnapKit.swift in Sources */,
-				125F436A211C25AD00607C9E /* SLUITextViewExtension.swift in Sources */,
 				12C95754211C1C7C00CE9434 /* SLUIButtonExtension.swift in Sources */,
 				D21AC9AD24E11D7900DF4F2F /* Ex_Rx.swift in Sources */,
 				12C9574C211C1B7C00CE9434 /* SLOperatorCustom.swift in Sources */,
@@ -347,7 +375,9 @@
 				125F4368211C21AD00607C9E /* SLCGFloatExtension.swift in Sources */,
 				D2F4E817258B52FE007510FB /* Ex_UIAlertController.swift in Sources */,
 				D21AC9A724E11A3F00DF4F2F /* Ex_ScrollView.swift in Sources */,
+				D24BECC2259DCBDE002A6FD7 /* SLFont.swift in Sources */,
 				12C95750211C1C5900CE9434 /* SLUITextFieldExtension.swift in Sources */,
+				D24BECAF259DC9EB002A6FD7 /* SLLineView.swift in Sources */,
 				D21AC9A924E11B7D00DF4F2F /* Ex_Navi.swift in Sources */,
 				12C95738211C1AEB00CE9434 /* ViewController.swift in Sources */,
 				D20506492595CB1200053794 /* Runtime.swift in Sources */,
@@ -358,9 +388,11 @@
 				12C9575E211C1DC900CE9434 /* SLDoubleExtension.swift in Sources */,
 				184612EF22DC5066002E9922 /* SLUIImageExtension.swift in Sources */,
 				125F4372211C312A00607C9E /* SLAlertView.swift in Sources */,
+				D201FF59259DD1B20039C89E /* R.generated.swift in Sources */,
 				125F4361211C1FF600607C9E /* SLUserDefaultsExtension.swift in Sources */,
 				12C95758211C1C9800CE9434 /* SLStringExtension.swift in Sources */,
 				125F4370211C307900607C9E /* SLFileManager.swift in Sources */,
+				D24BECAC259DC9E3002A6FD7 /* SLEditView.swift in Sources */,
 				12C95736211C1AEB00CE9434 /* AppDelegate.swift in Sources */,
 				12C9574E211C1C4000CE9434 /* SLUIViewExtension.swift in Sources */,
 				D21AC9AB24E11BB800DF4F2F /* Ex_HUD.swift in Sources */,
