@@ -14,9 +14,9 @@ import FSTextView
 public class SLEditView: UIView {
     
     /// 点击事件
-    var tapEvent: (() -> Void)?
+    public var tapEvent: (() -> Void)?
     /// 只监听, 不要赋值
-    let textSubject = PublishSubject<String?>()
+    public let textSubject = PublishSubject<String?>()
     
     @IBInspectable public dynamic var textFieldStyle: Bool = true {
         didSet {
