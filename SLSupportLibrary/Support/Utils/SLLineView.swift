@@ -12,7 +12,7 @@ import UIKit
 public class SLLineView: UIView {
 
     @IBInspectable public dynamic var horizontal: Bool = true
-    @IBInspectable public dynamic var lineWidth: CGFloat = 0.5
+    @IBInspectable public dynamic var lineWidth: CGFloat = 0.4
     @IBInspectable public dynamic var lineColor: UIColor? = SLAssets.bundledColor(named: "sl_view_gray3") {
         didSet {
             backgroundColor = lineColor

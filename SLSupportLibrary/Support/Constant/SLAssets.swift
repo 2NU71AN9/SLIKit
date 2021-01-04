@@ -15,6 +15,10 @@ class SLAssets: NSObject {
             return image
         } else if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
             return image
+        } else if let subBundleUrl = primaryBundle.url(forResource: "SLSupportLibrary", withExtension: "bundle"),
+                  let subBundle = Bundle(url: subBundleUrl),
+                  let image = UIImage(named: name, in: subBundle, compatibleWith: nil) {
+            return image
         }
         return UIImage()
     }
@@ -24,6 +28,10 @@ class SLAssets: NSObject {
         if let color = UIColor(named: name, in: .module, compatibleWith: nil) {
             return color
         } else if let color = UIColor(named: name, in: primaryBundle, compatibleWith: nil) {
+            return color
+        } else if let subBundleUrl = primaryBundle.url(forResource: "SLSupportLibrary", withExtension: "bundle"),
+                  let subBundle = Bundle(url: subBundleUrl),
+                  let color = UIColor(named: name, in: subBundle, compatibleWith: nil) {
             return color
         }
         return nil
