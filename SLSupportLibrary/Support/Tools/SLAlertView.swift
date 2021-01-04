@@ -31,7 +31,7 @@ public class SLAlertView: UIView {
         $0.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
     private let titleImageView = UIImageView().then {
-        let image = R.image.balloon()
+        let image = SLAssets.bundledImage(named: "balloon")
         $0.image = image
     }
     private let infoLabel = UILabel().then {

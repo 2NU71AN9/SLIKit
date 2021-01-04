@@ -13,16 +13,13 @@ import RxCocoa
 
 /// 没有复制,粘贴,选择等的输入框
 public class SLNoPasteTextField: UITextField {
+    
+    @IBInspectable public dynamic var perform: Bool = true
+    
     override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
         switch action {
-        case #selector(paste(_:)):
-            return false //粘贴
-        case #selector(select(_:)):
-            return false //选择
-        case #selector(selectAll(_:)):
-            return false //全选
-        case #selector(cut(_:)):
-            return false //剪切
+        case #selector(paste(_:)), #selector(select(_:)), #selector(selectAll(_:)), #selector(cut(_:)):
+            return perform
         default:
             return super.canPerformAction(action, withSender: sender)
         }

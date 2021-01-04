@@ -15,6 +15,5 @@ pod 'SwiftDate'
 pod 'JXPhotoBrowser'
 pod 'Kingfisher'
 pod 'FSTextView'
-pod 'R.swift'
 
 end

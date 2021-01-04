@@ -26,6 +26,5 @@ Pod::Spec.new do |s|
   s.dependency "JXPhotoBrowser"
   s.dependency "Kingfisher"
   s.dependency "FSTextView"
-  s.dependency "R.swift"
   
 end

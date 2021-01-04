@@ -40,23 +40,30 @@ public class SLEditView: UIView {
             subTitleLabel.isHidden = subTitle?.sl_noSpace.isEmpty ?? false
         }
     }
-    // 0-无 1-右 2-下
+    // 0-无 1-右 2-下 3-上
     @IBInspectable public dynamic var arrowType: Int = 0 {
         didSet {
-            arrowView.isHidden = !(arrowType == 1 || arrowType == 2)
+            arrowView.isHidden = !(arrowType == 1 || arrowType == 2 || arrowType == 3)
             arrowView.image =
-                arrowType == 1 ? R.image.sl_arrowRight15() :
-                arrowType == 2 ? R.image.sl_arrowDown15() : nil
+                arrowType == 1 ? SLAssets.bundledImage(named: "sl_arrowRight15") :
+                arrowType == 2 ? SLAssets.bundledImage(named: "sl_arrowDown15") :
+                arrowType == 3 ? SLAssets.bundledImage(named: "sl_arrowUp15") : nil
         }
     }
-    @IBInspectable public dynamic var titleColor: UIColor? = R.color.sl_text_gray1() {
+    @IBInspectable public dynamic var titleColor: UIColor? = SLAssets.bundledColor(named: "sl_text_gray1") {
         didSet {
             titleLabel.textColor = titleColor
         }
     }
-    @IBInspectable public dynamic var subColor: UIColor? = R.color.sl_text_gray2() {
+    @IBInspectable public dynamic var subColor: UIColor? = SLAssets.bundledColor(named: "sl_text_gray2") {
         didSet {
             subTitleLabel.textColor = subColor
+        }
+    }
+    @IBInspectable public dynamic var textColor: UIColor? = SLAssets.bundledColor(named: "sl_label_color") {
+        didSet {
+            textField.textColor = textColor
+            textView.textColor = textColor
         }
     }
     @IBInspectable public dynamic var titleFont: Int = 4 {
@@ -110,19 +117,29 @@ public class SLEditView: UIView {
             textView.placeholder = placeholder
         }
     }
+    // textField和textView长按弹出剪贴,全选等操作
+    @IBInspectable public dynamic var isPerform: Bool = true {
+        didSet {
+            textField.perform = isPerform
+            textView.isCanPerformAction = isPerform
+        }
+    }
     // textField和textView是否可以编辑
     @IBInspectable public dynamic var editable: Bool = true {
         didSet {
             textView.isEditable = editable
         }
     }
+    // 数字键盘
     @IBInspectable public dynamic var numberKeyboard: Bool = false {
         didSet {
             textField.keyboardType = numberKeyboard ? .numberPad : .default
             textView.keyboardType = numberKeyboard ? .numberPad : .default
         }
     }
+    // 内容缩进
     @IBInspectable public dynamic var contentInset: CGFloat = 0
+    // 分隔线缩进
     @IBInspectable public dynamic var lineInset: CGFloat = 0
     @IBInspectable public dynamic var line: Bool = false {
         didSet {
@@ -150,16 +167,18 @@ public class SLEditView: UIView {
         label.isHidden = subTitle?.sl_noSpace.isEmpty ?? false
         return label
     }()
-    private lazy var textField: UITextField = {
-        let tf = UITextField()
+    private lazy var textField: SLNoPasteTextField = {
+        let tf = SLNoPasteTextField()
         tf.isHidden = !textFieldStyle
         tf.text = text
+        tf.textColor = textColor
         tf.textAlignment = .right
         tf.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
         tf.sl_maxCount = textCount
         tf.placeholder = placeholder
         tf.delegate = self
         tf.keyboardType = numberKeyboard ? .numberPad : .default
+        tf.perform = isPerform
         if textFieldStyle {
             _ = tf.rx.text.orEmpty.bind(to: textSubject)
         }
@@ -169,20 +188,23 @@ public class SLEditView: UIView {
         let imageView = UIImageView()
         imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 252), for: .horizontal)
         imageView.contentMode = .scaleAspectFit
-        imageView.isHidden = !(arrowType == 1 || arrowType == 2)
+        imageView.isHidden = !(arrowType == 1 || arrowType == 2 || arrowType == 3)
         imageView.image =
-            arrowType == 1 ? R.image.sl_arrowRight15() :
-            arrowType == 2 ? R.image.sl_arrowDown15() : nil
+            arrowType == 1 ? SLAssets.bundledImage(named: "sl_arrowRight15") :
+            arrowType == 2 ? SLAssets.bundledImage(named: "sl_arrowDown15") :
+            arrowType == 3 ? SLAssets.bundledImage(named: "sl_arrowUp15") : nil
         return imageView
     }()
     
     private lazy var textView: FSTextView = {
         let view = FSTextView()
         view.backgroundColor = .clear
+        view.textColor = textColor
         view.isHidden = textFieldStyle
         view.isEditable = editable
+        view.isCanPerformAction = isPerform
         view.placeholder = placeholder
-        view.placeholderColor = R.color.sl_view_gray3()
+        view.placeholderColor = SLAssets.bundledColor(named: "sl_view_gray3")
         view.maxLength = UInt(textCount)
         view.text = text
         view.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
