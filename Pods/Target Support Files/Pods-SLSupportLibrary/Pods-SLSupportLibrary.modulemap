@@ -1,6 +1,0 @@
-framework module Pods_SLSupportLibrary {
-  umbrella header "Pods-SLSupportLibrary-umbrella.h"
-
-  export *
-  module * { export * }
-}

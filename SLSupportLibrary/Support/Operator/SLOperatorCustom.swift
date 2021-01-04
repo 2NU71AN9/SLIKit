@@ -134,7 +134,7 @@ func <-> <T>(property: ControlProperty<T>, relay: BehaviorRelay<T>) -> Disposabl
 func <-> (property: BehaviorRelay<String?>, relay: BehaviorRelay<String>) -> Disposable {
     let bindToUIDisposable = relay.asObservable().bind(to: property)
     let bindToRelay = property
-        .observeOn(MainScheduler.asyncInstance)
+        .observe(on: MainScheduler.asyncInstance)
         .subscribe(onNext: { n in
             if n != relay.value {
                 relay.accept(n ?? "")
@@ -149,7 +149,7 @@ func <-> (property: BehaviorRelay<String?>, relay: BehaviorRelay<String>) -> Dis
 func <-> <T> (property: BehaviorRelay<T>, relay: BehaviorRelay<T>) -> Disposable {
     let bindToUIDisposable = relay.asObservable().bind(to: property)
     let bindToRelay = property
-        .observeOn(MainScheduler.asyncInstance)
+        .observe(on: MainScheduler.asyncInstance)
         .subscribe(onNext: { n in
             if let _n = n as? String,
                 let _value = relay.value as? String,

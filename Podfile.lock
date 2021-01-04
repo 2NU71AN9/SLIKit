@@ -1,22 +1,20 @@
 PODS:
   - FSTextView (1.8)
-  - HandyJSON (5.0.0)
+  - HandyJSON (5.0.2)
   - JXPhotoBrowser (3.1.2)
-  - Kingfisher (5.15.3):
-    - Kingfisher/Core (= 5.15.3)
-  - Kingfisher/Core (5.15.3)
-  - MJRefresh (3.4.3)
+  - Kingfisher (6.0.0)
+  - MJRefresh (3.5.0)
   - PKHUD (5.3.0)
-  - pop (1.0.10)
-  - RxCocoa (5.0.0):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.0.0):
-    - RxSwift (~> 5)
-  - RxSwift (5.0.0)
-  - SnapKit (5.0.0)
-  - SwiftDate (6.1.0)
-  - Then (2.4.0)
+  - pop (1.0.12)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
+  - SnapKit (5.0.1)
+  - SwiftDate (6.3.1)
+  - Then (2.7.0)
 
 DEPENDENCIES:
   - FSTextView
@@ -33,37 +31,36 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
-    - HandyJSON
-    - pop
-    - RxCocoa
-    - RxRelay
-    - SnapKit
-    - Then
   trunk:
     - FSTextView
+    - HandyJSON
     - JXPhotoBrowser
     - Kingfisher
     - MJRefresh
     - PKHUD
+    - pop
+    - RxCocoa
+    - RxRelay
     - RxSwift
+    - SnapKit
     - SwiftDate
+    - Then
 
 SPEC CHECKSUMS:
   FSTextView: 9e2ca07bb6bb0fb7e77b49b2717adf81f3c620b5
-  HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   JXPhotoBrowser: 7f0bc11f02fbc84ae06829f922f32ce822aa9661
-  Kingfisher: 2fef2f4d9e809285aff7f6195b5290520904f3fa
-  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  Kingfisher: 13f6e68c928eb50439b5cb2ea75d6035018438ea
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
-  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
-  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
-  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
-  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
-  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
-  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
-  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 3c5869796c0d471b5b5844d80e9cabd1984b0c64
+PODFILE CHECKSUM: fbf4cdebb0c8fc7438bab6aed0ee62b9c0c5e9aa
 
 COCOAPODS: 1.10.0
