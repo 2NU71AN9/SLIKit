@@ -17,9 +17,7 @@
 		125F4372211C312A00607C9E /* SLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125F4371211C312A00607C9E /* SLAlertView.swift */; };
 		12C95736211C1AEB00CE9434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C95735211C1AEB00CE9434 /* AppDelegate.swift */; };
 		12C95738211C1AEB00CE9434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C95737211C1AEB00CE9434 /* ViewController.swift */; };
-		12C9573B211C1AEB00CE9434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C95739211C1AEB00CE9434 /* Main.storyboard */; };
 		12C9573D211C1AEC00CE9434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12C9573C211C1AEC00CE9434 /* Assets.xcassets */; };
-		12C95740211C1AEC00CE9434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C9573E211C1AEC00CE9434 /* LaunchScreen.storyboard */; };
 		12C9574C211C1B7C00CE9434 /* SLOperatorCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9574B211C1B7C00CE9434 /* SLOperatorCustom.swift */; };
 		12C9574E211C1C4000CE9434 /* SLUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9574D211C1C4000CE9434 /* SLUIViewExtension.swift */; };
 		12C95750211C1C5900CE9434 /* SLUITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9574F211C1C5900CE9434 /* SLUITextFieldExtension.swift */; };
@@ -61,9 +59,7 @@
 		12C95732211C1AEB00CE9434 /* SLSupportLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLSupportLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12C95735211C1AEB00CE9434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12C95737211C1AEB00CE9434 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		12C9573A211C1AEB00CE9434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12C9573C211C1AEC00CE9434 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		12C9573F211C1AEC00CE9434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12C95741211C1AEC00CE9434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12C9574B211C1B7C00CE9434 /* SLOperatorCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLOperatorCustom.swift; sourceTree = "<group>"; };
 		12C9574D211C1C4000CE9434 /* SLUIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLUIViewExtension.swift; sourceTree = "<group>"; };
@@ -153,9 +149,7 @@
 				12C95747211C1B3C00CE9434 /* Support */,
 				12C95735211C1AEB00CE9434 /* AppDelegate.swift */,
 				12C95737211C1AEB00CE9434 /* ViewController.swift */,
-				12C95739211C1AEB00CE9434 /* Main.storyboard */,
 				12C9573C211C1AEC00CE9434 /* Assets.xcassets */,
-				12C9573E211C1AEC00CE9434 /* LaunchScreen.storyboard */,
 				12C95741211C1AEC00CE9434 /* Info.plist */,
 			);
 			path = SLSupportLibrary;
@@ -292,10 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12C95740211C1AEC00CE9434 /* LaunchScreen.storyboard in Resources */,
 				D2C3EF3A25A2AC38008B8188 /* Images.xcassets in Resources */,
 				12C9573D211C1AEC00CE9434 /* Assets.xcassets in Resources */,
-				12C9573B211C1AEB00CE9434 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,25 +393,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		12C95739211C1AEB00CE9434 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12C9573A211C1AEB00CE9434 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		12C9573E211C1AEC00CE9434 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				12C9573F211C1AEC00CE9434 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		12C95742211C1AEC00CE9434 /* Debug */ = {
