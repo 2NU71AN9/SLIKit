@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "11.0"
   s.source       = { :git => "https://github.com/2NU71AN9/SLSupportLibrary.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
   s.source_files  =  "SLSupportLibrary/Support/**/*.{h,m,swift}" #需要托管的源代码路径
-  s.resource_bundle = { 'PKHUDResources' => 'SLSupportLibrary/Support/**/*.xcassets' }
+  s.resource_bundle = { 'SLSupportLibrary' => 'SLSupportLibrary/Support/**/*.xcassets' }
 
   s.requires_arc = true #是否支持ARC
   s.dependency "RxSwift"
