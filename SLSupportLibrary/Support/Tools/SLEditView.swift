@@ -45,8 +45,8 @@ public class SLEditView: UIView {
         didSet {
             arrowView.isHidden = !(arrowType == 1 || arrowType == 2)
             arrowView.image =
-                arrowType == 1 ? R.image.arrowRight15() :
-                arrowType == 2 ? R.image.arrowDown15() : nil
+                arrowType == 1 ? R.image.sl_arrowRight15() :
+                arrowType == 2 ? R.image.sl_arrowDown15() : nil
         }
     }
     @IBInspectable public dynamic var titleColor: UIColor? = R.color.sl_text_gray1() {
@@ -171,8 +171,8 @@ public class SLEditView: UIView {
         imageView.contentMode = .scaleAspectFit
         imageView.isHidden = !(arrowType == 1 || arrowType == 2)
         imageView.image =
-            arrowType == 1 ? R.image.arrowRight15() :
-            arrowType == 2 ? R.image.arrowDown15() : nil
+            arrowType == 1 ? R.image.sl_arrowRight15() :
+            arrowType == 2 ? R.image.sl_arrowDown15() : nil
         return imageView
     }()
     

@@ -317,92 +317,42 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 1 files.
-  struct file {
-    /// Resource file `Support.bundle`.
-    static let supportBundle = Rswift.FileResource(bundle: R.hostingBundle, name: "Support", pathExtension: "bundle")
-
-    /// `bundle.url(forResource: "Support", withExtension: "bundle")`
-    static func supportBundle(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.supportBundle
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-
-    fileprivate init() {}
-  }
-
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
-    /// Image `arrowDown15`.
-    static let arrowDown15 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowDown15")
-    /// Image `arrowDown20`.
-    static let arrowDown20 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowDown20")
-    /// Image `arrowDown50`.
-    static let arrowDown50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowDown50")
-    /// Image `arrowRight15`.
-    static let arrowRight15 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowRight15")
-    /// Image `arrowRight50`.
-    static let arrowRight50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowRight50")
-    /// Image `arrowUp15`.
-    static let arrowUp15 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowUp15")
-    /// Image `arrowUp50`.
-    static let arrowUp50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrowUp50")
-    /// Image `cry100`.
-    static let cry100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cry100")
+    /// Image `balloon`.
+    static let balloon = Rswift.ImageResource(bundle: R.hostingBundle, name: "balloon")
+    /// Image `sl_arrowDown15`.
+    static let sl_arrowDown15 = Rswift.ImageResource(bundle: R.hostingBundle, name: "sl_arrowDown15")
+    /// Image `sl_arrowRight15`.
+    static let sl_arrowRight15 = Rswift.ImageResource(bundle: R.hostingBundle, name: "sl_arrowRight15")
+    /// Image `sl_arrowUp15`.
+    static let sl_arrowUp15 = Rswift.ImageResource(bundle: R.hostingBundle, name: "sl_arrowUp15")
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "arrowDown15", bundle: ..., traitCollection: ...)`
-    static func arrowDown15(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.arrowDown15, compatibleWith: traitCollection)
+    /// `UIImage(named: "balloon", bundle: ..., traitCollection: ...)`
+    static func balloon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.balloon, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "arrowDown20", bundle: ..., traitCollection: ...)`
-    static func arrowDown20(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.arrowDown20, compatibleWith: traitCollection)
+    /// `UIImage(named: "sl_arrowDown15", bundle: ..., traitCollection: ...)`
+    static func sl_arrowDown15(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sl_arrowDown15, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "arrowDown50", bundle: ..., traitCollection: ...)`
-    static func arrowDown50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.arrowDown50, compatibleWith: traitCollection)
+    /// `UIImage(named: "sl_arrowRight15", bundle: ..., traitCollection: ...)`
+    static func sl_arrowRight15(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sl_arrowRight15, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "arrowRight15", bundle: ..., traitCollection: ...)`
-    static func arrowRight15(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.arrowRight15, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "arrowRight50", bundle: ..., traitCollection: ...)`
-    static func arrowRight50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.arrowRight50, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "arrowUp15", bundle: ..., traitCollection: ...)`
-    static func arrowUp15(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.arrowUp15, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "arrowUp50", bundle: ..., traitCollection: ...)`
-    static func arrowUp50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.arrowUp50, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "cry100", bundle: ..., traitCollection: ...)`
-    static func cry100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.cry100, compatibleWith: traitCollection)
+    /// `UIImage(named: "sl_arrowUp15", bundle: ..., traitCollection: ...)`
+    static func sl_arrowUp15(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sl_arrowUp15, compatibleWith: traitCollection)
     }
     #endif
 

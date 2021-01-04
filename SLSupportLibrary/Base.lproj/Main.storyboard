@@ -23,7 +23,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6BE-lv-J0M" customClass="SLEditView" customModule="SLSupportLibrary" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BE-lv-J0M" customClass="SLEditView" customModule="SLSupportLibrary" customModuleProvider="target">
                                 <rect key="frame" x="20" y="64" width="374" height="42.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -33,7 +33,6 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="textFieldStyle" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="line" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
@@ -56,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170" y="126"/>
+            <point key="canvasLocation" x="-171.01449275362319" y="125.89285714285714"/>
         </scene>
     </scenes>
     <resources>
