@@ -33,6 +33,11 @@ class ViewController: UIViewController {
         }
         print(array)
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let vc = SLWebViewController(URL(string: "https://www.baidu.com"))
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 @_functionBuilder public struct ArrayBuilder {
