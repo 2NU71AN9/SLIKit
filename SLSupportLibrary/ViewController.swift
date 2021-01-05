@@ -35,8 +35,7 @@ class ViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let vc = SLWebViewController(URL(string: "https://www.baidu.com"))
-        navigationController?.pushViewController(vc, animated: true)
+        SLPickerViewController(["123", "22222"], complete: nil).show()
     }
 }
 

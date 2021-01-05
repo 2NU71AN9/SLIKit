@@ -21,7 +21,8 @@ public class SLEditView: UIView {
     @IBInspectable public dynamic var textFieldStyle: Bool = true {
         didSet {
             textField.isHidden = !textFieldStyle
-            textView.isHidden = textFieldStyle
+            textView.isHidden = textFieldStyle || !editable
+            textLabel.isHidden = textFieldStyle || editable
             if textFieldStyle {
                 _ = textField.rx.text.orEmpty.bind(to: textSubject)
             } else {
@@ -64,6 +65,7 @@ public class SLEditView: UIView {
         didSet {
             textField.textColor = textColor
             textView.textColor = textColor
+            textLabel.textColor = textColor
         }
     }
     @IBInspectable public dynamic var titleFont: Int = 4 {
@@ -90,18 +92,21 @@ public class SLEditView: UIView {
         didSet {
             textField.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
             textView.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
+            textLabel.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
         }
     }
     @IBInspectable public dynamic var textFontSize: CGFloat = 17 {
         didSet {
             textField.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
             textView.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
+            textLabel.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
         }
     }
     @IBInspectable public dynamic var text: String? {
         didSet {
             textField.text = text
             textView.text = text
+            textLabel.text = text
         }
     }
     // 0表示无限大
@@ -200,7 +205,7 @@ public class SLEditView: UIView {
         let view = FSTextView()
         view.backgroundColor = .clear
         view.textColor = textColor
-        view.isHidden = textFieldStyle
+        view.isHidden = textFieldStyle || !editable
         view.isEditable = editable
         view.isCanPerformAction = isPerform
         view.placeholder = placeholder
@@ -213,6 +218,15 @@ public class SLEditView: UIView {
             _ = view.rx.text.orEmpty.bind(to: textSubject)
         }
         return view
+    }()
+    private lazy var textLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = textColor
+        label.isHidden = textFieldStyle || editable
+        label.text = text
+        label.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
+        return label
     }()
     
     private lazy var lineView: SLLineView = {
@@ -237,11 +251,11 @@ public class SLEditView: UIView {
         return stackView
     }()
     private lazy var stackView3: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [stackView2, textView, lineView])
+        let stackView = UIStackView(arrangedSubviews: [stackView2, textView, textLabel, lineView])
         stackView.axis = .vertical
         stackView.spacing = lineSpacing
         stackView.alignment = .center
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fill
         stackView.addTarget(target: self, action: #selector(tapAction))
         return stackView
     }()
@@ -271,6 +285,10 @@ public class SLEditView: UIView {
             make.left.equalToSuperview().offset(contentInset-5)
             make.right.equalToSuperview().offset(-contentInset+5)
             make.height.greaterThanOrEqualTo(80)
+        }
+        textLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(contentInset)
+            make.right.equalToSuperview().offset(-contentInset)
         }
         lineView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(lineInset)
