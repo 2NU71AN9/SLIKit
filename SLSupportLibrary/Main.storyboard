@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BE-lv-J0M" customClass="SLEditView" customModule="SLSupportLibrary" customModuleProvider="target">
-                                <rect key="frame" x="20" y="108" width="374" height="42.5"/>
+                                <rect key="frame" x="20" y="108" width="374" height="66.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="title" value="123"/>
@@ -48,10 +48,12 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="arrowType">
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="textFieldStyle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="textFieldStyle" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="titleFont">
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="hczcjzxczxc"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -72,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-171.01449275362319" y="125.89285714285714"/>
+            <point key="canvasLocation" x="-471" y="126"/>
         </scene>
     </scenes>
     <resources>

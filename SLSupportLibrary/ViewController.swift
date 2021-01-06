@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         SLPickerViewController(["123", "22222"], complete: nil).show()
+        print(Bundle.main.infoDictionary)
     }
 }
 

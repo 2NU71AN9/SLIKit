@@ -30,6 +30,11 @@ public class SLEditView: UIView {
             }
         }
     }
+    @IBInspectable public dynamic var required: Bool = false {
+        didSet {
+            requiredView.isHidden = !required
+        }
+    }
     @IBInspectable public dynamic var title: String? {
         didSet {
             titleLabel.text = title
@@ -133,6 +138,8 @@ public class SLEditView: UIView {
     @IBInspectable public dynamic var editable: Bool = true {
         didSet {
             textView.isEditable = editable
+            textView.isHidden = textFieldStyle || !editable
+            textLabel.isHidden = textFieldStyle || editable
         }
     }
     // 数字键盘
@@ -157,8 +164,16 @@ public class SLEditView: UIView {
         }
     }
     
+    private lazy var requiredView: UIImageView = {
+        let view = UIImageView(image: SLAssets.bundledImage(named: "sl_required6"))
+        view.isHidden = !required
+        view.setContentHuggingPriority(UILayoutPriority(rawValue: 252), for: .horizontal)
+        view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 252), for: .horizontal)
+        return view
+    }()
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.setContentHuggingPriority(UILayoutPriority(rawValue: 246), for: .horizontal)
         label.text = title
         label.textColor = titleColor
         label.font = UIFont(name: SLFontPingFang.fontName(titleFont).rawValue, size: titleFontSize)
@@ -166,6 +181,7 @@ public class SLEditView: UIView {
     }()
     private lazy var subTitleLabel: UILabel = {
         let label = UILabel()
+        label.setContentHuggingPriority(UILayoutPriority(rawValue: 246), for: .horizontal)
         label.text = subTitle
         label.textColor = subColor
         label.font = UIFont(name: SLFontPingFang.fontName(subFont).rawValue, size: subFontSize)
@@ -174,6 +190,8 @@ public class SLEditView: UIView {
     }()
     private lazy var textField: SLNoPasteTextField = {
         let tf = SLNoPasteTextField()
+        tf.setContentHuggingPriority(UILayoutPriority(rawValue: 245), for: .horizontal)
+        tf.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 245), for: .horizontal)
         tf.isHidden = !textFieldStyle
         tf.text = text
         tf.textColor = textColor
@@ -192,6 +210,7 @@ public class SLEditView: UIView {
     private lazy var arrowView: UIImageView = {
         let imageView = UIImageView()
         imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 252), for: .horizontal)
+        imageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 252), for: .horizontal)
         imageView.contentMode = .scaleAspectFit
         imageView.isHidden = !(arrowType == 1 || arrowType == 2 || arrowType == 3)
         imageView.image =
@@ -243,9 +262,9 @@ public class SLEditView: UIView {
         return stackView
     }()
     private lazy var stackView2: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleStackView, textField, arrowView])
+        let stackView = UIStackView(arrangedSubviews: [requiredView, titleStackView, textField, arrowView])
         stackView.axis = .horizontal
-        stackView.spacing = 10
+        stackView.spacing = 5
         stackView.alignment = .center
         stackView.distribution = .fill
         return stackView
