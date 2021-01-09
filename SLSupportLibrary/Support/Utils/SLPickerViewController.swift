@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SLSupportLibrary
 import pop
 
 public class SLPickerViewController: UIViewController {
@@ -82,7 +81,7 @@ extension SLPickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-extension SLPickerViewController {
+public extension SLPickerViewController {
     private func showAnim() {
         let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
         anim?.toValue = 0
@@ -95,7 +94,7 @@ extension SLPickerViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    public func show() {
+    func show() {
         cur_visible_vc?.present(self, animated: true, completion: nil)
     }
 }
