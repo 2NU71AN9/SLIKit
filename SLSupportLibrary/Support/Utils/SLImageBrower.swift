@@ -12,7 +12,7 @@ import Kingfisher
 
 public class SLImageBrower {
     
-    static func browser(_ images: [String]) -> JXPhotoBrowser {
+    public static func browser(_ images: [String], index: Int = 0) -> JXPhotoBrowser {
         let browser = JXPhotoBrowser()
         browser.numberOfItems = { images.count }
         let urls = images.compactMap { URL(string: $0) }
@@ -29,10 +29,11 @@ public class SLImageBrower {
                 save(cell)
             }
         }
+        browser.pageIndex = index
         return browser
     }
     
-    static func browser(_ images: [UIImage]) -> JXPhotoBrowser {
+    public static func browser(_ images: [UIImage], index: Int = 0) -> JXPhotoBrowser {
         let browser = JXPhotoBrowser()
         browser.numberOfItems = { images.count }
         browser.reloadCellAtIndex = { context in
@@ -42,7 +43,7 @@ public class SLImageBrower {
                 save(cell)
             }
         }
-        browser.pageIndex = 0
+        browser.pageIndex = index
         return browser
     }
     
