@@ -31,7 +31,7 @@ public class SLPickerViewController: UIViewController {
     private var titles: [String] = []
     
     public init(_ titles: [String], complete: ((Int, String) -> Void)?) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl_loadBundle(cls: SLPickerViewController.self, bundleName: "Resource"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
         self.titles = titles
@@ -39,7 +39,7 @@ public class SLPickerViewController: UIViewController {
     }
 
     init() {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl_loadBundle(cls: SLPickerViewController.self, bundleName: "Resource"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
     }

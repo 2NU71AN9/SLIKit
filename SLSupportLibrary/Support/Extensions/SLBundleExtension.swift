@@ -18,3 +18,11 @@ public extension Bundle {
     /// 命名空间
     var sl_namespace: String? { return infoDictionary?["CFBundleName"] as? String }
 }
+
+public extension Bundle {
+    class func sl_loadBundle(cls: AnyClass, bundleName: String) -> Bundle? {
+        let bundle = Bundle(for: cls)
+        guard let path = bundle.path(forResource: bundleName, ofType: "bundle") else { return nil }
+        return Bundle(path: path)
+    }
+}
