@@ -22,10 +22,11 @@ public extension UIView {
     }
     
     /// 从xib加载view
-    ///
+    /// - Parameter module: 从哪个模块
     /// - Returns: view
-    static func sl_loadNib() -> UIView? {
-        return Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.first as? UIView
+    static func sl_loadNib(from module: String? = nil) -> UIView? {
+        let bundle = Bundle.sl_moduleBundle(self, module) ?? Bundle.main
+        return bundle.loadNibNamed("\(self)", owner: nil, options: nil)?.first as? UIView
     }
 }
 

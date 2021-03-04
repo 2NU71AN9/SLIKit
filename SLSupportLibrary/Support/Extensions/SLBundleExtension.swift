@@ -20,9 +20,19 @@ public extension Bundle {
 }
 
 public extension Bundle {
-    class func sl_loadBundle(cls: AnyClass, bundleName: String) -> Bundle? {
+    /// 获取资源bundle, 加载图片 文件等资源
+    static func sl_loadBundle(cls: AnyClass, bundleName: String) -> Bundle? {
         let bundle = Bundle(for: cls)
         guard let path = bundle.path(forResource: bundleName, ofType: "bundle") else { return nil }
         return Bundle(path: path)
+    }
+    
+    /// 跨模块获取bundle, 获取xib storyboard
+    static func sl_moduleBundle(_ forClass: AnyClass, _ module: String? = nil) -> Bundle? {
+        let bundle = Bundle(for: forClass)
+        guard let bundleURL = bundle.url(forResource: module, withExtension: "bundle") else {
+            return nil
+        }
+        return Bundle(url: bundleURL)
     }
 }
