@@ -45,12 +45,11 @@ public extension SLEx where Base: UIView {
     }
     
     /// 从xib加载view
-    /// - Parameter module: 从哪个模块
-    /// - Returns: view
     @discardableResult
-    static func loadNib(from module: String? = nil) -> SLEx? {
-        let bundle = Bundle.sl.moduleBundle(Base.self, module) ?? Bundle.main
-        return bundle.loadNibNamed("\(Base.self)", owner: nil, options: nil)?.first as? SLEx
+    static func loadNib() -> SLEx? {
+        let moduleName = Base.description().components(separatedBy: ".").first ?? ""
+        let bundle = Bundle.sl.moduleBundle(Base.self, moduleName) ?? Bundle.main
+        return (bundle.loadNibNamed("\(Base.self)", owner: nil, options: nil)?.first as? Base)?.sl
     }
     
     /// 返回该view所在VC
