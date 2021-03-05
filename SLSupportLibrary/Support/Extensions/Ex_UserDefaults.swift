@@ -1,5 +1,5 @@
 //
-//  SLUserDefaultsExtension.swift
+//  Ex_UserDefaults.swift
 //  SLSupportLibrary
 //
 //  Created by RY on 2018/8/9.
@@ -8,17 +8,18 @@
 
 import Foundation
 
-public extension UserDefaults {
-    
+public extension SLEx where Base: UserDefaults {
     /// 保存自定义的对象,需要对象实现解归档
     ///
     /// - Parameters:
     ///   - object: 要保存的对象
     ///   - key: key
-    final func sl_saveCustomObject(_ object: NSCoding, key: String) {
+    @discardableResult
+    func saveObject(_ object: NSCoding, key: String) -> SLEx {
         let encodedObject = NSKeyedArchiver.archivedData(withRootObject: object)
-        self.set(encodedObject, forKey: key)
-        self.synchronize()
+        base.set(encodedObject, forKey: key)
+        base.synchronize()
+        return self
     }
     
     /// 根据key获取保存的对象,需要对象实现解归档
@@ -27,9 +28,8 @@ public extension UserDefaults {
     ///   - type: 对象类型
     ///   - key: key
     /// - Returns: 对象
-    final func sl_getCustomObject<T>(type: T.Type, forKey key: String) -> T? {
-        
-        let decodedObject = self.object(forKey: key) as? Data
+    func getDecodedObject<T>(type: T.Type, forKey key: String) -> T? {
+        let decodedObject = base.object(forKey: key) as? Data
         if let decoded = decodedObject {
             let object = NSKeyedUnarchiver.unarchiveObject(with: decoded)
             return object as? T

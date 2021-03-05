@@ -1,5 +1,5 @@
 //
-//  SLUITextFieldExtension.swift
+//  Ex_TextField.swift
 //  SLSupportLibrary
 //
 //  Created by RY on 2018/8/9.
@@ -26,11 +26,28 @@ public class SLNoPasteTextField: UITextField {
     }
 }
 
+public extension SLEx where Base: UITextField {
+    /// 最大字符数, 0为不限
+    @discardableResult
+    func maxCount(_ count: Int) -> SLEx {
+        base.sl_maxCount = count
+        return self
+    }
+    
+    /// 小数点后可以输入几位, -1为不限
+    @discardableResult
+    func pointCount(_ count: Int) -> SLEx {
+        base.sl_pointCount = count
+        return self
+    }
+}
+
+
 public extension UITextField {
     private static let maxCountKey = UnsafeRawPointer(bitPattern:"maxCountKey".hashValue)!
     private static let maxCountBagKey = UnsafeRawPointer(bitPattern:"maxCountBagKey".hashValue)!
     
-    /// 最大字符数
+    /// 最大字符数, 0为不限
     var sl_maxCount: Int? {
         get {
             return objc_getAssociatedObject(self, UITextField.maxCountKey) as? Int
@@ -65,7 +82,7 @@ public extension UITextField {
         }
     }
     
-    /// 最大字符数
+    /// 最大字符数, 0为不限
     @IBInspectable
     var maxCount: Int {
         get {
@@ -83,7 +100,7 @@ public extension UITextField {
     private static let pointCountKey = UnsafeRawPointer(bitPattern:"pointCountKey".hashValue)!
     private static let pointCountBagKey = UnsafeRawPointer(bitPattern:"pointCountBagKey".hashValue)!
     
-    /// 小数点后可以输入几位
+    /// 小数点后可以输入几位, -1为不限
     var sl_pointCount: Int? {
         get {
             return objc_getAssociatedObject(self, UITextField.pointCountKey) as? Int
@@ -92,10 +109,12 @@ public extension UITextField {
             if let pointCount = newValue {
                 objc_setAssociatedObject(self, UITextField.pointCountKey, pointCount, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
                 pointDisposeBag = DisposeBag()
-                rx.textInput.text.orEmpty
-                    .subscribe(onNext: {[weak self] (text) in
-                        self?.checkPoint(text)
-                    }).disposed(by: pointDisposeBag)
+                if pointCount >= 0 {
+                    rx.textInput.text.orEmpty
+                        .subscribe(onNext: {[weak self] (text) in
+                            self?.checkPoint(text)
+                        }).disposed(by: pointDisposeBag)
+                }
             }
         }
     }
@@ -121,18 +140,29 @@ public extension UITextField {
             return
         }
         let agoIndex = input.count - 1
-        let agoText = input.subString(start: 0, length: input.count - 1)
-        let newValue = input.subString(start: input.count-1, length: 1)
+        let agoText = input.sl.subString(start: 0, length: input.count - 1)
+        let newValue = input.sl.subString(start: input.count-1, length: 1)
         if agoText?.contains(".") ?? false {
             if newValue == "." {
                 text = String(input.prefix(agoIndex))
             } else {
                 if let subfix = input.components(separatedBy: ".").last,
-                    let pointCount = sl_pointCount,
+                   let pointCount = sl_pointCount,
                     subfix.count > pointCount {
                     text = String(input.prefix(agoIndex))
                 }
             }
+        }
+    }
+    
+    /// 小数点后可以输入几位, -1为不限
+    @IBInspectable
+    var pointCount: Int {
+        get {
+            return sl_pointCount ?? 0
+        }
+        set {
+            sl_pointCount = newValue
         }
     }
 }

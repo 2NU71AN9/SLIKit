@@ -1,5 +1,5 @@
 //
-//  SLUIViewExtension.swift
+//  Ex_UIView.swift
 //  SLSupportLibrary
 //
 //  Created by RY on 2018/8/9.
@@ -11,29 +11,51 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-// MARK: -
-public extension UIView {
+public extension SLEx where Base: UIView {
+    
+    @discardableResult
+    func frame(_ frame: CGRect) -> SLEx {
+        base.frame = frame
+        return self
+    }
+    
+    @discardableResult
+    func add(subView view: UIView?) -> SLEx {
+        guard let view = view else { return self }
+        switch base {
+        case let v as UIStackView:
+            v.addArrangedSubview(view)
+        default:
+            base.addSubview(view)
+        }
+        return self
+    }
+    
+    @discardableResult
+    func backgroundColor(_ color: UIColor?) -> SLEx {
+        base.backgroundColor = color
+        return self
+    }
     
     /// 在屏幕上的位置,相对于屏幕,不是相对于SuperView
-    var sl_frameOnScreen: CGRect {
-        let window = UIApplication.shared.windows[0]
-        let rect = self.convert(bounds, to: window)
+    var frameOnScreen: CGRect {
+        let window = UIApplication.shared.keyWindow
+        let rect = base.convert(base.bounds, to: window)
         return rect
     }
     
     /// 从xib加载view
     /// - Parameter module: 从哪个模块
     /// - Returns: view
-    static func sl_loadNib(from module: String? = nil) -> UIView? {
-        let bundle = Bundle.sl_moduleBundle(self, module) ?? Bundle.main
-        return bundle.loadNibNamed("\(self)", owner: nil, options: nil)?.first as? UIView
+    @discardableResult
+    static func loadNib(from module: String? = nil) -> SLEx? {
+        let bundle = Bundle.sl.moduleBundle(Base.self, module) ?? Bundle.main
+        return bundle.loadNibNamed("\(Base.self)", owner: nil, options: nil)?.first as? SLEx
     }
-}
-
-public extension UIView {
-    //返回该view所在VC
-    func sl_superVC() -> UIViewController? {
-        for view in sequence(first: self.superview, next: { $0?.superview }) {
+    
+    /// 返回该view所在VC
+    var superVC: UIViewController? {
+        for view in sequence(first: base.superview, next: { $0?.superview }) {
             if let responder = view?.next {
                 if responder.isKind(of: UIViewController.self){
                     return responder as? UIViewController
@@ -43,106 +65,110 @@ public extension UIView {
         return nil
     }
     
-    //返回该view所在的父view
-    func sl_superView<T: UIView>(of: T.Type) -> T? {
-        for view in sequence(first: self.superview, next: { $0?.superview }) {
+    /// 返回该view所在的父view
+    func superView<T: UIView>(of: T.Type) -> T? {
+        for view in sequence(first: base.superview, next: { $0?.superview }) {
             if let father = view as? T {
                 return father
             }
         }
         return nil
     }
-}
-
-public extension UIView {
     
-    func removeAllSubviews() {
-        while subviews.count > 0 {
-            subviews.last?.removeFromSuperview()
+    @discardableResult
+    func removeAllSubviews() -> SLEx {
+        while base.subviews.count > 0 {
+            base.subviews.last?.removeFromSuperview()
         }
+        return self
     }
     
-    func addTarget(target: Any?, action: Selector?) {
-        isUserInteractionEnabled = true
+    @discardableResult
+    func addTarget(_ target: Any?, action: Selector?) -> SLEx {
+        base.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: target, action: action)
-        addGestureRecognizer(tap)
+        base.addGestureRecognizer(tap)
+        return self
     }
     
-    func tap() -> ControlEvent<UITapGestureRecognizer> {
-        isUserInteractionEnabled = true
+    var tap: ControlEvent<UITapGestureRecognizer> {
+        base.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer()
-        addGestureRecognizer(tap)
+        base.addGestureRecognizer(tap)
         return tap.rx.event
     }
     
-    static var reuseIdentifier: String {
-        return String(describing: self)
-    }
-    static var nibName: String {
-        return String(describing: self)
-    }
-    
     /// 设置阴影
-    func sl_makeCardShadow(_ cornerRadius: CGFloat = 5, opacity: Float = 1) {
-        layer.cornerRadius = cornerRadius
-        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.21).cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        layer.shadowOpacity = opacity
-        layer.shadowRadius = cornerRadius
+    @discardableResult
+    func makeShadow(_ cornerRadius: CGFloat = 5,
+                    color: UIColor? = UIColor(red: 0, green: 0, blue: 0, alpha: 0.21),
+                    offset: CGSize = CGSize.zero,
+                    opacity: Float = 1) -> SLEx {
+        base.layer.cornerRadius = cornerRadius
+        base.layer.shadowColor = color?.cgColor
+        base.layer.shadowOffset = offset
+        base.layer.shadowOpacity = opacity
+        base.layer.shadowRadius = cornerRadius
+        return self
     }
     
     /// 设置颜色渐变
-    func sl_makeGradientColor(_ colors: [CGColor], locations: [NSNumber], startPoint: CGPoint, endPoint: CGPoint) {
+    @discardableResult
+    func makeGradient(_ colors: [CGColor], locations: [NSNumber], startPoint: CGPoint, endPoint: CGPoint) -> SLEx {
         let bgLayer = CAGradientLayer()
         bgLayer.colors = colors
         bgLayer.locations = locations
-        bgLayer.frame = bounds
+        bgLayer.frame = base.bounds
         bgLayer.startPoint = startPoint
         bgLayer.endPoint = endPoint
-        layer.addSublayer(bgLayer)
+        base.layer.addSublayer(bgLayer)
+        return self
     }
     
     /// 截图
-     func sl_screenShot() -> UIImage? {
-         guard frame.size.height > 0 && frame.size.width > 0 else {
-             return nil
-         }
-         UIGraphicsBeginImageContextWithOptions(frame.size, false, 0)
-         layer.render(in: UIGraphicsGetCurrentContext()!)
-         let image = UIGraphicsGetImageFromCurrentImageContext()
-         UIGraphicsEndImageContext()
-         return image
-     }
+    func screenShot() -> UIImage? {
+        guard base.frame.size.height > 0 && base.frame.size.width > 0 else {
+            return nil
+        }
+        UIGraphicsBeginImageContextWithOptions(base.frame.size, false, 0)
+        base.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
     
     var size: CGSize {
         get {
-            return self.frame.size
+            return base.frame.size
         }
         set {
-            self.width = newValue.width
-            self.height = newValue.height
+            base.sl.width = newValue.width
+            base.sl.height = newValue.height
         }
     }
       
     var width: CGFloat {
         get {
-            return self.frame.size.width
+            return base.frame.size.width
         }
         set {
-            self.frame.size.width = newValue
+            base.frame.size.width = newValue
         }
     }
       
     var height: CGFloat {
         get {
-            return self.frame.size.height
+            return base.frame.size.height
         }
         set {
-            self.frame.size.height = newValue
+            base.frame.size.height = newValue
         }
     }
+    
+    static var reuseIdentifier: String {
+        return String(describing: Base.self)
+    }
 }
-
 
 // MARK: - 描边、圆角等
 public extension UIView {
@@ -308,54 +334,6 @@ public extension UIView {
         }
         set {
             layer.masksToBounds = newValue
-        }
-    }
-}
-
-public extension UIImageView {
-    private static let browseEnableKey = UnsafeRawPointer(bitPattern:"browseEnableKey".hashValue)!
-    private static let browseTapKey = UnsafeRawPointer(bitPattern:"browseTapKey".hashValue)!
-
-    var browseEnable: Bool {
-        get {
-            return objc_getAssociatedObject(self, UIImageView.browseEnableKey) as? Bool ?? false
-        }
-        set {
-            objc_setAssociatedObject(self, UIImageView.browseEnableKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            if newValue {
-                isUserInteractionEnabled = true
-                let tap = browseTap ?? UITapGestureRecognizer(target: self, action: #selector(showImageBrowse))
-                addGestureRecognizer(tap)
-                browseTap = tap
-            } else if let tap = browseTap {
-                self.removeGestureRecognizer(tap)
-            }
-        }
-    }
-    private var browseTap: UITapGestureRecognizer? {
-        get {
-            return objc_getAssociatedObject(self, UIImageView.browseTapKey) as? UITapGestureRecognizer
-        }
-        set {
-            if let newValue = newValue {
-                objc_setAssociatedObject(self, UIImageView.browseTapKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            }
-        }
-    }
-    
-    @IBInspectable
-    var browse: Bool {
-        set {
-            browseEnable = newValue
-        }
-        get {
-            return browseEnable
-        }
-    }
-    
-    @objc private func showImageBrowse() {
-        if browseEnable, let image = image {
-            SLImageBrower.browser([image]).show()
         }
     }
 }

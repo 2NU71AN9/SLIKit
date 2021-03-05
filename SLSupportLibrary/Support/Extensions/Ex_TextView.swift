@@ -24,6 +24,15 @@ public class SLNoPasteTextView: UITextView {
     }
 }
 
+public extension SLEx where Base: UITextView {
+    /// 最大字符数, 0为无限
+    @discardableResult
+    func maxCount(_ count: Int) -> SLEx {
+        base.sl_maxCount = count
+        return self
+    }
+}
+
 public extension UITextView {
     private static let maxCountKey = UnsafeRawPointer(bitPattern:"maxCountKey".hashValue)!
     private static let maxCountBagKey = UnsafeRawPointer(bitPattern:"maxCountBagKey".hashValue)!

@@ -8,11 +8,14 @@
 
 import UIKit
 
-public extension UINavigationController {
-    final func removeAllCenterVC() {
-        if let first = viewControllers.first,
-            let last = viewControllers.last {
-            viewControllers = [first, last]
+public extension SLEx where Base: UINavigationController {
+    
+    @discardableResult
+    func removeCenterVC() -> SLEx {
+        if let first = base.viewControllers.first,
+           let last = base.viewControllers.last {
+            base.viewControllers = [first, last]
         }
+        return self
     }
 }

@@ -43,7 +43,7 @@ public class SLEditView: UIView {
     @IBInspectable public dynamic var subTitle: String? {
         didSet {
             subTitleLabel.text = subTitle
-            subTitleLabel.isHidden = subTitle?.sl_noSpace.isEmpty ?? false
+            subTitleLabel.isHidden = subTitle?.sl.noSpace.base.isEmpty ?? false
         }
     }
     // 0-无 1-右 2-下 3-上
@@ -75,36 +75,36 @@ public class SLEditView: UIView {
     }
     @IBInspectable public dynamic var titleFont: Int = 4 {
         didSet {
-            titleLabel.font = UIFont(name: SLFontPingFang.fontName(titleFont).rawValue, size: titleFontSize)
+            titleLabel.font = SL.PingFang.font(index: titleFont, size: titleFontSize)
         }
     }
     @IBInspectable public dynamic var titleFontSize: CGFloat = 16 {
         didSet {
-            titleLabel.font = UIFont(name: SLFontPingFang.fontName(titleFont).rawValue, size: titleFontSize)
+            titleLabel.font = SL.PingFang.font(index: titleFont, size: titleFontSize)
         }
     }
     @IBInspectable public dynamic var subFont: Int = 4 {
         didSet {
-            subTitleLabel.font = UIFont(name: SLFontPingFang.fontName(subFont).rawValue, size: subFontSize)
+            subTitleLabel.font = SL.PingFang.font(index: subFont, size: subFontSize)
         }
     }
     @IBInspectable public dynamic var subFontSize: CGFloat = 14 {
         didSet {
-            subTitleLabel.font = UIFont(name: SLFontPingFang.fontName(subFont).rawValue, size: subFontSize)
+            subTitleLabel.font = SL.PingFang.font(index: subFont, size: subFontSize)
         }
     }
     @IBInspectable public dynamic var textFont: Int = 5 {
         didSet {
-            textField.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
-            textView.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
-            textLabel.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
+            textField.font = SL.PingFang.font(index: textFont, size: textFontSize)
+            textView.font = SL.PingFang.font(index: textFont, size: textFontSize)
+            textLabel.font = SL.PingFang.font(index: textFont, size: textFontSize)
         }
     }
     @IBInspectable public dynamic var textFontSize: CGFloat = 17 {
         didSet {
-            textField.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
-            textView.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
-            textLabel.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
+            textField.font = SL.PingFang.font(index: textFont, size: textFontSize)
+            textView.font = SL.PingFang.font(index: textFont, size: textFontSize)
+            textLabel.font = SL.PingFang.font(index: textFont, size: textFontSize)
         }
     }
     @IBInspectable public dynamic var text: String? {
@@ -117,7 +117,7 @@ public class SLEditView: UIView {
     // 0表示无限大
     @IBInspectable public dynamic var textCount: Int = 0 {
         didSet {
-            textField.sl_maxCount = textCount
+            textField.sl.maxCount(textCount)
             textView.maxLength = UInt(textCount)
         }
     }
@@ -176,7 +176,7 @@ public class SLEditView: UIView {
         label.setContentHuggingPriority(UILayoutPriority(rawValue: 246), for: .horizontal)
         label.text = title
         label.textColor = titleColor
-        label.font = UIFont(name: SLFontPingFang.fontName(titleFont).rawValue, size: titleFontSize)
+        label.font = UIFont(name: SL.PingFang.fontName(titleFont).rawValue, size: titleFontSize)
         return label
     }()
     private lazy var subTitleLabel: UILabel = {
@@ -184,8 +184,8 @@ public class SLEditView: UIView {
         label.setContentHuggingPriority(UILayoutPriority(rawValue: 246), for: .horizontal)
         label.text = subTitle
         label.textColor = subColor
-        label.font = UIFont(name: SLFontPingFang.fontName(subFont).rawValue, size: subFontSize)
-        label.isHidden = subTitle?.sl_noSpace.isEmpty ?? false
+        label.font = SL.PingFang.font(index: subFont, size: subFontSize)
+        label.isHidden = subTitle?.sl.noSpace.base.isEmpty ?? false
         return label
     }()
     private lazy var textField: SLNoPasteTextField = {
@@ -196,8 +196,8 @@ public class SLEditView: UIView {
         tf.text = text
         tf.textColor = textColor
         tf.textAlignment = .right
-        tf.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
-        tf.sl_maxCount = textCount
+        tf.font = SL.PingFang.font(index: textFont, size: textFontSize)
+        tf.sl.maxCount(textCount)
         tf.placeholder = placeholder
         tf.delegate = self
         tf.keyboardType = numberKeyboard ? .numberPad : .default
@@ -231,7 +231,7 @@ public class SLEditView: UIView {
         view.placeholderColor = SLAssets.bundledColor(named: "sl_view_gray3")
         view.maxLength = UInt(textCount)
         view.text = text
-        view.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
+        view.font = SL.PingFang.font(index: textFont, size: textFontSize)
         view.keyboardType = numberKeyboard ? .numberPad : .default
         if !textFieldStyle {
             _ = view.rx.text.orEmpty.bind(to: textSubject)
@@ -244,7 +244,7 @@ public class SLEditView: UIView {
         label.textColor = textColor
         label.isHidden = textFieldStyle || editable
         label.text = text
-        label.font = UIFont(name: SLFontPingFang.fontName(textFont).rawValue, size: textFontSize)
+        label.font = SL.PingFang.font(index: textFont, size: textFontSize)
         return label
     }()
     
@@ -275,7 +275,7 @@ public class SLEditView: UIView {
         stackView.spacing = lineSpacing
         stackView.alignment = .center
         stackView.distribution = .fill
-        stackView.addTarget(target: self, action: #selector(tapAction))
+        stackView.sl.addTarget(self, action: #selector(tapAction))
         return stackView
     }()
     

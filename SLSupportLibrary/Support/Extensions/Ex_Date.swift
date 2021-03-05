@@ -1,5 +1,5 @@
 //
-//  SLDateExtension.swift
+//  Ex_Date.swift
 //  SLSupportLibrary
 //
 //  Created by RY on 2018/8/9.
@@ -8,34 +8,32 @@
 
 import Foundation
 
-public extension Date {
-    
+public extension SLEx where Base == Date {
     /// 获取当前年
-    var sl_nowYear: Int {
+    var nowYear: Int {
         let curCalendar: Calendar = Calendar.current
-        let year: Int = curCalendar.component(.year, from: self)
+        let year: Int = curCalendar.component(.year, from: base)
         return year
     }
     
     /// 获取当前月
-    var sl_nowMonth: Int {
+    var nowMonth: Int {
         let curCalendar: Calendar = Calendar.current
-        let month: Int = curCalendar.component(.month, from: self)
+        let month: Int = curCalendar.component(.month, from: base)
         return month
     }
     
     /// 获取当前日
-    var sl_nowDay: Int {
+    var nowDay: Int {
         let curCalendar: Calendar = Calendar.current
-        let day: Int = curCalendar.component(.day, from: self)
+        let day: Int = curCalendar.component(.day, from: base)
         return day
     }
     
     /// 时间转换成年月
-    var sl_date2YearMonth: String {
-        let dateFormatter = DateFormatter()
+    var yearMonth: String {
         dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = "yyyy-MM"
-        return dateFormatter.string(from: self)
+        return dateFormatter.string(from: base)
     }
 }

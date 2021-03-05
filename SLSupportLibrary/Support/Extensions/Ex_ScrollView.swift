@@ -9,66 +9,215 @@
 import UIKit
 import MJRefresh
 
-public extension UITableView {
-    final func registerNib<T: UITableViewCell>(_: T.Type)  {
-        let nib = UINib(nibName: T.reuseIdentifier, bundle: nil)
-        register(nib, forCellReuseIdentifier: T.reuseIdentifier)
+public extension SLEx where Base: UITableView {
+    
+    @discardableResult
+    func rowHeight(_ height: CGFloat = UITableView.automaticDimension) -> SLEx {
+        base.rowHeight = height
+        return self
     }
     
-    final func registerClass<T: UITableViewCell>(_: T.Type) {
-        register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
+    @discardableResult
+    func estimatedRowHeight(_ height: CGFloat) -> SLEx {
+        base.estimatedRowHeight = height
+        return self
+    }
+    
+    @discardableResult
+    func sectionHeaderHeight(_ height: CGFloat = UITableView.automaticDimension) -> SLEx {
+        base.sectionHeaderHeight = height
+        return self
+    }
+    
+    @discardableResult
+    func estimatedSectionHeaderHeight(_ height: CGFloat) -> SLEx {
+        base.estimatedSectionHeaderHeight = height
+        return self
+    }
+    
+    @discardableResult
+    func sectionFooterHeight(_ height: CGFloat = UITableView.automaticDimension) -> SLEx {
+        base.sectionFooterHeight = height
+        return self
+    }
+    
+    @discardableResult
+    func estimatedSectionFooterHeight(_ height: CGFloat) -> SLEx {
+        base.estimatedSectionFooterHeight = height
+        return self
+    }
+    
+    @discardableResult
+    func separatorStyle(_ style: UITableViewCell.SeparatorStyle) -> SLEx {
+        base.separatorStyle = style
+        return self
+    }
+    
+    @discardableResult
+    func registerNib<T: UITableViewCell>(_: T.Type) -> SLEx {
+        let nib = UINib(nibName: T.sl.reuseIdentifier, bundle: nil)
+        base.register(nib, forCellReuseIdentifier: T.sl.reuseIdentifier)
+        return self
+    }
+    
+    @discardableResult
+    func registerClass<T: UITableViewCell>(_: T.Type) -> SLEx {
+        base.register(T.self, forCellReuseIdentifier: T.sl.reuseIdentifier)
+        return self
     }
 }
 
-public extension UICollectionView {
-    final func registerNib<T: UICollectionViewCell>(_: T.Type)  {
-        let nib = UINib(nibName: T.reuseIdentifier, bundle: nil)
-        register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
+public extension SLEx where Base: UICollectionViewFlowLayout {
+    
+    @discardableResult
+    func itemSize(_ size: CGSize = UICollectionViewFlowLayout.automaticSize) -> SLEx {
+        base.itemSize = size
+        return self
     }
     
-    final func registerClass<T: UICollectionViewCell>(_: T.Type) {
-        register(T.self, forCellWithReuseIdentifier: T.reuseIdentifier)
+    @discardableResult
+    func estimatedItemSize(_ size: CGSize) -> SLEx {
+        base.estimatedItemSize = size
+        return self
     }
     
-    final func registerHeaderNib<T: UICollectionReusableView>(_: T.Type) {
-        let nib = UINib(nibName: T.reuseIdentifier, bundle: nil)
-        register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.reuseIdentifier)
+    /// 水平间距
+    @discardableResult
+    func minimumInteritemSpacing(_ spacing: CGFloat) -> SLEx {
+        base.minimumInteritemSpacing = spacing
+        return self
     }
     
-    final func registerHeaderClass<T: UICollectionReusableView>(_: T.Type) {
-        register(T.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.reuseIdentifier)
+    /// 垂直间距
+    @discardableResult
+    func minimumLineSpacing(_ spacing: CGFloat) -> SLEx {
+        base.minimumLineSpacing = spacing
+        return self
     }
     
-    final func registerFooterNib<T: UICollectionReusableView>(_: T.Type) {
-        let nib = UINib(nibName: T.reuseIdentifier, bundle: nil)
-        register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: T.reuseIdentifier)
+    @discardableResult
+    func sectionInset(_ inset: UIEdgeInsets) -> SLEx {
+        base.sectionInset = inset
+        return self
     }
-    
-    final func registerFooterClass<T: UICollectionReusableView>(_: T.Type) {
-        register(T.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: T.reuseIdentifier)
+
+    /// 横屏时在SafeArea内
+    @discardableResult
+    func sectionInsetReference(_ a: UICollectionViewFlowLayout.SectionInsetReference = .fromSafeArea) -> SLEx {
+        base.sectionInsetReference = a
+        return self
     }
 }
 
-public extension UIScrollView {
-    func set_refreshHeader(_ ignoredTop: CGFloat = 0, _ refresh: @escaping () -> Void) {
+public extension SLEx where Base: UICollectionView {
+    
+    @discardableResult
+    func registerNib<T: UICollectionViewCell>(_: T.Type) -> SLEx {
+        let nib = UINib(nibName: T.sl.reuseIdentifier, bundle: nil)
+        base.register(nib, forCellWithReuseIdentifier: T.sl.reuseIdentifier)
+        return self
+    }
+    
+    @discardableResult
+    func registerClass<T: UICollectionViewCell>(_: T.Type) -> SLEx {
+        base.register(T.self, forCellWithReuseIdentifier: T.sl.reuseIdentifier)
+        return self
+    }
+    
+    @discardableResult
+    func registerHeaderNib<T: UICollectionReusableView>(_: T.Type) -> SLEx {
+        let nib = UINib(nibName: T.sl.reuseIdentifier, bundle: nil)
+        base.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.sl.reuseIdentifier)
+        return self
+    }
+    
+    @discardableResult
+    func registerHeaderClass<T: UICollectionReusableView>(_: T.Type) -> SLEx {
+        base.register(T.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: T.sl.reuseIdentifier)
+        return self
+    }
+    
+    @discardableResult
+    func registerFooterNib<T: UICollectionReusableView>(_: T.Type) -> SLEx {
+        let nib = UINib(nibName: T.sl.reuseIdentifier, bundle: nil)
+        base.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: T.sl.reuseIdentifier)
+        return self
+    }
+    
+    @discardableResult
+    func registerFooterClass<T: UICollectionReusableView>(_: T.Type) -> SLEx {
+        base.register(T.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: T.sl.reuseIdentifier)
+        return self
+    }
+}
+
+public extension SLEx where Base: UIScrollView {
+    
+    @discardableResult
+    func showsHorizontalScrollIndicator(_ show: Bool) -> SLEx {
+        base.showsHorizontalScrollIndicator = show
+        return self
+    }
+    
+    @discardableResult
+    func showsVerticalScrollIndicator(_ show: Bool) -> SLEx {
+        base.showsVerticalScrollIndicator = show
+        return self
+    }
+    
+    @discardableResult
+    func delegate(_ delegate: UIScrollViewDelegate) -> SLEx {
+        switch delegate {
+        case let d as UITableViewDelegate where base is UITableView:
+            base.delegate = d
+        case let d as UICollectionViewDelegate where base is UICollectionView:
+            base.delegate = d
+        default:
+            base.delegate = delegate
+        }
+        return self
+    }
+    
+    @discardableResult
+    func dataSource(_ dataSource: NSObjectProtocol) -> SLEx {
+        switch dataSource {
+        case let d as UITableViewDataSource where base is UITableView:
+            (base as? UITableView)?.dataSource = d
+        case let d as UICollectionViewDataSource where base is UICollectionView:
+            (base as? UICollectionView)?.dataSource = d
+        default:
+            break
+        }
+        return self
+    }
+    
+    @discardableResult
+    func refreshHeader(_ ignoredTop: CGFloat = 0, _ refresh: @escaping () -> Void) -> SLEx {
         let header = MJRefreshNormalHeader(refreshingBlock: refresh)
         header.ignoredScrollViewContentInsetTop = ignoredTop
         header.lastUpdatedTimeLabel?.isHidden = true
         header.stateLabel?.textColor = UIColor.lightGray
-        mj_header = header
+        base.mj_header = header
+        return self
     }
-    func set_refreshFooter(_ loadMore: @escaping () -> Void) {
+    
+    @discardableResult
+    func refreshFooter(_ loadMore: @escaping () -> Void) -> SLEx {
         let footer = MJRefreshBackNormalFooter(refreshingBlock: loadMore)
         footer.arrowView?.image = nil
         footer.stateLabel?.textColor = UIColor.lightGray
         footer.setTitle("- end -", for: .noMoreData)
-        mj_footer = footer
+        base.mj_footer = footer
+        return self
     }
+    
     /// 上拉下拉都有的时候才可以调用
-    func endRefreshing(_ count: Int = 0, standard: Int = 10) {
-        mj_header?.endRefreshing()
+    @discardableResult
+    func endRefreshing(_ count: Int = 0, standard: Int = 10) -> SLEx {
+        base.mj_header?.endRefreshing()
         count < standard
-            ? mj_footer?.endRefreshingWithNoMoreData()
-            : mj_footer?.endRefreshing()
+            ? base.mj_footer?.endRefreshingWithNoMoreData()
+            : base.mj_footer?.endRefreshing()
+        return self
     }
 }

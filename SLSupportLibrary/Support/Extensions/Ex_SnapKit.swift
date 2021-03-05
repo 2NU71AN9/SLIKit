@@ -9,29 +9,30 @@
 import UIKit
 import SnapKit
 
-public extension ConstraintViewDSL {
-    func sl_makeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
-        guard let target = target as? UIView,
+extension ConstraintViewDSL: SLExCompatible {}
+
+public extension SLEx where Base == ConstraintViewDSL {
+    func makeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
+        guard let target = base.target as? UIView,
             target.superview != nil else {
             return
         }
-        makeConstraints(closure)
+        base.makeConstraints(closure)
     }
 
-    func sl_remakeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
-        guard let target = target as? UIView,
+    func remakeConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
+        guard let target = base.target as? UIView,
             target.superview != nil else {
             return
         }
-        remakeConstraints(closure)
+        base.remakeConstraints(closure)
     }
 
-    func sl_updateConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
-        guard let target = target as? UIView,
+    func updateConstraints(_ closure: (_ make: ConstraintMaker) -> Void) {
+        guard let target = base.target as? UIView,
             target.superview != nil else {
             return
         }
-        updateConstraints(closure)
+        base.updateConstraints(closure)
     }
 }
-

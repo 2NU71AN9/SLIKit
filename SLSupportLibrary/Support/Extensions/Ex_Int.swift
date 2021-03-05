@@ -1,5 +1,5 @@
 //
-//  SLDoubleExtension.swift
+//  Ex_Int.swift
 //  SLSupportLibrary
 //
 //  Created by RY on 2018/8/9.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public extension Double {
-    /// Double -> String
-    var sl_2String: String { return String(describing: self) }
+public extension SLEx where Base == Int {
+    /// Int -> String
+    var stringValue: String { return String(describing: base) }
 }

@@ -51,7 +51,7 @@ public class SLAlertView: UIView {
     private var single = true
     
     init(text: String, firstTitle: String, secondTitle: String?, firstAction: (() -> Void)?, secondAction: (() -> Void)?) {
-        super.init(frame: SCREEN_BOUNS)
+        super.init(frame: SL.SCREEN_BOUNS)
         backgroundColor = #colorLiteral(red: 0.370555222, green: 0.3705646992, blue: 0.3705595732, alpha: 0.3134364298)
         
         addSubview(alertView)
@@ -90,8 +90,8 @@ public class SLAlertView: UIView {
         super.didMoveToSuperview()
         alertView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
-            make.width.equalTo(SCREEN_WIDTH * 0.8)
-            make.height.equalTo(SCREEN_WIDTH * 0.5)
+            make.width.equalTo(SL.SCREEN_WIDTH * 0.8)
+            make.height.equalTo(SL.SCREEN_WIDTH * 0.5)
         }
         titleImageView.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()

@@ -50,7 +50,7 @@ public class SLImageBrower {
     private static func save(_ cell: JXPhotoBrowserImageCell) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "保存", style: .default, handler: { _ in
-            cell.imageView.image?.sl_save2PhotoAlbum()
+            cell.imageView.image?.sl.save2PhotoAlbum()
         }))
         alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         cell.photoBrowser?.present(alert, animated: true, completion: nil)

@@ -23,7 +23,7 @@ public class SLPickerViewController: UIViewController {
     }
     @IBOutlet weak var viewHeight: NSLayoutConstraint! {
         didSet {
-            viewHeight.constant = 266 + bottomHeight
+            viewHeight.constant = 266 + SL.bottomHeight
         }
     }
     @IBOutlet weak var bottomGap: NSLayoutConstraint!
@@ -31,7 +31,7 @@ public class SLPickerViewController: UIViewController {
     private var titles: [String] = []
     
     public init(_ titles: [String], complete: ((Int, String) -> Void)?) {
-        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl_loadBundle(cls: SLPickerViewController.self, bundleName: "Resource"))
+        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl.loadBundle(cls: SLPickerViewController.self, bundleName: "Resource"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
         self.titles = titles
@@ -39,7 +39,7 @@ public class SLPickerViewController: UIViewController {
     }
 
     init() {
-        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl_loadBundle(cls: SLPickerViewController.self, bundleName: "Resource"))
+        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl.loadBundle(cls: SLPickerViewController.self, bundleName: "Resource"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
     }
@@ -95,6 +95,6 @@ public extension SLPickerViewController {
     }
     
     func show() {
-        cur_visible_vc?.present(self, animated: true, completion: nil)
+        SL.visibleVC?.present(self, animated: true, completion: nil)
     }
 }

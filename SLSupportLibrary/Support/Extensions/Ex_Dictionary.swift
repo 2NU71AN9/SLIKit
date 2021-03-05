@@ -1,5 +1,5 @@
 //
-//  SLDictionaryExtension.swift
+//  Ex_Dictionary.swift
 //  SLSupportLibrary
 //
 //  Created by RY on 2018/8/9.
@@ -8,18 +8,17 @@
 
 import Foundation
 
-public extension Dictionary {
+public extension SLEx where Base == Dictionary<String, Any> {
     /// 添加可选值
-    func sl_addOptional(_ item: [String: Any?]) -> Dictionary {
+    @discardableResult
+    func addOptional(_ item: [String: Any?]) -> Base {
         let keys = Array(item.keys) as [String]
-        guard var dict = self as? [String: Any] else {
-                return self
-        }
+        var dict = base
         for key in keys {
             if item[key] != nil {
                 dict[key] = item[key]!
             }
         }
-        return dict as! Dictionary<Key, Value>
+        return dict
     }
 }
