@@ -24,6 +24,12 @@ public extension SLEx where Base: UIButton {
     }
     
     @discardableResult
+    func titleFont(_ font: UIFont?) -> SLEx {
+        base.titleLabel?.font = font
+        return self
+    }
+    
+    @discardableResult
     func image(_ image: UIImage?, for state: UIControl.State = .normal) -> SLEx {
         base.setImage(image, for: state)
         return self
