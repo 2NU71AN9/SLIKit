@@ -1,6 +1,7 @@
 PODS:
   - FSTextView (1.8)
   - HandyJSON (5.0.2)
+  - Haptica (3.0.2)
   - JXPhotoBrowser (3.1.2)
   - Kingfisher (6.0.0)
   - MJRefresh (3.5.0)
@@ -19,6 +20,7 @@ PODS:
 DEPENDENCIES:
   - FSTextView
   - HandyJSON
+  - Haptica
   - JXPhotoBrowser
   - Kingfisher
   - MJRefresh
@@ -34,6 +36,7 @@ SPEC REPOS:
   trunk:
     - FSTextView
     - HandyJSON
+    - Haptica
     - JXPhotoBrowser
     - Kingfisher
     - MJRefresh
@@ -49,6 +52,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   FSTextView: 9e2ca07bb6bb0fb7e77b49b2717adf81f3c620b5
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  Haptica: dc206651beeca25ab4744c633fbf0ae4d1e86baf
   JXPhotoBrowser: 7f0bc11f02fbc84ae06829f922f32ce822aa9661
   Kingfisher: 13f6e68c928eb50439b5cb2ea75d6035018438ea
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
@@ -61,6 +65,6 @@ SPEC CHECKSUMS:
   SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: fbf4cdebb0c8fc7438bab6aed0ee62b9c0c5e9aa
+PODFILE CHECKSUM: a620c0360510475f62369cacde9b7071eccab7b3
 
 COCOAPODS: 1.10.0
