@@ -54,6 +54,18 @@ public extension SLEx where Base: UITableView {
     }
     
     @discardableResult
+    func tableHeaderView(_ view: UIView?) -> SLEx {
+        base.tableHeaderView = view
+        return self
+    }
+    
+    @discardableResult
+    func tableFooterView(_ view: UIView?) -> SLEx {
+        base.tableFooterView = view
+        return self
+    }
+    
+    @discardableResult
     func registerNib<T: UITableViewCell>(_: T.Type) -> SLEx {
         let nib = UINib(nibName: T.sl.reuseIdentifier, bundle: nil)
         base.register(nib, forCellReuseIdentifier: T.sl.reuseIdentifier)
