@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author       = { "2UN7" => "1491859758@qq.com" }
   s.platform     = :ios, "11.0"
   s.source       = { :git => "https://github.com/2NU71AN9/SLIKit.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
-  s.source_files  =  'SLIKit/Classes/**/*'
+  s.source_files  =  'SLIKit/Classes/**/*.{h, m, swift, xib, xcassets}'
   s.resource_bundle = {
     'SLIKit' => ['SLIKit/Classes/**/*.xcassets', 'SLIKit/Classes/**/*.xib']
   }

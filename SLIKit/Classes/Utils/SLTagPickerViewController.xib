@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SLTagPickerViewController" customModule="SLSupportLibrary" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SLTagPickerViewController" customModule="SLIKit" customModuleProvider="target">
             <connections>
                 <outlet property="bottomGap" destination="KAf-H2-94Z" id="cEb-gW-oK1"/>
                 <outlet property="cancelBtn" destination="zas-2V-ssk" id="nAC-Fq-vSj"/>
@@ -64,11 +64,11 @@
                                 <constraint firstItem="OXW-xG-3mi" firstAttribute="top" secondItem="gZb-Dk-1aD" secondAttribute="top" id="sNK-wH-OxB"/>
                             </constraints>
                         </view>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhF-Pi-7BV">
-                            <rect key="frame" x="15" y="50" width="384" height="250"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhF-Pi-7BV">
+                            <rect key="frame" x="15" y="45" width="384" height="255"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-Ol-e28" customClass="TagListView" customModule="TagListView">
-                                    <rect key="frame" x="0.0" y="0.0" width="384" height="22"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-Ol-e28" customClass="TagListView" customModule="TagListView">
+                                    <rect key="frame" x="0.0" y="0.0" width="384" height="32"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
@@ -144,6 +144,11 @@
             <point key="canvasLocation" x="-155.07246376811597" y="140.625"/>
         </view>
     </objects>
+    <designables>
+        <designable name="a5b-Ol-e28">
+            <size key="intrinsicContentSize" width="384" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="sl_view_gray1">
             <color red="0.92100000381469727" green="0.92100000381469727" blue="0.92100000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
