@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JYPickerViewController" customModule="SLSupportLibrary" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JYPickerViewController" customModule="SLIKit" customModuleProvider="target">
             <connections>
                 <outlet property="bottomGap" destination="3n1-1z-5Jj" id="Dzx-SL-d7I"/>
                 <outlet property="cancelBtn" destination="vdm-i6-Ndo" id="f1f-N7-OZx"/>

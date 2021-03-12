@@ -1,6 +1,6 @@
 platform :ios, '11.0'
 
-target 'SLSupportLibrary' do
+target 'SLIKit' do
   use_frameworks!
 
 pod 'RxSwift'

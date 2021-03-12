@@ -35,7 +35,7 @@ public class SLPickerViewController: UIViewController {
     }
     
     init(titles: [String], complete: ((Int, String) -> Void)?) {
-        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl.loadBundle(cls: Self.self, bundleName: "SLSupportLibrary"))
+        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl.loadBundle(cls: Self.self, bundleName: "SLIKit"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
         self.titles = titles

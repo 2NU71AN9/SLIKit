@@ -45,7 +45,7 @@ public class SLTagPickerViewController: UIViewController {
     }
     
     init(titles: [(String, Bool)], multiple: Bool = false, complete: @escaping ([(Int, String)]) -> Void) {
-        super.init(nibName: "SLTagPickerViewController", bundle: Bundle.sl.loadBundle(cls: Self.self, bundleName: "SLSupportLibrary"))
+        super.init(nibName: "SLTagPickerViewController", bundle: Bundle.sl.loadBundle(cls: Self.self, bundleName: "SLIKit"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
         self.titles = titles
