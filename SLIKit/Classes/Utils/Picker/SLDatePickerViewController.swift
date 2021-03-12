@@ -80,7 +80,7 @@ public class SLDatePickerViewController: UIViewController {
     }
     
     init(mode: UIDatePicker.Mode, initDate: Date? = nil, minDate: Date? = nil, maxDate: Date? = nil, complete: ((Date) -> Void)?) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "SLDatePickerViewController", bundle: Bundle.sl.loadBundle(cls: Self.self, bundleName: "SLIKit"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
         self.mode = mode
