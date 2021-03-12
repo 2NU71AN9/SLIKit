@@ -1,6 +1,6 @@
 //
 //  StringInterpolation.swift
-//  SLSupportLibrary
+//  SLIKit
 //
 //  Created by 孙梁 on 2020/11/14.
 //  Copyright © 2020 SL. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  Ex_Image.swift
-//  SLSupportLibrary
+//  SLIKit
 //
 //  Created by Kevin on 2019/7/15.
 //  Copyright © 2019 SL. All rights reserved.

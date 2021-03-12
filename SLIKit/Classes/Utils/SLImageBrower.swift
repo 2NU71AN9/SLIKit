@@ -1,6 +1,6 @@
 //
 //  SLImageBrower.swift
-//  SLSupportLibrary
+//  SLIKit
 //
 //  Created by 孙梁 on 2020/10/28.
 //  Copyright © 2020 SL. All rights reserved.

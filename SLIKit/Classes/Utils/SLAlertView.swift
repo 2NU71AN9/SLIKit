@@ -1,6 +1,6 @@
 //
 //  SLAlertView.swift
-//  SLSupportLibrary
+//  SLIKit
 //
 //  Created by RY on 2018/8/9.
 //  Copyright © 2018年 SL. All rights reserved.

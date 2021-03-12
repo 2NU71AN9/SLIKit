@@ -1,6 +1,6 @@
 //
 //  Ex_TextView.swift
-//  SLSupportLibrary
+//  SLIKit
 //
 //  Created by 孙梁 on 2021/1/13.
 //  Copyright © 2021 SL. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  SLLineView.swift
-//  SLSupportLibrary
+//  SLIKit
 //
 //  Created by 孙梁 on 2020/12/31.
 //  Copyright © 2020 SL. All rights reserved.

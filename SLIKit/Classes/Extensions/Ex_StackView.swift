@@ -1,6 +1,6 @@
 //
 //  Ex_StackView.swift
-//  SLSupportLibrary
+//  SLIKit
 //
 //  Created by 孙梁 on 2021/3/5.
 //  Copyright © 2021 SL. All rights reserved.
