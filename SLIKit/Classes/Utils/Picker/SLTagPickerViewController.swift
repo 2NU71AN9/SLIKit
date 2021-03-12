@@ -10,13 +10,59 @@ import UIKit
 import TagListView
 import pop
 
+public extension SLEx where Base: SLTagPickerViewController {
+    @discardableResult
+    func titles(_ titles: [String]) -> SLEx {
+        base.titles = titles.compactMap{($0, false)}
+        return self
+    }
+    
+    @discardableResult
+    func titles(_ titles: [(String, Bool)]) -> SLEx {
+        base.titles = titles
+        return self
+    }
+    
+    @discardableResult
+    func maxNum(_ num: Int) -> SLEx {
+        base.maxNum = num
+        return self
+    }
+    
+    @discardableResult
+    func primeColor(_ color: UIColor?) -> SLEx {
+        base.primeColor = color ?? .orange
+        return self
+    }
+    
+    @discardableResult
+    func font(_ font: UIFont?) -> SLEx {
+        base.font = font
+        return self
+    }
+    
+    @discardableResult
+    func complete(_ complete: @escaping ([(Int, String)]) -> Void) -> SLEx {
+        base.complete = complete
+        return self
+    }
+    
+    @discardableResult
+    func show() -> SLEx {
+        base.show()
+        return self
+    }
+}
+
+
 public class SLTagPickerViewController: UIViewController {
     
-    static var primeColor: UIColor = .orange
-    
-    private var complete: (([(Int, String)]) -> Void)?
-    private var titles: [(String, Bool)] = []
-    private var multiple = false
+    fileprivate var primeColor: UIColor = .orange
+    fileprivate var font = SL.PingFang.font(name: .常规, size: 14)
+    fileprivate var complete: (([(Int, String)]) -> Void)?
+    fileprivate var titles: [(String, Bool)] = []
+    /// 最多选择多少, 0代表无限
+    fileprivate var maxNum = 0
     
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
@@ -27,29 +73,24 @@ public class SLTagPickerViewController: UIViewController {
     }
     @IBOutlet weak var tagListView: TagListView! {
         didSet {
-            tagListView.textColor = Self.primeColor
-            tagListView.borderColor = Self.primeColor
-            tagListView.selectedBorderColor = Self.primeColor
-            tagListView.tagSelectedBackgroundColor = Self.primeColor
-            tagListView.textFont = SL.PingFang.font(name: .常规, size: 14)~~
             tagListView.delegate = self
         }
     }
     @IBOutlet weak var bottomGap: NSLayoutConstraint!
     
-    convenience public init(_ titles: [String], multiple: Bool = false, complete: @escaping ([(Int, String)]) -> Void) {
-        self.init(titles: titles.compactMap{($0, false)}, multiple: multiple, complete: complete)
+    convenience public init(_ titles: [String], maxNum: Int = 0, complete: (([(Int, String)]) -> Void)?) {
+        self.init(titles: titles.compactMap{($0, false)}, maxNum: maxNum, complete: complete)
     }
-    convenience public init(_ selectTitles: [(String, Bool)], multiple: Bool = false, complete: @escaping ([(Int, String)]) -> Void) {
-        self.init(titles: selectTitles, multiple: multiple, complete: complete)
+    convenience public init(_ selectTitles: [(String, Bool)], maxNum: Int = 0, complete: (([(Int, String)]) -> Void)?) {
+        self.init(titles: selectTitles, maxNum: maxNum, complete: complete)
     }
     
-    init(titles: [(String, Bool)], multiple: Bool = false, complete: @escaping ([(Int, String)]) -> Void) {
+    init(titles: [(String, Bool)], maxNum: Int = 0, complete: (([(Int, String)]) -> Void)?) {
         super.init(nibName: "SLTagPickerViewController", bundle: Bundle.sl.loadBundle(cls: Self.self, bundleName: "SLIKit"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
         self.titles = titles
-        self.multiple = multiple
+        self.maxNum = maxNum
         self.complete = complete
     }
     
@@ -66,6 +107,7 @@ public class SLTagPickerViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
         showAnim()
         for (index, item) in titles.enumerated() {
             let tagView = tagListView.addTag(item.0)
@@ -89,8 +131,18 @@ public class SLTagPickerViewController: UIViewController {
 
 extension SLTagPickerViewController: TagListViewDelegate {
     public func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
+        if maxNum > 1 && sender.selectedTags().count >= maxNum && !tagView.isSelected {
+            SLHUD.showToast("最多选择 \(maxNum) 项")
+            return
+        }
         tagView.isSelected = !tagView.isSelected
         titles[tagView.tag - 200].1 = tagView.isSelected
+        if maxNum == 1 {
+            sender.tagViews.forEach { $0.isSelected = ($0 == tagView && tagView.isSelected) }
+            for (index, _) in titles.enumerated() {
+                titles[index].1 = (tagView.tag - 200 == index && tagView.isSelected)
+            }
+        }
     }
 }
 
@@ -105,6 +157,14 @@ public extension SLTagPickerViewController {
         anim?.toValue = -200
         bottomGap.pop_add(anim, forKey: nil)
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func setUI() {
+        tagListView.textColor = primeColor
+        tagListView.borderColor = primeColor
+        tagListView.selectedBorderColor = primeColor
+        tagListView.tagSelectedBackgroundColor = primeColor
+        tagListView.textFont = font~~
     }
     
     func show() {

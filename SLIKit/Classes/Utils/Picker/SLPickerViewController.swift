@@ -9,9 +9,31 @@
 import UIKit
 import pop
 
+public extension SLEx where Base: SLPickerViewController {
+    @discardableResult
+    func titles(_ titles: [String]) -> SLEx {
+        base.titles = titles
+        return self
+    }
+    
+    @discardableResult
+    func complete(_ complete: @escaping (Int, String) -> Void) -> SLEx {
+        base.complete = complete
+        return self
+    }
+    
+    @discardableResult
+    func show() -> SLEx {
+        base.show()
+        return self
+    }
+}
+
+
 public class SLPickerViewController: UIViewController {
 
-    public var complete: ((Int, String) -> Void)?
+    fileprivate var complete: ((Int, String) -> Void)?
+    fileprivate var titles: [String] = []
 
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
@@ -27,8 +49,6 @@ public class SLPickerViewController: UIViewController {
         }
     }
     @IBOutlet weak var bottomGap: NSLayoutConstraint!
-
-    private var titles: [String] = []
     
     convenience public init(_ titles: [String], complete: ((Int, String) -> Void)?) {
         self.init(titles: titles, complete: complete)

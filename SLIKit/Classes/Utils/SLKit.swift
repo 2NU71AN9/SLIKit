@@ -211,3 +211,17 @@ public extension SL {
         }
     }
 }
+
+public extension SL {
+    static func pickerNormal() -> SLEx<SLPickerViewController> {
+        SLPickerViewController(titles: [], complete: nil).sl
+    }
+    
+    static func pickerTag() -> SLEx<SLTagPickerViewController> {
+        SLTagPickerViewController([""], complete: nil).sl
+    }
+    
+    static func pickerDate() -> SLEx<SLDatePickerViewController> {
+        SLDatePickerViewController(.date, complete: nil).sl
+    }
+}

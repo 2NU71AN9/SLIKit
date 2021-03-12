@@ -64,10 +64,10 @@
                                 <constraint firstItem="OXW-xG-3mi" firstAttribute="top" secondItem="gZb-Dk-1aD" secondAttribute="top" id="sNK-wH-OxB"/>
                             </constraints>
                         </view>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhF-Pi-7BV">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhF-Pi-7BV">
                             <rect key="frame" x="15" y="45" width="384" height="255"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-Ol-e28" customClass="TagListView" customModule="TagListView">
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-Ol-e28" customClass="TagListView" customModule="TagListView">
                                     <rect key="frame" x="0.0" y="0.0" width="384" height="32"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <userDefinedRuntimeAttributes>
@@ -144,11 +144,6 @@
             <point key="canvasLocation" x="-155.07246376811597" y="140.625"/>
         </view>
     </objects>
-    <designables>
-        <designable name="a5b-Ol-e28">
-            <size key="intrinsicContentSize" width="384" height="32"/>
-        </designable>
-    </designables>
     <resources>
         <namedColor name="sl_view_gray1">
             <color red="0.92100000381469727" green="0.92100000381469727" blue="0.92100000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

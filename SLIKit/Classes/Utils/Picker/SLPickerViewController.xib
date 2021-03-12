@@ -52,7 +52,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kt-CD-k2B">
                                                     <rect key="frame" x="324" y="0.0" width="50" height="45"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                    <state key="normal" title="完成"/>
+                                                    <state key="normal" title="确定"/>
                                                     <connections>
                                                         <action selector="confirmAction:" destination="-1" eventType="touchUpInside" id="nk4-gN-yWG"/>
                                                     </connections>

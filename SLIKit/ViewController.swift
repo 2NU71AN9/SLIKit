@@ -34,11 +34,20 @@ class ViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        SLTagPickerViewController(["dasdadasc", "dajisdapskdncn", "dsada", "vlp[lpcclpxc"]) { (_) in
-            
-        }.show()
-//        SLPickerViewController(["123", "22222"], complete: nil).show()
-//        print(Bundle.main.infoDictionary)
+//        SL.pickerDate()
+//            .minDate(Date())
+//            .show()
+        
+        SL.pickerTag()
+            .titles(["dasdadasc", "dajisdapskdncn", "dsada", "vlp[lpcclpxc"])
+            .maxNum(2)
+            .primeColor(.blue)
+            .font(SL.PingFang.font(name: .中粗, size: 12))
+            .show()
+        
+//        SL.pickerNormal()
+//            .titles(["123123", "dsadasdadasd", "vxv24141"])
+//            .show()
     }
 }
 
