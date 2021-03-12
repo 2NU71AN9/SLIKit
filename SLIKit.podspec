@@ -10,9 +10,10 @@ Pod::Spec.new do |s|
   s.author       = { "2UN7" => "1491859758@qq.com" }
   s.platform     = :ios, "11.0"
   s.source       = { :git => "https://github.com/2NU71AN9/SLIKit.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
-  s.source_files  =  "SLSupportLibrary/Support/**/*.{h,m,swift}" #需要托管的源代码路径
-  s.resource_bundle = { 'SLSupportLibrary' => 'SLSupportLibrary/Support/**/*.xcassets' }
-  s.resources     = 'SLSupportLibrary/Support/*.{bundle}'
+  s.source_files  =  "SLSupportLibrary/Support/**/*"
+  s.resource_bundle = {
+    'SLSupportLibrary' => ['SLSupportLibrary/Support/**/*.xcassets', 'SLSupportLibrary/Support/**/*.xib']
+  }
   
   s.requires_arc = true #是否支持ARC
   s.dependency "RxSwift"
@@ -28,5 +29,6 @@ Pod::Spec.new do |s|
   s.dependency "Kingfisher"
   s.dependency "FSTextView"
   s.dependency "Haptica"
+  s.dependency "TagListView"
   
 end

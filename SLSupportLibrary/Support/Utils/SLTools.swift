@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 import SystemConfiguration.CaptiveNetwork
 
-public class SLTools {
+public extension SL {
     
     /// 拨打电话
     ///
     /// - Parameter number: 电话号码
-    public static func callWithNumber(_ number: String?) {
+    static func call(_ number: String?) {
         guard let number = number,
             let url = URL(string: "tel:\(number)") else { return }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     /// 获取本机IP
-    public static func getIPAddress() -> String? {
+    static func getIPAddress() -> String? {
         var addresses = [String]()
         var ifaddr : UnsafeMutablePointer<ifaddrs>? = nil
         if getifaddrs(&ifaddr) == 0 {
@@ -49,14 +49,14 @@ public class SLTools {
     
     
     /// 前往App Store进行评价
-    public static func evaluationInAppStore(appid: String) {
+    static func evaluationInAppStore(appid: String) {
         let urlString = "https://itunes.apple.com/cn/app/id" + appid + "?mt=12"
         let url = URL(string: urlString)
         UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
     /// 获取连接wifi的ip地址, 需要定位权限和添加Access WiFi information
-    public static func getWiFiIP() -> String? {
+    static func getWiFiIP() -> String? {
         var address: String?
         // get list of all interfaces on the local machine
         var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
@@ -83,7 +83,7 @@ public class SLTools {
     }
     
     /// 获取连接wifi的名字和mac地址, 需要定位权限和添加Access WiFi information
-    public static func getWifiNameWithMac() -> (String?, String?) {
+    static func getWifiNameWithMac() -> (String?, String?) {
         guard let interfaces: NSArray = CNCopySupportedInterfaces() else { return (nil, nil) }
         var ssid: String?
         var mac: String?

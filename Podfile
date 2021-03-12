@@ -16,5 +16,6 @@ pod 'JXPhotoBrowser'
 pod 'Kingfisher'
 pod 'FSTextView'
 pod 'Haptica'
+pod 'TagListView'
 
 end

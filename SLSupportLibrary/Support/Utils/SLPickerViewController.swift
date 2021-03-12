@@ -30,19 +30,18 @@ public class SLPickerViewController: UIViewController {
 
     private var titles: [String] = []
     
-    public init(_ titles: [String], complete: ((Int, String) -> Void)?) {
-        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl.loadBundle(cls: SLPickerViewController.self, bundleName: "Resource"))
+    convenience public init(_ titles: [String], complete: ((Int, String) -> Void)?) {
+        self.init(titles: titles, complete: complete)
+    }
+    
+    init(titles: [String], complete: ((Int, String) -> Void)?) {
+        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl.loadBundle(cls: Self.self, bundleName: "SLSupportLibrary"))
         modalPresentationStyle = .overFullScreen
         modalTransitionStyle = .crossDissolve
         self.titles = titles
         self.complete = complete
     }
-
-    init() {
-        super.init(nibName: "SLPickerViewController", bundle: Bundle.sl.loadBundle(cls: SLPickerViewController.self, bundleName: "Resource"))
-        modalPresentationStyle = .overFullScreen
-        modalTransitionStyle = .crossDissolve
-    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
