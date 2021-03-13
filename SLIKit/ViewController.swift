@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        SL.pickerDate()
+        SL.pickerDate
             .minDate(Date())
             .show()
         

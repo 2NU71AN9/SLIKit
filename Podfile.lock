@@ -2,6 +2,9 @@ PODS:
   - FSTextView (1.8)
   - HandyJSON (5.0.2)
   - Haptica (3.0.2)
+  - HXPhotoPicker (3.1.9):
+    - HXPhotoPicker/Default (= 3.1.9)
+  - HXPhotoPicker/Default (3.1.9)
   - JXPhotoBrowser (3.1.3)
   - Kingfisher (6.1.1)
   - MJRefresh (3.5.0)
@@ -22,6 +25,7 @@ DEPENDENCIES:
   - FSTextView
   - HandyJSON
   - Haptica
+  - HXPhotoPicker (= 3.1.9)
   - JXPhotoBrowser
   - Kingfisher
   - MJRefresh
@@ -35,6 +39,8 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - HXPhotoPicker
   trunk:
     - FSTextView
     - HandyJSON
@@ -56,6 +62,7 @@ SPEC CHECKSUMS:
   FSTextView: 9e2ca07bb6bb0fb7e77b49b2717adf81f3c620b5
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   Haptica: dc206651beeca25ab4744c633fbf0ae4d1e86baf
+  HXPhotoPicker: e1816ff27f17c3926f6e83aebbb9f4b329324f0b
   JXPhotoBrowser: d32e94e1226d43bf5ed83164e3f5b651fed625e0
   Kingfisher: 676d63307fbef6ed5d5ed400bff36983480d7500
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
@@ -69,6 +76,6 @@ SPEC CHECKSUMS:
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 72914e0784370d984ac2ffe0adb47951e202914c
+PODFILE CHECKSUM: c51900c03db844cba2102d2c5d68e6c2362d3bfa
 
 COCOAPODS: 1.10.0

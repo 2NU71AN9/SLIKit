@@ -11,15 +11,12 @@ import UIKit
 import SystemConfiguration.CaptiveNetwork
 
 public extension SL {
-    
-    /// 拨打电话
-    ///
-    /// - Parameter number: 电话号码
-    static func call(_ number: String?) {
-        guard let number = number,
-            let url = URL(string: "tel:\(number)") else { return }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    static var tools: SLTools.Type {
+        return SLTools.self
     }
+}
+
+public class SLTools {
     
     /// 获取本机IP
     static func getIPAddress() -> String? {
@@ -48,11 +45,12 @@ public extension SL {
     }
     
     
-    /// 前往App Store进行评价
-    static func evaluationInAppStore(appid: String) {
-        let urlString = "https://itunes.apple.com/cn/app/id" + appid + "?mt=12"
-        let url = URL(string: urlString)
-        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+    /// 前往App Store
+    static func goAppStore(_ appId: String) {
+        let urlString = "https://itunes.apple.com/cn/app/id" + appId + "?mt=12"
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
     
     /// 获取连接wifi的ip地址, 需要定位权限和添加Access WiFi information

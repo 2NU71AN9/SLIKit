@@ -10,6 +10,12 @@ import UIKit
 import JXPhotoBrowser
 import Kingfisher
 
+public extension SL {
+    static var imageBrower: SLImageBrower.Type {
+        SLImageBrower.self
+    }
+}
+
 public class SLImageBrower {
     
     public static func browser(_ images: [String], index: Int = 0) -> JXPhotoBrowser {

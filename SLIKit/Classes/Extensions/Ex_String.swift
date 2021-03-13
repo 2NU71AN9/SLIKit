@@ -239,6 +239,14 @@ public extension SLEx where Base == String {
         let index = base.index(base.startIndex, offsetBy: index)
         return String(base[index])
     }
+    
+    /// 拨打电话
+    @discardableResult
+    func call() -> SLEx {
+        guard let url = URL(string: "tel:\(base)") else { return self }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        return self
+    }
 }
 
 public extension String {

@@ -8,6 +8,12 @@
 
 import UIKit
 
+public extension SL {
+    static var file: SLFileManager.Type {
+        return SLFileManager.self
+    }
+}
+
 public class SLFileManager {
 
     // 获取缓存大小

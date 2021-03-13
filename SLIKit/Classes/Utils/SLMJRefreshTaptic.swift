@@ -9,6 +9,12 @@ import UIKit
 import MJRefresh
 import Haptica
 
+public extension SL {
+    static var refresh: SLMJRefreshTaptic.Type {
+        SLMJRefreshTaptic.self
+    }
+}
+
 public class SLMJRefreshTaptic: NSObject {
     @objc public static var enable: Bool = false {
         didSet {
