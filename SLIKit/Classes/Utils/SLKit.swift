@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import HXPhotoPicker
 
 public struct SL {
     public static var WINDOW: UIWindow? {
@@ -223,5 +224,14 @@ public extension SL {
     
     static var pickerDate: SLEx<SLDatePickerViewController> {
         SLDatePickerViewController(.date, complete: nil).sl
+    }
+    
+    static var pickerImage: SLEx<HXPhotoManager>? {
+        let configuration = HXPhotoConfiguration()
+        configuration.openCamera = true
+        configuration.clarityScale = 2
+        let manager = HXPhotoManager(type: .photo)
+        manager?.configuration = configuration
+        return manager?.sl
     }
 }

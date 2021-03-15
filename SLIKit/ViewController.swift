@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +35,9 @@ class ViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        SL.pickerDate
-            .minDate(Date())
-            .show()
+//        SL.pickerDate
+//            .minDate(Date())
+//            .show()
         
 //        SL.pickerTag()
 //            .titles(["dasdadasc", "dajisdapskdncn", "dsada", "vlp[lpcclpxc"])
@@ -48,6 +49,17 @@ class ViewController: UIViewController {
 //        SL.pickerNormal()
 //            .titles(["123123", "dsadasdadasd", "vxv24141"])
 //            .show()
+        
+        SL.pickerImage?.selectPortrait { [weak self] (image, _) in
+            self?.imageView.image = image
+        }
+        
+//        SL.pickerImage?
+//            .maxNum(3)
+//            .aspectRatio(.type_1x1)
+//            .show { (_) in
+//
+//            }
     }
 }
 

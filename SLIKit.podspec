@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SLIKit"
-  s.version      = "1.4.5"
+  s.version      = "1.4.6"
   s.swift_version  = "5.0"
   s.summary      = "开发常用"
   s.description  = "开发中常用的扩展和工具"
@@ -30,5 +30,6 @@ Pod::Spec.new do |s|
   s.dependency "FSTextView"
   s.dependency "Haptica"
   s.dependency "TagListView"
+  s.dependency "HXPhotoPicker"
   
 end

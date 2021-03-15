@@ -56,6 +56,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2K-oH-wAK">
+                                <rect key="frame" x="107" y="712" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0fc-nL-SSO"/>
+                                    <constraint firstAttribute="width" constant="200" id="6aM-wv-TAO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,11 +71,14 @@
                             <constraint firstItem="HJt-97-q4j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Fok-Fr-s5k"/>
                             <constraint firstItem="HJt-97-q4j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="JNj-dn-r1c"/>
                             <constraint firstItem="R6a-G9-SWc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MwK-35-UAN"/>
+                            <constraint firstItem="O2K-oH-wAK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OzC-DB-TKJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O2K-oH-wAK" secondAttribute="bottom" constant="50" id="Thv-aY-NAc"/>
                             <constraint firstItem="R6a-G9-SWc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="n0o-kH-9Ot"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LqI-ZC-b3D"/>
                     <connections>
+                        <outlet property="imageView" destination="O2K-oH-wAK" id="NVE-QF-luy"/>
                         <outlet property="label" destination="R6a-G9-SWc" id="Qaj-x0-HUE"/>
                     </connections>
                 </viewController>
