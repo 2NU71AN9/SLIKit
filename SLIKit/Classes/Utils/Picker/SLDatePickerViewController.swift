@@ -17,19 +17,19 @@ public extension SLEx where Base: SLDatePickerViewController {
     }
     
     @discardableResult
-    func date(_ date: Date) -> SLEx {
-        base.initDate = date
+    func date(_ date: Date?) -> SLEx {
+        base.initDate = date ?? Date()
         return self
     }
     
     @discardableResult
-    func minDate(_ date: Date) -> SLEx {
+    func minDate(_ date: Date?) -> SLEx {
         base.minDate = date
         return self
     }
     
     @discardableResult
-    func maxDate(_ date: Date) -> SLEx {
+    func maxDate(_ date: Date?) -> SLEx {
         base.maxDate = date
         return self
     }

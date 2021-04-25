@@ -131,9 +131,9 @@ public extension SLEx where Base == String {
     }
     
     /// 去掉空格
-    var noSpace: SLEx {
+    var noSpace: String {
         let whitespace = CharacterSet.whitespacesAndNewlines
-        return base.trimmingCharacters(in: whitespace).sl
+        return base.trimmingCharacters(in: whitespace)
     }
     
     /// 中文转拼音
@@ -234,7 +234,7 @@ public extension SLEx where Base == String {
     }
     
     /// 获取开头到指定位置的字符串
-    func subStringFor(index: Int) -> String? {
+    func subStringFrom0To(_ index: Int) -> String? {
         if base.count <= index { return nil }
         let index = base.index(base.startIndex, offsetBy: index)
         return String(base[index])
@@ -246,6 +246,18 @@ public extension SLEx where Base == String {
         guard let url = URL(string: "tel:\(base)") else { return self }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
         return self
+    }
+    
+    /// 计算文本高度
+    /// - Parameters:
+    ///   - font: 字体
+    ///   - width: 宽度
+    /// - Returns: 文本高度
+    func height(font: UIFont, width: CGFloat) -> CGFloat {
+        base.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)),
+                          options: .usesLineFragmentOrigin,
+                          attributes: [.font: font],
+                          context: nil).size.height
     }
 }
 

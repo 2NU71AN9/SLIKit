@@ -43,7 +43,7 @@ public class SLEditView: UIView {
     @IBInspectable public dynamic var subTitle: String? {
         didSet {
             subTitleLabel.text = subTitle
-            subTitleLabel.isHidden = subTitle?.sl.noSpace.base.isEmpty ?? false
+            subTitleLabel.isHidden = subTitle?.sl.noSpace.isEmpty ?? false
         }
     }
     // 0-无 1-右 2-下 3-上
@@ -185,7 +185,7 @@ public class SLEditView: UIView {
         label.text = subTitle
         label.textColor = subColor
         label.font = SL.PingFang.font(index: subFont, size: subFontSize)
-        label.isHidden = subTitle?.sl.noSpace.base.isEmpty ?? false
+        label.isHidden = subTitle?.sl.noSpace.isEmpty ?? false
         return label
     }()
     private lazy var textField: SLNoPasteTextField = {

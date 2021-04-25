@@ -10,25 +10,25 @@ import UIKit
 
 public extension SLEx where Base: UIViewController {
     @discardableResult
-    func push(_ animated: Bool) -> SLEx {
-        SL.visibleVC?.navigationController?.pushViewController(base, animated: animated)
+    func push(_ vc: UIViewController, animated: Bool = true) -> SLEx {
+        base.navigationController?.pushViewController(vc, animated: animated)
         return self
     }
     
     @discardableResult
-    func pop(_ animated: Bool) -> SLEx {
+    func pop(_ animated: Bool = true) -> SLEx {
         base.navigationController?.popViewController(animated: animated)
         return self
     }
     
     @discardableResult
-    func present(_ animated: Bool, completion: (() -> Void)?) -> SLEx {
-        SL.visibleVC?.present(base, animated: animated, completion: completion)
+    func present(_ vc: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) -> SLEx {
+        base.present(vc, animated: animated, completion: completion)
         return self
     }
     
     @discardableResult
-    func dismiss(_ animated: Bool, completion: (() -> Void)?) -> SLEx {
+    func dismiss(_ animated: Bool = true, completion: (() -> Void)? = nil) -> SLEx {
         base.dismiss(animated: animated, completion: completion)
         return self
     }

@@ -11,5 +11,5 @@ import UIKit
 
 public extension SLEx where Base == Double {
     /// Int -> String
-    var stringValue: String { return String(describing: base) }
+    var stringValue: String { String(describing: base) }
 }
