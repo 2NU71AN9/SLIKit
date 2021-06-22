@@ -19,7 +19,7 @@ public extension SL {
 public class SLTools {
     
     /// 获取本机IP
-    static func getIPAddress() -> String? {
+    public static func getIPAddress() -> String? {
         var addresses = [String]()
         var ifaddr : UnsafeMutablePointer<ifaddrs>? = nil
         if getifaddrs(&ifaddr) == 0 {
@@ -46,7 +46,7 @@ public class SLTools {
     
     
     /// 前往App Store
-    static func goAppStore(_ appId: String) {
+    public static func goAppStore(_ appId: String) {
         let urlString = "https://itunes.apple.com/cn/app/id" + appId + "?mt=12"
         if let url = URL(string: urlString) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -54,7 +54,7 @@ public class SLTools {
     }
     
     /// 获取连接wifi的ip地址, 需要定位权限和添加Access WiFi information
-    static func getWiFiIP() -> String? {
+    public static func getWiFiIP() -> String? {
         var address: String?
         // get list of all interfaces on the local machine
         var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
@@ -81,7 +81,7 @@ public class SLTools {
     }
     
     /// 获取连接wifi的名字和mac地址, 需要定位权限和添加Access WiFi information
-    static func getWifiNameWithMac() -> (String?, String?) {
+    public static func getWifiNameWithMac() -> (String?, String?) {
         guard let interfaces: NSArray = CNCopySupportedInterfaces() else { return (nil, nil) }
         var ssid: String?
         var mac: String?

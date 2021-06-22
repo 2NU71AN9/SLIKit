@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SLAssets: NSObject {
-    class func bundledImage(named name: String) -> UIImage {
+public class SLAssets: NSObject {
+    public class func bundledImage(named name: String) -> UIImage {
         let primaryBundle = Bundle(for: SLAssets.self)
         if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
             return image
@@ -23,7 +23,7 @@ class SLAssets: NSObject {
         return UIImage()
     }
     
-    class func bundledColor(named name: String) -> UIColor? {
+    public class func bundledColor(named name: String) -> UIColor? {
         let primaryBundle = Bundle(for: SLAssets.self)
         if let color = UIColor(named: name, in: .module, compatibleWith: nil) {
             return color

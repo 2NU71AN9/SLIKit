@@ -118,8 +118,8 @@ extension SLLocationService: CLLocationManagerDelegate {
 
 
 public struct Location {
-    var location: CLLocation
-    var placemark: CLPlacemark?
+    public var location: CLLocation
+    public var placemark: CLPlacemark?
 }
 
 extension Location {
