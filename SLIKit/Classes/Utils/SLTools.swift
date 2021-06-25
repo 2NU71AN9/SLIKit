@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SystemConfiguration.CaptiveNetwork
+import swiftScan
 
 public extension SL {
     static var tools: SLTools.Type {
@@ -92,5 +93,33 @@ public class SLTools {
             }
         }
         return (ssid, mac)
+    }
+    
+    /// 创建二维码
+    /// - Parameters:
+    ///   - codeString: 内容
+    ///   - size: 二维码大小
+    ///   - codeColor: 二维码颜色, 默认黑色
+    ///   - bgColor: 二维码背景颜色, 默认白色
+    ///   - logo: 中间logo
+    ///   - logoSize: 中间logo大小
+    /// - Returns: 创建好的二维码
+    public static func makeQRCode(content: String, size: CGSize, codeColor: UIColor = .black, bgColor: UIColor = .white, logo: UIImage? = nil, logoSize: CGSize = CGSize.zero) -> UIImage? {
+        var qrImg = LBXScanWrapper.createCode(codeType: "CIQRCodeGenerator", codeString: content, size: size, qrColor: codeColor, bkColor: bgColor)
+        if let logo = logo, let originImg = qrImg {
+            qrImg = LBXScanWrapper.addImageLogo(srcImg: originImg, logoImg: logo, logoSize: logoSize)
+        }
+        return qrImg
+    }
+    
+    /// 创建条形码
+    /// - Parameters:
+    ///   - content: 内容
+    ///   - size: 条形码大小
+    ///   - codeColor: 条形码颜色, 默认黑色
+    ///   - bgColor: 条形码背景颜色, 默认白色
+    /// - Returns: 创建好的条形码
+    public static func makeBarCode(content: String, size: CGSize, codeColor: UIColor = .black, bgColor: UIColor = .white) -> UIImage? {
+        LBXScanWrapper.createCode128(codeString: content, size: size, qrColor: codeColor, bkColor: bgColor)
     }
 }

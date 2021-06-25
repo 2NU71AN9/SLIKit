@@ -21,5 +21,6 @@ pod 'FSTextView'
 pod 'Haptica'
 pod 'TagListView'
 pod 'HXPhotoPicker'
+pod 'swiftScan'
 
 end

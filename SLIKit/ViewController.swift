@@ -50,9 +50,9 @@ class ViewController: UIViewController {
 //            .titles(["123123", "dsadasdadasd", "vxv24141"])
 //            .show()
         
-        SL.pickerImage?.selectPortrait { [weak self] (image, _) in
-            self?.imageView.image = image
-        }
+//        SL.pickerImage?.selectPortrait { [weak self] (image, _) in
+//            self?.imageView.image = image
+//        }
         
 //        SL.pickerImage?
 //            .maxNum(3)
@@ -60,6 +60,14 @@ class ViewController: UIViewController {
 //            .show { (_) in
 //
 //            }
+        
+//        let vc = SLQRCodeViewController { result in
+//            SLHUD.showToast(result?.strScanned)
+//        }
+//        present(vc, animated: true, completion: nil)
+        
+//        let image = SLTools.makeBarCode(content: "dasdapsdlapd", size: imageView.frame.size, codeColor: .blue, bgColor: .systemPink)
+//        imageView.image = image
     }
 }
 
