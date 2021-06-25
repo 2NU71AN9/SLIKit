@@ -114,12 +114,10 @@ public class SLTools {
     
     /// 创建条形码
     /// - Parameters:
-    ///   - content: 内容
+    ///   - content: 内容(字母和数字)
     ///   - size: 条形码大小
-    ///   - codeColor: 条形码颜色, 默认黑色
-    ///   - bgColor: 条形码背景颜色, 默认白色
     /// - Returns: 创建好的条形码
-    public static func makeBarCode(content: String, size: CGSize, codeColor: UIColor = .black, bgColor: UIColor = .white) -> UIImage? {
-        LBXScanWrapper.createCode128(codeString: content, size: size, qrColor: codeColor, bkColor: bgColor)
+    public static func makeBarCode(content: String, size: CGSize) -> UIImage? {
+        LBXScanWrapper.createCode128(codeString: content, size: size, qrColor: .black, bkColor: .white)
     }
 }
