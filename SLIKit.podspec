@@ -31,5 +31,6 @@ Pod::Spec.new do |s|
   s.dependency "Haptica"
   s.dependency "TagListView"
   s.dependency "HXPhotoPicker"
+  s.dependency "swiftScan"
   
 end
