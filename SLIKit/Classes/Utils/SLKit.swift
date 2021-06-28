@@ -234,4 +234,8 @@ public extension SL {
         manager?.configuration = configuration
         return manager?.sl
     }
+    
+    static var pickerFile: SLEx<SLFilePickerViewController> {
+        SLFilePickerViewController(nil).sl
+    }
 }

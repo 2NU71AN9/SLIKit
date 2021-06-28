@@ -1,18 +1,31 @@
 //
-//  SLFilePicker.swift
+//  SLFilePickerViewController.swift
 //  SLIKit
 //
-//  Created by 孙梁 on 2021/6/8.
+//  Created by 孙梁 on 2021/6/28.
 //
 
 import UIKit
 
-public class SLFilePicker: NSObject {
+public extension SLEx where Base: SLFilePickerViewController {
+    @discardableResult
+    func complete(_ complete: @escaping (URL, Data?) -> Void) -> SLEx {
+        base.complete = complete
+        return self
+    }
     
-    private var complete: ((URL, Data?) -> Void)?
+    @discardableResult
+    func show() -> SLEx {
+        base.show()
+        return self
+    }
+}
+
+public class SLFilePickerViewController: UIDocumentPickerViewController {
+
+    fileprivate var complete: ((URL, Data?) -> Void)?
     
-    public func selectFile(_ complete: @escaping ((URL, Data?) -> Void)) {
-        self.complete = complete
+    public init(_ complete: ((URL, Data?) -> Void)?) {
         let documentTypes = ["public.content",
                              "public.text",
                              "public.source-code",
@@ -23,21 +36,34 @@ public class SLFilePicker: NSObject {
                              "com.microsoft.word.doc",
                              "com.microsoft.excel.xls",
                              "com.microsoft.powerpoint.ppt"]
-        let document = UIDocumentPickerViewController(documentTypes: documentTypes, in: .open)
-        document.delegate = self
-        SL.visibleVC?.present(document, animated: true, completion: nil)
+        super.init(documentTypes: documentTypes, in: .open)
+        self.complete = complete
+        delegate = self
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension SLFilePicker: UIDocumentPickerDelegate {
+extension SLFilePickerViewController: UIDocumentPickerDelegate {
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard let fileUrl = urls.first else { return }
+        guard let fileUrl = urls.first else {
+            controller.dismiss(animated: true, completion: nil)
+            return
+        }
         SLICouldManager.download(withFileUrl: fileUrl) { [weak self] (fileData) in
             self?.complete?(fileUrl, fileData)
+            controller.dismiss(animated: true, completion: nil)
         }
-        controller.dismiss(animated: true, completion: nil)
     }
 }
+
+public extension SLFilePickerViewController {
+    func show() {
+        SL.visibleVC?.present(self, animated: true, completion: nil)
+    }
+}
+
 
 public class SLICouldManager {
     

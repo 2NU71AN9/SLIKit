@@ -68,6 +68,12 @@ class ViewController: UIViewController {
         
 //        let image = SLTools.makeBarCode(content: "dasdapsdlapd", size: imageView.frame.size, codeColor: .blue, bgColor: .systemPink)
 //        imageView.image = image
+        
+        SL.pickerFile.complete { url, data in
+            print(url)
+            print(data)
+            SLFileBrowser(url).show()
+        }.show()
     }
 }
 
