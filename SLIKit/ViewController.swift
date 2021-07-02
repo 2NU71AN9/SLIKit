@@ -69,11 +69,16 @@ class ViewController: UIViewController {
 //        let image = SLTools.makeBarCode(content: "dasdapsdlapd", size: imageView.frame.size, codeColor: .blue, bgColor: .systemPink)
 //        imageView.image = image
         
-        SL.pickerFile.complete { url, data in
-            print(url)
-            print(data)
-            SLFileBrowser(url).show()
-        }.show()
+//        SL.pickerFile.complete { url, data in
+//            print(url)
+//            print(data)
+//            SLFileBrowser(url).show()
+//        }.show()
+        
+        let vc = SLAddressPickerViewController(.province) { p, c, a in
+            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
+        }
+        present(vc, animated: true, completion: nil)
     }
 }
 

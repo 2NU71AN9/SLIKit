@@ -9,7 +9,7 @@ import UIKit
 import LocalAuthentication
 
 // MARK: - 添加权限 Privacy - Face ID Usage Description
-public class SLFaceIDWithTouchIDManager {
+public class SLFaceIDWithTouchIDManager: NSObject {
     
     private lazy var context: LAContext = {
         let context = LAContext()
