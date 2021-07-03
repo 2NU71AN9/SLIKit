@@ -93,6 +93,7 @@ public class SLAddressPickerViewController: UIViewController {
         hide()
     }
     @IBAction func confirmAction(_ sender: UIButton) {
+        guard dataArray.count > 0 else { return }
         switch type {
         case .province:
             complete?(dataArray[p_index], nil, nil)
@@ -144,8 +145,9 @@ extension SLAddressPickerViewController: UIPickerViewDelegate, UIPickerViewDataS
 public extension SLAddressPickerViewController {
     
     private func loadData() {
-        if let path = Bundle.sl.moduleBundle(SLAddressPickerViewController.self)?.path(forResource: "SL_Address", ofType: "plist"),
-           let dict = NSDictionary(contentsOfFile: path) as? [String: [[String: Any]]],
+        if let bundle = Bundle.sl.loadBundle(cls: Self.self, bundleName: "my"),
+           let plistPath = bundle.path(forResource: "SL_Address", ofType: "plist"),
+           let dict = NSDictionary(contentsOfFile: plistPath) as? [String: [[String: Any]]],
            let p = dict["children"],
            let array = [SLAddressModel].deserialize(from: p) as? [SLAddressModel] {
             dataArray =  array
@@ -174,12 +176,12 @@ public class SLAddressModel: NSObject, HandyJSON {
     
     required public override init() { }
     
-    var code = 0
-    var pinyin: String?
-    var alias: String?
-    var provinceCode = 0
-    var name: String?
-    var firstLetter: String?
-    var cityCode: String?
-    var children: [SLAddressModel] = []
+    public var code = 0
+    public var pinyin: String?
+    public var alias: String?
+    public var provinceCode = 0
+    public var name: String?
+    public var firstLetter: String?
+    public var cityCode: String?
+    public var children: [SLAddressModel] = []
 }
