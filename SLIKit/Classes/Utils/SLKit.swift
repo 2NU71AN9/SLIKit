@@ -238,4 +238,8 @@ public extension SL {
     static var pickerFile: SLEx<SLFilePickerViewController> {
         SLFilePickerViewController(nil).sl
     }
+    
+    static var pickerAddress: SLEx<SLAddressPickerViewController> {
+        SLAddressPickerViewController(.area, complete: nil).sl
+    }
 }

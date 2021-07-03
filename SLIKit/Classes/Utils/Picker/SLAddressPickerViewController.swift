@@ -9,6 +9,27 @@ import UIKit
 import pop
 import HandyJSON
 
+public extension SLEx where Base: SLAddressPickerViewController {
+    @discardableResult
+    func type(_ type: SLAddressPickerViewController.AddressType) -> SLEx {
+        base.type = type
+        return self
+    }
+    
+    @discardableResult
+    func complete(_ complete: @escaping (SLAddressModel?, SLAddressModel?, SLAddressModel?) -> Void) -> SLEx {
+        base.complete = complete
+        return self
+    }
+    
+    @discardableResult
+    func show() -> SLEx {
+        base.show()
+        return self
+    }
+}
+
+
 public class SLAddressPickerViewController: UIViewController {
     
     public enum AddressType {
