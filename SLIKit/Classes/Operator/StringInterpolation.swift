@@ -8,26 +8,26 @@
 
 import UIKit
 
-struct ColorString: ExpressibleByStringInterpolation {
+public struct ColorString: ExpressibleByStringInterpolation {
     
     // 嵌套结构，插入带属性的字符串
-    struct StringInterpolation: StringInterpolationProtocol {
+    public struct StringInterpolation: StringInterpolationProtocol {
 
         // 存储带属性字符串
         var output = NSMutableAttributedString()
         // 默认的字符串属性
-        var baseAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 17), .foregroundColor: UIColor.black]
+        var baseAttributes: [NSAttributedString.Key: Any] = [:]
         // 必须的,创建时可用于优化性能
-        init(literalCapacity: Int, interpolationCount: Int) {}
+        public init(literalCapacity: Int, interpolationCount: Int) {}
 
         // 添加默认文字时
-        mutating func appendLiteral(_ literal: String) {
+        mutating public func appendLiteral(_ literal: String) {
             let attributedString = NSAttributedString(string: literal, attributes: baseAttributes)
             output.append(attributedString)
         }
         
         // 添加带颜色的文字时
-        mutating func appendInterpolation(message: String, color: UIColor, font: UIFont) {
+        public mutating func appendInterpolation(message: String, color: UIColor, font: UIFont) {
             var colorAtt = baseAttributes
             colorAtt[.foregroundColor] = color
             colorAtt[.font] = font
@@ -37,14 +37,14 @@ struct ColorString: ExpressibleByStringInterpolation {
     }
     
     // 所有文字处理完成后，存储最终的文字
-    let value: NSAttributedString
+    public let value: NSAttributedString
     // 从普通字符串初始化
-    init(stringLiteral value: StringLiteralType) {
+    public init(stringLiteral value: StringLiteralType) {
         self.value = NSAttributedString(string: value)
     }
     
     // 从带颜色的字符串初始化
-    init(stringInterpolation: StringInterpolation) {
+    public init(stringInterpolation: StringInterpolation) {
         self.value = stringInterpolation.output
     }
 }
