@@ -132,7 +132,7 @@ public class SLTagPickerViewController: UIViewController {
 extension SLTagPickerViewController: TagListViewDelegate {
     public func tagPressed(_ title: String, tagView: TagView, sender: TagListView) {
         if maxNum > 1 && sender.selectedTags().count >= maxNum && !tagView.isSelected {
-            SLHUD.showToast("最多选择 \(maxNum) 项")
+            SLHUD.message(title: nil, desc: "最多选择 \(maxNum) 项")
             return
         }
         tagView.isSelected = !tagView.isSelected

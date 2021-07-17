@@ -79,6 +79,8 @@ class ViewController: UIViewController {
             print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
         }
         present(vc, animated: true, completion: nil)
+        
+//        SLHUD.message(title: nil, desc: "提交成功")
     }
 }
 

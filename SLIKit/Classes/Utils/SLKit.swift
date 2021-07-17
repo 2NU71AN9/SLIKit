@@ -149,7 +149,7 @@ public extension SL {
         return vc
     }
     
-    static weak var topVC:UIViewController? {
+    static weak var topVC: UIViewController? {
         func topVC(_ vc: UIViewController? = nil) -> UIViewController? {
             let vc = vc ?? WINDOW?.rootViewController
             if let nv = vc as? UINavigationController,
@@ -169,6 +169,14 @@ public extension SL {
         }
         let vc = WINDOW?.rootViewController
         return topVC(vc)
+    }
+    
+    static func mainThread(_ work: @escaping @convention(block) () -> Void) {
+        DispatchQueue.main.async(execute: work)
+    }
+    
+    static func delay(second: Double, work: @escaping @convention(block) () -> Void) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + second, execute: work)
     }
 }
 

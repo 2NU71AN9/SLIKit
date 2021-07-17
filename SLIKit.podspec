@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/2NU71AN9/SLIKit" #项目主页，不是git地址
   s.license      = { :type => "MIT", :file => "LICENSE" } #开源协议
   s.author       = { "2UN7" => "1491859758@qq.com" }
-  s.platform     = :ios, "11.0"
+  s.platform     = :ios, "13.0"
   s.source       = { :git => "https://github.com/2NU71AN9/SLIKit.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
   s.source_files = "SLIKit/Classes/**/*.{h,m,swift,xib,xcassets}"
   s.resources    = "SLIKit/Classes/Resource/*.bundle"
@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
   s.dependency "pop"
   s.dependency "HandyJSON"
   s.dependency "MJRefresh"
-  s.dependency "PKHUD"
   s.dependency "SwiftDate"
   s.dependency "JXPhotoBrowser"
   s.dependency "Kingfisher"
@@ -33,5 +32,7 @@ Pod::Spec.new do |s|
   s.dependency "TagListView"
   s.dependency "HXPhotoPicker"
   s.dependency "swiftScan"
+  s.dependency "SwiftMessages"
+  s.dependency "ProgressHUD"
   
 end

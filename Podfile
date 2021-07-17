@@ -1,7 +1,7 @@
 #source 'https://github.com/CocoaPods/Specs.git'
-source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
-platform :ios, '11.0'
+platform :ios, '13.0'
 
 target 'SLIKit' do
   use_frameworks!
@@ -11,9 +11,8 @@ pod 'RxCocoa'
 pod 'Then'
 pod 'SnapKit'
 pod 'pop'
-pod 'HandyJSON'
+pod 'HandyJSON', '5.0.2'
 pod 'MJRefresh'
-pod 'PKHUD'
 pod 'SwiftDate'
 pod 'JXPhotoBrowser'
 pod 'Kingfisher'
@@ -22,5 +21,7 @@ pod 'Haptica'
 pod 'TagListView'
 pod 'HXPhotoPicker'
 pod 'swiftScan'
+pod 'SwiftMessages'
+pod 'ProgressHUD'
 
 end
