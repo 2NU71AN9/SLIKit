@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HandyJSON
 import RxSwift
 import RxCocoa
 #if os(iOS)
@@ -35,9 +34,6 @@ public postfix func ~~(a: [String: Any]?)     -> [String: Any]     { return a ==
 public postfix func ~~(a: [String: String]?)  -> [String: String]  { return a == nil ? [:] : a! }
 public postfix func ~~<T: NSObject>(a: T?) -> T {
     return a == nil ? T.init() : a!
-}
-public postfix func ~~<T: HandyJSON>(a: T?) -> T {
-    return a == nil ? T.deserialize(from: "")! : a!
 }
 
 /// 字典相加

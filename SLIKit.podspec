@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SLIKit"
-  s.version      = "1.4.8"
+  s.version      = "1.4.9"
   s.swift_version  = "5.0"
   s.summary      = "开发常用"
   s.description  = "开发中常用的扩展和工具"
@@ -22,7 +22,6 @@ Pod::Spec.new do |s|
   s.dependency "Then"
   s.dependency "SnapKit"
   s.dependency "pop"
-  s.dependency "HandyJSON"
   s.dependency "MJRefresh"
   s.dependency "SwiftDate"
   s.dependency "JXPhotoBrowser"

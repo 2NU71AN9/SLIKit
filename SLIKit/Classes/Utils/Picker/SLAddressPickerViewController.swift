@@ -7,7 +7,6 @@
 
 import UIKit
 import pop
-import HandyJSON
 
 public extension SLEx where Base: SLAddressPickerViewController {
     @discardableResult
@@ -168,9 +167,12 @@ public extension SLAddressPickerViewController {
     private func loadData() {
         if let bundle = Bundle.sl.loadBundle(cls: Self.self, bundleName: "my"),
            let dict = bundle.sl.loadPlist(with: "SL_Address") as? [String: [[String: Any]]],
-           let p = dict["children"],
-           let array = [SLAddressModel].deserialize(from: p) as? [SLAddressModel] {
-            dataArray =  array
+           let p = dict["children"] {
+            dataArray = p.compactMap {
+                let model = SLAddressModel()
+                model.setValuesForKeys($0)
+                return model
+            }
             picker.reloadAllComponents()
         }
     }
@@ -192,16 +194,25 @@ public extension SLAddressPickerViewController {
     }
 }
 
-public class SLAddressModel: NSObject, HandyJSON {
+public class SLAddressModel: NSObject {
+    @objc public var code = 0
+    @objc public var pinyin: String?
+    @objc public var alias: String?
+    @objc public var provinceCode = 0
+    @objc public var name: String?
+    @objc public var firstLetter: String?
+    @objc public var cityCode = 0
+    @objc public var children: [SLAddressModel] = []
     
-    required public override init() { }
-    
-    public var code = 0
-    public var pinyin: String?
-    public var alias: String?
-    public var provinceCode = 0
-    public var name: String?
-    public var firstLetter: String?
-    public var cityCode: String?
-    public var children: [SLAddressModel] = []
+    public override func setValue(_ value: Any?, forKey key: String) {
+        if key == "children", let value = value as? [[String: Any]] {
+            children = value.compactMap {
+                let model = SLAddressModel()
+                model.setValuesForKeys($0)
+                return model
+            }
+        } else {
+            super.setValue(value, forKey: key)
+        }
+    }
 }
