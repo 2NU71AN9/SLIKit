@@ -47,11 +47,12 @@ public class SLHUD {
         message(title: nil, desc: title, position: .bottom)
     }
     
-    /// 设置loading和progress颜色
-    public static func loadingColor(_ color: UIColor?) {
+    /// 设置loading&progress颜色, 遮罩颜色
+    public static func loadingColor(_ color: UIColor?, maskColor: UIColor? = ProgressHUD.colorBackground) {
         guard let color = color else { return }
         ProgressHUD.colorAnimation = color
         ProgressHUD.colorProgress = color
+        ProgressHUD.colorBackground = maskColor ?? ProgressHUD.colorBackground
     }
     
     /// 加载中...
@@ -83,10 +84,14 @@ public class SLHUD {
         }
     }
     
-    public static func dismiss() {
+    public static func dismissLoadingOrProgress() {
+        SL.mainThread {
+            ProgressHUD.dismiss()
+        }
+    }
+    public static func dismissMessage() {
         SL.mainThread {
             SwiftMessages.hide()
-            ProgressHUD.dismiss()
         }
     }
 }
