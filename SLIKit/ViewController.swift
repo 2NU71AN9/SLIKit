@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftMessages
 
 class ViewController: UIViewController {
     
@@ -75,12 +76,15 @@ class ViewController: UIViewController {
 //            SLFileBrowser(url).show()
 //        }.show()
         
-        let vc = SLAddressPickerViewController(.province) { p, c, a in
-            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
-        }
-        present(vc, animated: true, completion: nil)
+//        let vc = SLAddressPickerViewController(.province) { p, c, a in
+//            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
+//        }
+//        present(vc, animated: true, completion: nil)
         
-//        SLHUD.message(title: nil, desc: "提交成功")
+        
+        SLHUD.message(title: nil, desc: "提交成功") {
+            
+        }
     }
 }
 

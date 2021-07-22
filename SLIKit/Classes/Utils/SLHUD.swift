@@ -19,16 +19,20 @@ public class SLHUD {
     ///   - position: 位置, 默认顶部
     ///   - btnTitle: 按钮文字, 默认无按钮, 设置按钮文字后持续时间未永久
     ///   - complete: 按钮点击
-    public static func message(title: String? = nil, desc: String?, duration: Double = 2, position: SwiftMessages.PresentationStyle = .top, btnTitle: String? = nil, complete: ((_ button: UIButton) -> Void)? = nil) {
+    public static func message(title: String? = nil, desc: String?, duration: Double = 2, position: SwiftMessages.PresentationStyle = .top, btnTitle: String? = nil, complete: (() -> Void)? = nil) {
         SL.mainThread {
+            SwiftMessages.pauseBetweenMessages = 0
+            SwiftMessages.hide(animated: false)
             if (title == nil || title?.count == 0) && (desc == nil || desc?.count == 0) { return }
             let haveBtn = !(btnTitle == nil || btnTitle?.count == 0)
             let duration = haveBtn ? 0 : duration
             let messageView = MessageView.viewFromNib(layout: .cardView)
             messageView.configureTheme(.info)
-            messageView.configureContent(title: title ?? "", body: desc ?? "", iconImage: SLAssets.bundledImage(named: "info22"))
+            messageView.configureContent(title: title, body: desc, iconImage: SLAssets.bundledImage(named: "info22"), iconText: nil, buttonImage: nil, buttonTitle: btnTitle) { _ in
+                SwiftMessages.hide()
+                complete?()
+            }
             messageView.button?.isHidden = !haveBtn
-            messageView.buttonTapHandler = complete
             var config = SwiftMessages.defaultConfig
             config.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
             config.presentationStyle = position
@@ -40,9 +44,7 @@ public class SLHUD {
     /// Toast
     /// - Parameter title: 内容
     public static func toast(_ title: String?) {
-        SL.mainThread {
-            message(title: nil, desc: title, position: .bottom)
-        }
+        message(title: nil, desc: title, position: .bottom)
     }
     
     /// 设置loading和progress颜色
@@ -83,6 +85,7 @@ public class SLHUD {
     
     public static func dismiss() {
         SL.mainThread {
+            SwiftMessages.hide()
             ProgressHUD.dismiss()
         }
     }
