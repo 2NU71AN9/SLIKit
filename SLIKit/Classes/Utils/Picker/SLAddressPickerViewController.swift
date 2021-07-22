@@ -167,8 +167,7 @@ public extension SLAddressPickerViewController {
     
     private func loadData() {
         if let bundle = Bundle.sl.loadBundle(cls: Self.self, bundleName: "my"),
-           let plistPath = bundle.path(forResource: "SL_Address", ofType: "plist"),
-           let dict = NSDictionary(contentsOfFile: plistPath) as? [String: [[String: Any]]],
+           let dict = bundle.sl.loadPlist(with: "SL_Address") as? [String: [[String: Any]]],
            let p = dict["children"],
            let array = [SLAddressModel].deserialize(from: p) as? [SLAddressModel] {
             dataArray =  array

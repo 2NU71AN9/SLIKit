@@ -33,4 +33,31 @@ public extension SLEx where Base: Bundle {
         }
         return Bundle(url: bundleURL)
     }
+    
+    /// 获取json文件
+    /// - Parameter name: 文件名, 不带后缀
+    func loadJSON(with name: String) -> Any? {
+        if let path = base.path(forResource: name, ofType: "json") {
+            let url = URL(fileURLWithPath: path, isDirectory: true)
+            do {
+                let data = try Data(contentsOf: url)
+                if let value = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+                   return value
+                }
+            } catch {
+                return nil
+            }
+        }
+        return nil
+    }
+    
+    /// 获取plist文件
+    /// - Parameter name: 文件名, 不带后缀
+    func loadPlist(with name: String) -> [String: Any]? {
+        if let plistPath = base.path(forResource: name, ofType: "plist"),
+           let dict = NSDictionary(contentsOfFile: plistPath) as? [String: Any] {
+            return dict
+        }
+        return nil
+    }
 }
