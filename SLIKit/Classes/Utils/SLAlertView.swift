@@ -15,13 +15,13 @@ extension SLAlertView {
     /// 弹出1个按钮的提示框
     public static func showSingleAlert(text: String, actionTitle: String, action: (() -> Void)?) {
         let slertView = SLAlertView(text: text, firstTitle: actionTitle, secondTitle: nil, firstAction: action, secondAction: nil)
-        UIApplication.shared.keyWindow?.addSubview(slertView)
+        SL.WINDOW?.addSubview(slertView)
     }
     
     /// 弹出2个按钮的提示框
     public static func showChoiceAlert(text: String, firstTitle: String, secondTitle: String, firstAction: (() -> Void)?, secondAction: (() -> Void)?) {
         let slertView = SLAlertView(text: text, firstTitle: firstTitle, secondTitle: secondTitle, firstAction: firstAction, secondAction: secondAction)
-        UIApplication.shared.keyWindow?.addSubview(slertView)
+        SL.WINDOW?.addSubview(slertView)
     }
 }
 

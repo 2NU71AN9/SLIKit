@@ -39,8 +39,7 @@ public extension SLEx where Base: UIView {
     
     /// 在屏幕上的位置,相对于屏幕,不是相对于SuperView
     var frameOnScreen: CGRect {
-        let window = UIApplication.shared.keyWindow
-        let rect = base.convert(base.bounds, to: window)
+        let rect = base.convert(base.bounds, to: SL.WINDOW)
         return rect
     }
     

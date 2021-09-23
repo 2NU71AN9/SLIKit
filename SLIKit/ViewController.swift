@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     }
 }
 
-@_functionBuilder public struct ArrayBuilder {
+@resultBuilder public struct ArrayBuilder {
     public static func buildBlock<T>(_ items: T...) -> [T] {
         items
     }

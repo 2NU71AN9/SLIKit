@@ -16,7 +16,7 @@ public extension SLEx where Base: UserDefaults {
     ///   - key: key
     @discardableResult
     func saveObject(_ object: NSCoding, key: String) -> SLEx {
-        let encodedObject = NSKeyedArchiver.archivedData(withRootObject: object)
+        let encodedObject = try? NSKeyedArchiver.archivedData(withRootObject: object, requiringSecureCoding: true)
         base.set(encodedObject, forKey: key)
         base.synchronize()
         return self
@@ -31,7 +31,7 @@ public extension SLEx where Base: UserDefaults {
     func getDecodedObject<T>(type: T.Type, forKey key: String) -> T? {
         let decodedObject = base.object(forKey: key) as? Data
         if let decoded = decodedObject {
-            let object = NSKeyedUnarchiver.unarchiveObject(with: decoded)
+            let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded)
             return object as? T
         }
         return nil

@@ -12,7 +12,7 @@ import HXPhotoPicker
 
 public struct SL {
     public static var WINDOW: UIWindow? {
-        return UIApplication.shared.delegate?.window ?? UIApplication.shared.keyWindow ?? nil
+        return UIApplication.shared.delegate?.window ?? UIApplication.shared.windows.first
     }
     public static var SCREEN_BOUNS: CGRect { UIScreen.main.bounds }
     public static var SCREEN_SIZE: CGSize { SCREEN_BOUNS.size }
@@ -21,7 +21,7 @@ public struct SL {
     public static var SCREEN_SCALE: CGFloat { UIScreen.main.scale }
     public static var SCREEN_CENTER: CGPoint { CGPoint(x: SCREEN_WIDTH/2, y: SCREEN_HEIGHT/2) }
     /// 状态栏高度
-    public static var statusBarHeight: CGFloat { UIApplication.shared.statusBarFrame.height }
+    public static var statusBarHeight: CGFloat { WINDOW?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0 }
     /// 导航栏高度
     public static var sysNavigationH: CGFloat { statusBarHeight + 44 }
     /// tabBar高度 普通49 iPhoneX 83
