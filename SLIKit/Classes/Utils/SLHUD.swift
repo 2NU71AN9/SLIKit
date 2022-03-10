@@ -27,6 +27,7 @@ public class SLHUD {
             let haveBtn = !(btnTitle == nil || btnTitle?.count == 0)
             let duration = haveBtn ? 0 : duration
             let messageView = MessageView.viewFromNib(layout: .cardView)
+            messageView.id = "10086"
             messageView.configureTheme(.info)
             messageView.configureContent(title: title, body: desc, iconImage: SLAssets.bundledImage(named: "info22"), iconText: nil, buttonImage: nil, buttonTitle: btnTitle) { _ in
                 SwiftMessages.hide()
@@ -35,6 +36,7 @@ public class SLHUD {
             messageView.button?.isHidden = !haveBtn
             var config = SwiftMessages.defaultConfig
             config.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
+            config.preferredStatusBarStyle = .lightContent
             config.presentationStyle = position
             config.duration = duration == 0 ? .forever : .seconds(seconds: duration)
             SwiftMessages.show(config: config, view: messageView)
