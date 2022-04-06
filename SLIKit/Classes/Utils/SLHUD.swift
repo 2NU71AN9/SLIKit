@@ -8,6 +8,7 @@
 import UIKit
 import SwiftMessages
 import ProgressHUD
+import Toaster
 
 public class SLHUD {
     
@@ -45,8 +46,12 @@ public class SLHUD {
     
     /// Toast
     /// - Parameter title: 内容
-    public static func toast(_ title: String?) {
-        message(title: nil, desc: title, position: .bottom)
+    public static func toast(_ title: String?, duration: Double = 3) {
+        guard let title = title else { return }
+        ToastView.appearance().useSafeAreaForBottomOffset = true
+        DispatchQueue.main.async {
+            Toast(text: title, delay: 0, duration: duration).show()
+        }
     }
     
     /// 设置loading&progress颜色, 遮罩颜色

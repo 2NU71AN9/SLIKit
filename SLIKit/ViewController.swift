@@ -36,9 +36,10 @@ class ViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        SL.pickerDate
-//            .minDate(Date())
-//            .show()
+        SL.pickerDate
+            .mode(.dateAndTime)
+            .minDate(Date())
+            .show()
         
 //        SL.pickerTag()
 //            .titles(["dasdadasc", "dajisdapskdncn", "dsada", "vlp[lpcclpxc"])
@@ -76,10 +77,10 @@ class ViewController: UIViewController {
 //            SLFileBrowser(url).show()
 //        }.show()
         
-        let vc = SLAddressPickerViewController(.area) { p, c, a in
-            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
-        }
-        present(vc, animated: true, completion: nil)
+//        let vc = SLAddressPickerViewController(.area) { p, c, a in
+//            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
+//        }
+//        present(vc, animated: true, completion: nil)
         
 //        SLHUD.message(title: nil, desc: "提交成功") {
 //

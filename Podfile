@@ -22,5 +22,6 @@ pod 'HXPhotoPicker'
 pod 'swiftScan'
 pod 'SwiftMessages'
 pod 'ProgressHUD'
+pod 'Toaster'
 
 end

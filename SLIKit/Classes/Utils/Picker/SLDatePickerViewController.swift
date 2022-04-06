@@ -61,7 +61,7 @@ public class SLDatePickerViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var viewHeight: NSLayoutConstraint! {
         didSet {
-            viewHeight.constant = 266 + SL.bottomHeight
+//            viewHeight.constant = 455 + SL.bottomHeight
         }
     }
     @IBOutlet weak var bottomGap: NSLayoutConstraint!
@@ -123,7 +123,7 @@ public extension SLDatePickerViewController {
     
     @objc private func hide() {
         let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = -266
+        anim?.toValue = -300
         bottomGap.pop_add(anim, forKey: nil)
         dismiss(animated: true, completion: nil)
     }

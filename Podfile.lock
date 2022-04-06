@@ -23,6 +23,7 @@ PODS:
   - swiftScan (1.2.1)
   - TagListView (1.4.1)
   - Then (2.7.0)
+  - Toaster (2.3.0)
 
 DEPENDENCIES:
   - FSTextView
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - swiftScan
   - TagListView
   - Then
+  - Toaster
 
 SPEC REPOS:
   trunk:
@@ -61,6 +63,7 @@ SPEC REPOS:
     - swiftScan
     - TagListView
     - Then
+    - Toaster
 
 SPEC CHECKSUMS:
   FSTextView: 9e2ca07bb6bb0fb7e77b49b2717adf81f3c620b5
@@ -80,7 +83,8 @@ SPEC CHECKSUMS:
   swiftScan: 0849e7d7c1c641384767a573ee8cb90b88d1ddd9
   TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
-PODFILE CHECKSUM: d4b19aafbda1122a45093414bc38288f715713f3
+PODFILE CHECKSUM: 9483942adeba87e9be36c0877e993824279b21bf
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.11.2
