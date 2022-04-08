@@ -33,5 +33,6 @@ Pod::Spec.new do |s|
   s.dependency "swiftScan"
   s.dependency "SwiftMessages"
   s.dependency "ProgressHUD"
+  s.dependency "Toaster"
   
 end
