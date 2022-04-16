@@ -23,12 +23,12 @@ public class SLHUD {
     public static func message(title: String? = nil, desc: String?, duration: Double = 2, position: SwiftMessages.PresentationStyle = .top, btnTitle: String? = nil, complete: (() -> Void)? = nil) {
         SL.mainThread {
             SwiftMessages.pauseBetweenMessages = 0
-            SwiftMessages.hide(animated: false)
+            SwiftMessages.hide(animated: true)
             if (title == nil || title?.count == 0) && (desc == nil || desc?.count == 0) { return }
             let haveBtn = !(btnTitle == nil || btnTitle?.count == 0)
             let duration = haveBtn ? 0 : duration
             let messageView = MessageView.viewFromNib(layout: .cardView)
-            messageView.id = "10086"
+//            messageView.id = "10086"
             messageView.configureTheme(.info)
             messageView.configureContent(title: title, body: desc, iconImage: SLAssets.bundledImage(named: "info22"), iconText: nil, buttonImage: nil, buttonTitle: btnTitle) { _ in
                 SwiftMessages.hide()

@@ -35,11 +35,13 @@ class ViewController: UIViewController {
         print(array)
     }
     
+    var a = true
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        SL.pickerDate
-            .mode(.dateAndTime)
-            .minDate(Date())
-            .show()
+//        SL.pickerDate
+//            .mode(.dateAndTime)
+//            .minDate(Date())
+//            .show()
         
 //        SL.pickerTag()
 //            .titles(["dasdadasc", "dajisdapskdncn", "dsada", "vlp[lpcclpxc"])
@@ -81,10 +83,10 @@ class ViewController: UIViewController {
 //            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
 //        }
 //        present(vc, animated: true, completion: nil)
-        
-//        SLHUD.message(title: nil, desc: "提交成功") {
-//
-//        }
+        a = !a
+        SLHUD.message(title: "Title", desc: a ? "提交成功" : "提交失败") {
+
+        }
     }
 }
 

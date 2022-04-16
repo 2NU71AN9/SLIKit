@@ -10,6 +10,24 @@ import UIKit
 // MARK: - 描边、圆角等
 public extension UIView {
     
+    /// 宽度=屏幕宽度的多少倍再加上/减去多少, width代表倍数 100为1倍
+    @IBInspectable
+    var wEs1: CGSize {
+        get { CGSize.zero }
+        set {
+            widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * (newValue.width / 100) + newValue.height).isActive = true
+        }
+    }
+    
+    /// 宽度=屏幕宽度加上/减去多少再乘以倍数, width代表倍数 100为1倍
+    @IBInspectable
+    var wEs2: CGSize {
+        get { CGSize.zero }
+        set {
+            widthAnchor.constraint(equalToConstant: (UIScreen.main.bounds.width + newValue.height) * (newValue.width / 100)).isActive = true
+        }
+    }
+    
     @IBInspectable
     /// Border color of view; also inspectable from Storyboard.
     var kBorderColor: UIColor? {
