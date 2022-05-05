@@ -84,7 +84,7 @@ class ViewController: UIViewController {
 //        }
 //        present(vc, animated: true, completion: nil)
         a = !a
-        SLHUD.message(title: "Title", desc: a ? "提交成功" : "提交失败") {
+        SLHUD.message(title: a ? "提交成功" : "提交失败", desc: nil) {
 
         }
     }

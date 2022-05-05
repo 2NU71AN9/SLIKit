@@ -12,7 +12,8 @@ import WebKit
 public class SLWebView: WKWebView {
     
     public var titleSubject: ((String?) -> Void)?
-    
+    public var urlChanged: ((URL?) -> Void)?
+
     @IBInspectable public dynamic var progressColor: UIColor? = UIColor.blue {
         didSet {
             progress.tintColor = progressColor
@@ -63,6 +64,7 @@ public class SLWebView: WKWebView {
         addSubview(progress)
         addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         addObserver(self, forKeyPath: "title", options: .new, context: nil)
+        addObserver(self, forKeyPath: "URL", options: .new, context: nil)
         guard let url = requestUrl else { return }
         load(URLRequest(url: url))
     }
@@ -79,13 +81,15 @@ public class SLWebView: WKWebView {
     deinit {
         removeObserver(self, forKeyPath: "estimatedProgress")
         removeObserver(self, forKeyPath: "title")
+        removeObserver(self, forKeyPath: "URL")
     }
     
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "estimatedProgress", let _ = object as? WKWebView {
+        if keyPath == "estimatedProgress", let object = object as? WKWebView {
             progress.alpha = 1
             progress.setProgress(Float(estimatedProgress), animated: true)
             if estimatedProgress >= 1.0 {
+                urlChanged?(object.url)
                 UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut, animations: { [weak self] in
                     self?.progress.alpha = 0
                 }) { [weak self] (_) in
@@ -94,6 +98,8 @@ public class SLWebView: WKWebView {
             }
         } else if keyPath == "title", let _ = object as? WKWebView {
             titleSubject?(title)
+        } else if keyPath == "URL", let object = object as? WKWebView {
+            urlChanged?(object.url)
         }
     }
 }
