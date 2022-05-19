@@ -57,8 +57,12 @@ public class SLWebViewController: UIViewController {
     }
     
     @objc public func dismissAction() {
-        if navigationController?.presentingViewController != nil || presentingViewController != nil {
+        if presentingViewController != nil {
             dismiss(animated: true, completion: nil)
+        } else if navigationController?.presentingViewController != nil {
+            navigationController?.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
         }
     }
 }
