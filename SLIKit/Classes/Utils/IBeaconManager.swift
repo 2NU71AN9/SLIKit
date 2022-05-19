@@ -35,13 +35,7 @@ public class SLIBeaconManager: NSObject {
     
     public static let shared = SLIBeaconManager()
 
-    public weak var delegate: CLLocationManagerDelegate? {
-        didSet {
-            locationManager.delegate = delegate
-        }
-    }
-    
-    fileprivate var beaconCallback: callback?
+    private var beaconCallback: callback?
 
     private var rangingRegions: [CLBeaconRegion] = []
     private var willRangingRegion: CLBeaconRegion?
@@ -49,7 +43,7 @@ public class SLIBeaconManager: NSObject {
     // 监听IBeacon的locationManager
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
-        manager.delegate = delegate
+        manager.delegate = self
         return manager
     }()
 }
@@ -139,13 +133,13 @@ extension SLIBeaconManager {
     }
 }
 
-extension AppDelegate: CLLocationManagerDelegate {
+extension SLIBeaconManager: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        SLIBeaconManager.shared.authorizationChanged(status: status)
+        authorizationChanged(status: status)
     }
 
     public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        SLIBeaconManager.shared.authorizationChanged(status: CLLocationManager.authorizationStatus())
+        authorizationChanged(status: CLLocationManager.authorizationStatus())
     }
 
     ///  监控成功
@@ -154,30 +148,30 @@ extension AppDelegate: CLLocationManagerDelegate {
     }
     ///  监控失败
     public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        SLIBeaconManager.shared.beaconCallback?(.failure(msg: "Monitoring监控失败"))
+        beaconCallback?(.failure(msg: "Monitoring监控失败"))
     }
 
     /// 进入iBeaconRegion区域
     public func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         if let region = region as? CLBeaconRegion {
-            SLIBeaconManager.shared.beaconCallback?(.didEnterRegion(region: region))
+            beaconCallback?(.didEnterRegion(region: region))
         }
     }
     /// 离开iBeaconRegion区域
     public func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         if let region = region as? CLBeaconRegion {
-            SLIBeaconManager.shared.beaconCallback?(.didExitRegion(region: region))
+            beaconCallback?(.didExitRegion(region: region))
         }
     }
 
     /// 监测到iBeacon设备
     public func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         guard !beacons.isEmpty else { return }
-        SLIBeaconManager.shared.beaconCallback?(.rangingBeacons(beacons: beacons))
+        beaconCallback?(.rangingBeacons(beacons: beacons))
     }
 
     // Ranging有错误产生
     public func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
-        SLIBeaconManager.shared.beaconCallback?(.failure(msg: "Ranging错误"))
+        beaconCallback?(.failure(msg: "Ranging错误"))
     }
 }
