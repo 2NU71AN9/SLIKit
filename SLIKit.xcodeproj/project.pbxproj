@@ -1,0 +1,736 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1014C79E56A37EA183834FDA /* Pods_SLIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A633566CF7B4BA2A59D8AC04 /* Pods_SLIKit.framework */; };
+		D210B8DF2823C93B00051EFF /* IBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D210B8DE2823C93B00051EFF /* IBeaconManager.swift */; };
+		D21B38D6269E804A009D96CB /* SLDisplayModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B38D5269E804A009D96CB /* SLDisplayModeManager.swift */; };
+		D21B38F2269ECA47009D96CB /* IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B38F1269ECA47009D96CB /* IBInspectable.swift */; };
+		D21B38F4269EEFBE009D96CB /* SLLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B38F3269EEFBE009D96CB /* SLLanguageManager.swift */; };
+		D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */; };
+		D21D65F225FB6653001C971F /* SLDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */; };
+		D2377EA126A2824700F0A5E6 /* SLHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2377EA026A2824700F0A5E6 /* SLHUD.swift */; };
+		D24C44A125FB49DC0042DF9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A025FB49DC0042DF9E /* AppDelegate.swift */; };
+		D24C44A525FB49DC0042DF9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A425FB49DC0042DF9E /* ViewController.swift */; };
+		D24C44A825FB49DC0042DF9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24C44A625FB49DC0042DF9E /* Main.storyboard */; };
+		D24C44AA25FB49DD0042DF9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24C44A925FB49DD0042DF9E /* Assets.xcassets */; };
+		D24C44AD25FB49DD0042DF9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24C44AB25FB49DD0042DF9E /* LaunchScreen.storyboard */; };
+		D24C44E825FB4A270042DF9E /* SLPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44B825FB4A270042DF9E /* SLPickerViewController.swift */; };
+		D24C44E925FB4A270042DF9E /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44B925FB4A270042DF9E /* Runtime.swift */; };
+		D24C44EA25FB4A270042DF9E /* SLFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44BA25FB4A270042DF9E /* SLFileManager.swift */; };
+		D24C44EB25FB4A270042DF9E /* SLKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44BB25FB4A270042DF9E /* SLKit.swift */; };
+		D24C44EC25FB4A270042DF9E /* SLWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44BC25FB4A270042DF9E /* SLWebViewController.swift */; };
+		D24C44ED25FB4A270042DF9E /* SLWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44BD25FB4A270042DF9E /* SLWebView.swift */; };
+		D24C44EE25FB4A270042DF9E /* SLTagPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44BE25FB4A270042DF9E /* SLTagPickerViewController.swift */; };
+		D24C44EF25FB4A270042DF9E /* SLMJRefreshTaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44BF25FB4A270042DF9E /* SLMJRefreshTaptic.swift */; };
+		D24C44F025FB4A270042DF9E /* SLImageBrower.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C025FB4A270042DF9E /* SLImageBrower.swift */; };
+		D24C44F125FB4A270042DF9E /* SLEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C125FB4A270042DF9E /* SLEditView.swift */; };
+		D24C44F225FB4A270042DF9E /* SLTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C225FB4A270042DF9E /* SLTools.swift */; };
+		D24C44F325FB4A270042DF9E /* SLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C325FB4A270042DF9E /* SLLineView.swift */; };
+		D24C44F425FB4A270042DF9E /* SLPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24C44C425FB4A270042DF9E /* SLPickerViewController.xib */; };
+		D24C44F525FB4A270042DF9E /* SLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C525FB4A270042DF9E /* SLAlertView.swift */; };
+		D24C44F625FB4A270042DF9E /* SLTagPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24C44C625FB4A270042DF9E /* SLTagPickerViewController.xib */; };
+		D24C44F725FB4A270042DF9E /* Ex_Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C825FB4A270042DF9E /* Ex_Label.swift */; };
+		D24C44F825FB4A270042DF9E /* Ex_TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C925FB4A270042DF9E /* Ex_TextField.swift */; };
+		D24C44F925FB4A270042DF9E /* Ex_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44CA25FB4A270042DF9E /* Ex_ViewController.swift */; };
+		D24C44FA25FB4A270042DF9E /* Ex_Navi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44CB25FB4A270042DF9E /* Ex_Navi.swift */; };
+		D24C44FB25FB4A270042DF9E /* Ex_Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44CC25FB4A270042DF9E /* Ex_Button.swift */; };
+		D24C44FC25FB4A270042DF9E /* Ex_Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44CD25FB4A270042DF9E /* Ex_Bundle.swift */; };
+		D24C44FE25FB4A270042DF9E /* Ex_Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44CF25FB4A270042DF9E /* Ex_Array.swift */; };
+		D24C44FF25FB4A270042DF9E /* Ex_Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D025FB4A270042DF9E /* Ex_Rx.swift */; };
+		D24C450025FB4A270042DF9E /* Ex_Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D125FB4A270042DF9E /* Ex_Double.swift */; };
+		D24C450125FB4A280042DF9E /* Ex_UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D225FB4A270042DF9E /* Ex_UserDefaults.swift */; };
+		D24C450225FB4A280042DF9E /* Ex_Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D325FB4A270042DF9E /* Ex_Int.swift */; };
+		D24C450325FB4A280042DF9E /* Ex_UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D425FB4A270042DF9E /* Ex_UIAlertController.swift */; };
+		D24C450425FB4A280042DF9E /* Ex_CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D525FB4A270042DF9E /* Ex_CGFloat.swift */; };
+		D24C450525FB4A280042DF9E /* Ex_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D625FB4A270042DF9E /* Ex_String.swift */; };
+		D24C450625FB4A280042DF9E /* Ex_ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D725FB4A270042DF9E /* Ex_ImageView.swift */; };
+		D24C450725FB4A280042DF9E /* Ex_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D825FB4A270042DF9E /* Ex_Image.swift */; };
+		D24C450825FB4A280042DF9E /* Ex_ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44D925FB4A270042DF9E /* Ex_ScrollView.swift */; };
+		D24C450925FB4A280042DF9E /* SLEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44DA25FB4A270042DF9E /* SLEx.swift */; };
+		D24C450A25FB4A280042DF9E /* Ex_StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44DB25FB4A270042DF9E /* Ex_StackView.swift */; };
+		D24C450B25FB4A280042DF9E /* Ex_Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44DC25FB4A270042DF9E /* Ex_Dictionary.swift */; };
+		D24C450C25FB4A280042DF9E /* Ex_TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44DD25FB4A270042DF9E /* Ex_TextView.swift */; };
+		D24C450D25FB4A280042DF9E /* Ex_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44DE25FB4A270042DF9E /* Ex_Date.swift */; };
+		D24C450E25FB4A280042DF9E /* Ex_SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44DF25FB4A270042DF9E /* Ex_SnapKit.swift */; };
+		D24C450F25FB4A280042DF9E /* Ex_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E025FB4A270042DF9E /* Ex_Color.swift */; };
+		D24C451025FB4A280042DF9E /* Ex_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E125FB4A270042DF9E /* Ex_UIView.swift */; };
+		D24C451125FB4A280042DF9E /* SLAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E325FB4A270042DF9E /* SLAssets.swift */; };
+		D24C451225FB4A280042DF9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24C44E425FB4A270042DF9E /* Images.xcassets */; };
+		D24C451325FB4A280042DF9E /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E625FB4A270042DF9E /* StringInterpolation.swift */; };
+		D24C451425FB4A280042DF9E /* SLOperatorCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E725FB4A270042DF9E /* SLOperatorCustom.swift */; };
+		D24C452A25FB4B150042DF9E /* SLIKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D24C452925FB4B150042DF9E /* SLIKit.podspec */; };
+		D27C71EE26895B6300A72ACC /* SLFilePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C71ED26895B6300A72ACC /* SLFilePickerViewController.swift */; };
+		D2846F4927FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2846F4727FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift */; };
+		D2846F4A27FD8C7600BA0A36 /* Ex_CLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2846F4827FD8C7600BA0A36 /* Ex_CLPlacemark.swift */; };
+		D2846F4C27FD8DCE00BA0A36 /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2846F4B27FD8DCE00BA0A36 /* CodeInputView.swift */; };
+		D28A40C725FF46AA008D9186 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28A40C525FF46AA008D9186 /* LocationService.swift */; };
+		D2D34CAC2685B880001C2B10 /* SLQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D34CAB2685B880001C2B10 /* SLQRCodeViewController.swift */; };
+		D2D720652689636500B87422 /* SLFileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D720642689636500B87422 /* SLFileBrowser.swift */; };
+		D2DC426B25FCA566007B43AE /* SLImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DC426A25FCA566007B43AE /* SLImagePicker.swift */; };
+		D2E922F4268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E922F3268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift */; };
+		D2F52957268F149F00C92FDD /* my.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2F52956268F149F00C92FDD /* my.bundle */; };
+		D2F5295A268F150500C92FDD /* SLAddressPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F52958268F150500C92FDD /* SLAddressPickerViewController.swift */; };
+		D2F5295B268F150500C92FDD /* SLAddressPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F52959268F150500C92FDD /* SLAddressPickerViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3FCAD003B550B74B258EC347 /* Pods-SLIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLIKit.release.xcconfig"; path = "Target Support Files/Pods-SLIKit/Pods-SLIKit.release.xcconfig"; sourceTree = "<group>"; };
+		A633566CF7B4BA2A59D8AC04 /* Pods_SLIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SLIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D210B8DE2823C93B00051EFF /* IBeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBeaconManager.swift; sourceTree = "<group>"; };
+		D21B38D5269E804A009D96CB /* SLDisplayModeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDisplayModeManager.swift; sourceTree = "<group>"; };
+		D21B38F1269ECA47009D96CB /* IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBInspectable.swift; sourceTree = "<group>"; };
+		D21B38F3269EEFBE009D96CB /* SLLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLLanguageManager.swift; sourceTree = "<group>"; };
+		D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLDatePickerViewController.xib; sourceTree = "<group>"; };
+		D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDatePickerViewController.swift; sourceTree = "<group>"; };
+		D2377EA026A2824700F0A5E6 /* SLHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLHUD.swift; sourceTree = "<group>"; };
+		D24C449D25FB49DC0042DF9E /* SLIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24C44A025FB49DC0042DF9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D24C44A425FB49DC0042DF9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D24C44A725FB49DC0042DF9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D24C44A925FB49DD0042DF9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D24C44AC25FB49DD0042DF9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D24C44AE25FB49DD0042DF9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D24C44B825FB4A270042DF9E /* SLPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLPickerViewController.swift; sourceTree = "<group>"; };
+		D24C44B925FB4A270042DF9E /* Runtime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runtime.swift; sourceTree = "<group>"; };
+		D24C44BA25FB4A270042DF9E /* SLFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLFileManager.swift; sourceTree = "<group>"; };
+		D24C44BB25FB4A270042DF9E /* SLKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLKit.swift; sourceTree = "<group>"; };
+		D24C44BC25FB4A270042DF9E /* SLWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLWebViewController.swift; sourceTree = "<group>"; };
+		D24C44BD25FB4A270042DF9E /* SLWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLWebView.swift; sourceTree = "<group>"; };
+		D24C44BE25FB4A270042DF9E /* SLTagPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLTagPickerViewController.swift; sourceTree = "<group>"; };
+		D24C44BF25FB4A270042DF9E /* SLMJRefreshTaptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLMJRefreshTaptic.swift; sourceTree = "<group>"; };
+		D24C44C025FB4A270042DF9E /* SLImageBrower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLImageBrower.swift; sourceTree = "<group>"; };
+		D24C44C125FB4A270042DF9E /* SLEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLEditView.swift; sourceTree = "<group>"; };
+		D24C44C225FB4A270042DF9E /* SLTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLTools.swift; sourceTree = "<group>"; };
+		D24C44C325FB4A270042DF9E /* SLLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLLineView.swift; sourceTree = "<group>"; };
+		D24C44C425FB4A270042DF9E /* SLPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLPickerViewController.xib; sourceTree = "<group>"; };
+		D24C44C525FB4A270042DF9E /* SLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLAlertView.swift; sourceTree = "<group>"; };
+		D24C44C625FB4A270042DF9E /* SLTagPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLTagPickerViewController.xib; sourceTree = "<group>"; };
+		D24C44C825FB4A270042DF9E /* Ex_Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Label.swift; sourceTree = "<group>"; };
+		D24C44C925FB4A270042DF9E /* Ex_TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_TextField.swift; sourceTree = "<group>"; };
+		D24C44CA25FB4A270042DF9E /* Ex_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_ViewController.swift; sourceTree = "<group>"; };
+		D24C44CB25FB4A270042DF9E /* Ex_Navi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Navi.swift; sourceTree = "<group>"; };
+		D24C44CC25FB4A270042DF9E /* Ex_Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Button.swift; sourceTree = "<group>"; };
+		D24C44CD25FB4A270042DF9E /* Ex_Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Bundle.swift; sourceTree = "<group>"; };
+		D24C44CF25FB4A270042DF9E /* Ex_Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Array.swift; sourceTree = "<group>"; };
+		D24C44D025FB4A270042DF9E /* Ex_Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Rx.swift; sourceTree = "<group>"; };
+		D24C44D125FB4A270042DF9E /* Ex_Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Double.swift; sourceTree = "<group>"; };
+		D24C44D225FB4A270042DF9E /* Ex_UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_UserDefaults.swift; sourceTree = "<group>"; };
+		D24C44D325FB4A270042DF9E /* Ex_Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Int.swift; sourceTree = "<group>"; };
+		D24C44D425FB4A270042DF9E /* Ex_UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_UIAlertController.swift; sourceTree = "<group>"; };
+		D24C44D525FB4A270042DF9E /* Ex_CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_CGFloat.swift; sourceTree = "<group>"; };
+		D24C44D625FB4A270042DF9E /* Ex_String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_String.swift; sourceTree = "<group>"; };
+		D24C44D725FB4A270042DF9E /* Ex_ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_ImageView.swift; sourceTree = "<group>"; };
+		D24C44D825FB4A270042DF9E /* Ex_Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Image.swift; sourceTree = "<group>"; };
+		D24C44D925FB4A270042DF9E /* Ex_ScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_ScrollView.swift; sourceTree = "<group>"; };
+		D24C44DA25FB4A270042DF9E /* SLEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLEx.swift; sourceTree = "<group>"; };
+		D24C44DB25FB4A270042DF9E /* Ex_StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_StackView.swift; sourceTree = "<group>"; };
+		D24C44DC25FB4A270042DF9E /* Ex_Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Dictionary.swift; sourceTree = "<group>"; };
+		D24C44DD25FB4A270042DF9E /* Ex_TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_TextView.swift; sourceTree = "<group>"; };
+		D24C44DE25FB4A270042DF9E /* Ex_Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Date.swift; sourceTree = "<group>"; };
+		D24C44DF25FB4A270042DF9E /* Ex_SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_SnapKit.swift; sourceTree = "<group>"; };
+		D24C44E025FB4A270042DF9E /* Ex_Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Color.swift; sourceTree = "<group>"; };
+		D24C44E125FB4A270042DF9E /* Ex_UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_UIView.swift; sourceTree = "<group>"; };
+		D24C44E325FB4A270042DF9E /* SLAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLAssets.swift; sourceTree = "<group>"; };
+		D24C44E425FB4A270042DF9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D24C44E625FB4A270042DF9E /* StringInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
+		D24C44E725FB4A270042DF9E /* SLOperatorCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLOperatorCustom.swift; sourceTree = "<group>"; };
+		D24C452925FB4B150042DF9E /* SLIKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SLIKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D27C71ED26895B6300A72ACC /* SLFilePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFilePickerViewController.swift; sourceTree = "<group>"; };
+		D2846F4727FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
+		D2846F4827FD8C7600BA0A36 /* Ex_CLPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_CLPlacemark.swift; sourceTree = "<group>"; };
+		D2846F4B27FD8DCE00BA0A36 /* CodeInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
+		D28A40C525FF46AA008D9186 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		D2D34CAB2685B880001C2B10 /* SLQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLQRCodeViewController.swift; sourceTree = "<group>"; };
+		D2D720642689636500B87422 /* SLFileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFileBrowser.swift; sourceTree = "<group>"; };
+		D2DC426A25FCA566007B43AE /* SLImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLImagePicker.swift; sourceTree = "<group>"; };
+		D2E922F3268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLFaceIDWithTouchIDManager.swift; sourceTree = "<group>"; };
+		D2F52956268F149F00C92FDD /* my.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = my.bundle; sourceTree = "<group>"; };
+		D2F52958268F150500C92FDD /* SLAddressPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLAddressPickerViewController.swift; sourceTree = "<group>"; };
+		D2F52959268F150500C92FDD /* SLAddressPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SLAddressPickerViewController.xib; sourceTree = "<group>"; };
+		E0B6500762D3590BE4414BC9 /* Pods-SLIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLIKit.debug.xcconfig"; path = "Target Support Files/Pods-SLIKit/Pods-SLIKit.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D24C449A25FB49DC0042DF9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1014C79E56A37EA183834FDA /* Pods_SLIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D21D65ED25FB662A001C971F /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */,
+				D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */,
+				D24C44B825FB4A270042DF9E /* SLPickerViewController.swift */,
+				D24C44C425FB4A270042DF9E /* SLPickerViewController.xib */,
+				D24C44BE25FB4A270042DF9E /* SLTagPickerViewController.swift */,
+				D24C44C625FB4A270042DF9E /* SLTagPickerViewController.xib */,
+				D2DC426A25FCA566007B43AE /* SLImagePicker.swift */,
+				D27C71ED26895B6300A72ACC /* SLFilePickerViewController.swift */,
+				D2D720642689636500B87422 /* SLFileBrowser.swift */,
+				D2F52958268F150500C92FDD /* SLAddressPickerViewController.swift */,
+				D2F52959268F150500C92FDD /* SLAddressPickerViewController.xib */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		D24C449425FB49DC0042DF9E = {
+			isa = PBXGroup;
+			children = (
+				D24C449F25FB49DC0042DF9E /* SLIKit */,
+				D24C449E25FB49DC0042DF9E /* Products */,
+				EC9F94635DC9A571E47EC3A9 /* Pods */,
+				E80478A200BB12746B808EDC /* Frameworks */,
+				D24C452925FB4B150042DF9E /* SLIKit.podspec */,
+			);
+			sourceTree = "<group>";
+		};
+		D24C449E25FB49DC0042DF9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D24C449D25FB49DC0042DF9E /* SLIKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D24C449F25FB49DC0042DF9E /* SLIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D24C44B625FB4A270042DF9E /* Classes */,
+				D24C44A025FB49DC0042DF9E /* AppDelegate.swift */,
+				D24C44A425FB49DC0042DF9E /* ViewController.swift */,
+				D24C44A625FB49DC0042DF9E /* Main.storyboard */,
+				D24C44A925FB49DD0042DF9E /* Assets.xcassets */,
+				D24C44AB25FB49DD0042DF9E /* LaunchScreen.storyboard */,
+				D24C44AE25FB49DD0042DF9E /* Info.plist */,
+			);
+			path = SLIKit;
+			sourceTree = "<group>";
+		};
+		D24C44B625FB4A270042DF9E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D2F52955268F148F00C92FDD /* Resource */,
+				D24C44B725FB4A270042DF9E /* Utils */,
+				D24C44C725FB4A270042DF9E /* Extensions */,
+				D24C44E225FB4A270042DF9E /* Constant */,
+				D24C44E525FB4A270042DF9E /* Operator */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D24C44B725FB4A270042DF9E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D28A40C425FF4688008D9186 /* Location */,
+				D21D65ED25FB662A001C971F /* Picker */,
+				D24C44BB25FB4A270042DF9E /* SLKit.swift */,
+				D24C44B925FB4A270042DF9E /* Runtime.swift */,
+				D24C44BA25FB4A270042DF9E /* SLFileManager.swift */,
+				D24C44BC25FB4A270042DF9E /* SLWebViewController.swift */,
+				D24C44BD25FB4A270042DF9E /* SLWebView.swift */,
+				D24C44BF25FB4A270042DF9E /* SLMJRefreshTaptic.swift */,
+				D24C44C025FB4A270042DF9E /* SLImageBrower.swift */,
+				D24C44C125FB4A270042DF9E /* SLEditView.swift */,
+				D2846F4B27FD8DCE00BA0A36 /* CodeInputView.swift */,
+				D24C44C225FB4A270042DF9E /* SLTools.swift */,
+				D24C44C325FB4A270042DF9E /* SLLineView.swift */,
+				D24C44C525FB4A270042DF9E /* SLAlertView.swift */,
+				D2D34CAB2685B880001C2B10 /* SLQRCodeViewController.swift */,
+				D2E922F3268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift */,
+				D21B38D5269E804A009D96CB /* SLDisplayModeManager.swift */,
+				D21B38F3269EEFBE009D96CB /* SLLanguageManager.swift */,
+				D2377EA026A2824700F0A5E6 /* SLHUD.swift */,
+				D210B8DE2823C93B00051EFF /* IBeaconManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D24C44C725FB4A270042DF9E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D2846F4727FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift */,
+				D2846F4827FD8C7600BA0A36 /* Ex_CLPlacemark.swift */,
+				D24C44C825FB4A270042DF9E /* Ex_Label.swift */,
+				D24C44C925FB4A270042DF9E /* Ex_TextField.swift */,
+				D24C44CA25FB4A270042DF9E /* Ex_ViewController.swift */,
+				D24C44CB25FB4A270042DF9E /* Ex_Navi.swift */,
+				D24C44CC25FB4A270042DF9E /* Ex_Button.swift */,
+				D24C44CD25FB4A270042DF9E /* Ex_Bundle.swift */,
+				D24C44CF25FB4A270042DF9E /* Ex_Array.swift */,
+				D24C44D025FB4A270042DF9E /* Ex_Rx.swift */,
+				D24C44D125FB4A270042DF9E /* Ex_Double.swift */,
+				D24C44D225FB4A270042DF9E /* Ex_UserDefaults.swift */,
+				D24C44D325FB4A270042DF9E /* Ex_Int.swift */,
+				D24C44D425FB4A270042DF9E /* Ex_UIAlertController.swift */,
+				D24C44D525FB4A270042DF9E /* Ex_CGFloat.swift */,
+				D24C44D625FB4A270042DF9E /* Ex_String.swift */,
+				D24C44D725FB4A270042DF9E /* Ex_ImageView.swift */,
+				D24C44D825FB4A270042DF9E /* Ex_Image.swift */,
+				D24C44D925FB4A270042DF9E /* Ex_ScrollView.swift */,
+				D24C44DA25FB4A270042DF9E /* SLEx.swift */,
+				D24C44DB25FB4A270042DF9E /* Ex_StackView.swift */,
+				D24C44DC25FB4A270042DF9E /* Ex_Dictionary.swift */,
+				D24C44DD25FB4A270042DF9E /* Ex_TextView.swift */,
+				D24C44DE25FB4A270042DF9E /* Ex_Date.swift */,
+				D24C44DF25FB4A270042DF9E /* Ex_SnapKit.swift */,
+				D24C44E025FB4A270042DF9E /* Ex_Color.swift */,
+				D24C44E125FB4A270042DF9E /* Ex_UIView.swift */,
+				D21B38F1269ECA47009D96CB /* IBInspectable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D24C44E225FB4A270042DF9E /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				D24C44E325FB4A270042DF9E /* SLAssets.swift */,
+				D24C44E425FB4A270042DF9E /* Images.xcassets */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		D24C44E525FB4A270042DF9E /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				D24C44E625FB4A270042DF9E /* StringInterpolation.swift */,
+				D24C44E725FB4A270042DF9E /* SLOperatorCustom.swift */,
+			);
+			path = Operator;
+			sourceTree = "<group>";
+		};
+		D28A40C425FF4688008D9186 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				D28A40C525FF46AA008D9186 /* LocationService.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		D2F52955268F148F00C92FDD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D2F52956268F149F00C92FDD /* my.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E80478A200BB12746B808EDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A633566CF7B4BA2A59D8AC04 /* Pods_SLIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC9F94635DC9A571E47EC3A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E0B6500762D3590BE4414BC9 /* Pods-SLIKit.debug.xcconfig */,
+				3FCAD003B550B74B258EC347 /* Pods-SLIKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D24C449C25FB49DC0042DF9E /* SLIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D24C44B125FB49DD0042DF9E /* Build configuration list for PBXNativeTarget "SLIKit" */;
+			buildPhases = (
+				A12BC6BB95AB0A97ECE66753 /* [CP] Check Pods Manifest.lock */,
+				D24C449925FB49DC0042DF9E /* Sources */,
+				D24C449A25FB49DC0042DF9E /* Frameworks */,
+				D24C449B25FB49DC0042DF9E /* Resources */,
+				FB0621D34C816AD4A1EEBA45 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SLIKit;
+			productName = SLIKit;
+			productReference = D24C449D25FB49DC0042DF9E /* SLIKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D24C449525FB49DC0042DF9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					D24C449C25FB49DC0042DF9E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = D24C449825FB49DC0042DF9E /* Build configuration list for PBXProject "SLIKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D24C449425FB49DC0042DF9E;
+			productRefGroup = D24C449E25FB49DC0042DF9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D24C449C25FB49DC0042DF9E /* SLIKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D24C449B25FB49DC0042DF9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24C452A25FB4B150042DF9E /* SLIKit.podspec in Resources */,
+				D2F52957268F149F00C92FDD /* my.bundle in Resources */,
+				D24C44AD25FB49DD0042DF9E /* LaunchScreen.storyboard in Resources */,
+				D24C44AA25FB49DD0042DF9E /* Assets.xcassets in Resources */,
+				D24C44F625FB4A270042DF9E /* SLTagPickerViewController.xib in Resources */,
+				D24C451225FB4A280042DF9E /* Images.xcassets in Resources */,
+				D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */,
+				D24C44A825FB49DC0042DF9E /* Main.storyboard in Resources */,
+				D2F5295B268F150500C92FDD /* SLAddressPickerViewController.xib in Resources */,
+				D24C44F425FB4A270042DF9E /* SLPickerViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A12BC6BB95AB0A97ECE66753 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SLIKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB0621D34C816AD4A1EEBA45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SLIKit/Pods-SLIKit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SLIKit/Pods-SLIKit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SLIKit/Pods-SLIKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D24C449925FB49DC0042DF9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D210B8DF2823C93B00051EFF /* IBeaconManager.swift in Sources */,
+				D24C44E925FB4A270042DF9E /* Runtime.swift in Sources */,
+				D24C44FC25FB4A270042DF9E /* Ex_Bundle.swift in Sources */,
+				D2846F4C27FD8DCE00BA0A36 /* CodeInputView.swift in Sources */,
+				D21B38F4269EEFBE009D96CB /* SLLanguageManager.swift in Sources */,
+				D2846F4A27FD8C7600BA0A36 /* Ex_CLPlacemark.swift in Sources */,
+				D24C44EB25FB4A270042DF9E /* SLKit.swift in Sources */,
+				D2846F4927FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift in Sources */,
+				D24C450125FB4A280042DF9E /* Ex_UserDefaults.swift in Sources */,
+				D24C44F525FB4A270042DF9E /* SLAlertView.swift in Sources */,
+				D24C450525FB4A280042DF9E /* Ex_String.swift in Sources */,
+				D24C44EF25FB4A270042DF9E /* SLMJRefreshTaptic.swift in Sources */,
+				D2E922F4268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift in Sources */,
+				D24C44ED25FB4A270042DF9E /* SLWebView.swift in Sources */,
+				D24C450B25FB4A280042DF9E /* Ex_Dictionary.swift in Sources */,
+				D24C451325FB4A280042DF9E /* StringInterpolation.swift in Sources */,
+				D24C450725FB4A280042DF9E /* Ex_Image.swift in Sources */,
+				D2F5295A268F150500C92FDD /* SLAddressPickerViewController.swift in Sources */,
+				D24C44FA25FB4A270042DF9E /* Ex_Navi.swift in Sources */,
+				D24C450825FB4A280042DF9E /* Ex_ScrollView.swift in Sources */,
+				D21B38D6269E804A009D96CB /* SLDisplayModeManager.swift in Sources */,
+				D24C44F925FB4A270042DF9E /* Ex_ViewController.swift in Sources */,
+				D24C44F725FB4A270042DF9E /* Ex_Label.swift in Sources */,
+				D24C450E25FB4A280042DF9E /* Ex_SnapKit.swift in Sources */,
+				D24C44F225FB4A270042DF9E /* SLTools.swift in Sources */,
+				D24C450A25FB4A280042DF9E /* Ex_StackView.swift in Sources */,
+				D27C71EE26895B6300A72ACC /* SLFilePickerViewController.swift in Sources */,
+				D24C450325FB4A280042DF9E /* Ex_UIAlertController.swift in Sources */,
+				D24C44EA25FB4A270042DF9E /* SLFileManager.swift in Sources */,
+				D21D65F225FB6653001C971F /* SLDatePickerViewController.swift in Sources */,
+				D21B38F2269ECA47009D96CB /* IBInspectable.swift in Sources */,
+				D24C44A525FB49DC0042DF9E /* ViewController.swift in Sources */,
+				D2D720652689636500B87422 /* SLFileBrowser.swift in Sources */,
+				D24C450925FB4A280042DF9E /* SLEx.swift in Sources */,
+				D2377EA126A2824700F0A5E6 /* SLHUD.swift in Sources */,
+				D24C44F825FB4A270042DF9E /* Ex_TextField.swift in Sources */,
+				D24C450225FB4A280042DF9E /* Ex_Int.swift in Sources */,
+				D24C44E825FB4A270042DF9E /* SLPickerViewController.swift in Sources */,
+				D24C451025FB4A280042DF9E /* Ex_UIView.swift in Sources */,
+				D24C450C25FB4A280042DF9E /* Ex_TextView.swift in Sources */,
+				D24C44F025FB4A270042DF9E /* SLImageBrower.swift in Sources */,
+				D24C450625FB4A280042DF9E /* Ex_ImageView.swift in Sources */,
+				D24C450025FB4A270042DF9E /* Ex_Double.swift in Sources */,
+				D2D34CAC2685B880001C2B10 /* SLQRCodeViewController.swift in Sources */,
+				D24C44FE25FB4A270042DF9E /* Ex_Array.swift in Sources */,
+				D24C44EC25FB4A270042DF9E /* SLWebViewController.swift in Sources */,
+				D28A40C725FF46AA008D9186 /* LocationService.swift in Sources */,
+				D24C44EE25FB4A270042DF9E /* SLTagPickerViewController.swift in Sources */,
+				D24C451125FB4A280042DF9E /* SLAssets.swift in Sources */,
+				D24C451425FB4A280042DF9E /* SLOperatorCustom.swift in Sources */,
+				D24C450425FB4A280042DF9E /* Ex_CGFloat.swift in Sources */,
+				D2DC426B25FCA566007B43AE /* SLImagePicker.swift in Sources */,
+				D24C450D25FB4A280042DF9E /* Ex_Date.swift in Sources */,
+				D24C44A125FB49DC0042DF9E /* AppDelegate.swift in Sources */,
+				D24C44FF25FB4A270042DF9E /* Ex_Rx.swift in Sources */,
+				D24C450F25FB4A280042DF9E /* Ex_Color.swift in Sources */,
+				D24C44F125FB4A270042DF9E /* SLEditView.swift in Sources */,
+				D24C44FB25FB4A270042DF9E /* Ex_Button.swift in Sources */,
+				D24C44F325FB4A270042DF9E /* SLLineView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D24C44A625FB49DC0042DF9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D24C44A725FB49DC0042DF9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D24C44AB25FB49DD0042DF9E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D24C44AC25FB49DD0042DF9E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D24C44AF25FB49DD0042DF9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D24C44B025FB49DD0042DF9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D24C44B225FB49DD0042DF9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0B6500762D3590BE4414BC9 /* Pods-SLIKit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WK29BGA7MZ;
+				INFOPLIST_FILE = SLIKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sl.SLIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D24C44B325FB49DD0042DF9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FCAD003B550B74B258EC347 /* Pods-SLIKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WK29BGA7MZ;
+				INFOPLIST_FILE = SLIKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.5.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sl.SLIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D24C449825FB49DC0042DF9E /* Build configuration list for PBXProject "SLIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D24C44AF25FB49DD0042DF9E /* Debug */,
+				D24C44B025FB49DD0042DF9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D24C44B125FB49DD0042DF9E /* Build configuration list for PBXNativeTarget "SLIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D24C44B225FB49DD0042DF9E /* Debug */,
+				D24C44B325FB49DD0042DF9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D24C449525FB49DC0042DF9E /* Project object */;
+}

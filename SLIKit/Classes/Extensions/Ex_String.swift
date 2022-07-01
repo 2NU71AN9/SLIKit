@@ -215,11 +215,11 @@ public extension SLEx where Base == String {
         return nil
     }
     
-    /// 获取指定位置和大小的字符串
+    /// 获取指定位置和长度的字符串
     ///
     /// - Parameters:
     ///   - start: 起始位置
-    ///   - length: 长度
+    ///   - length: 长度, 默认到结束
     /// - Returns: 字符串
     func subString(start: Int, length: Int = -1) -> String? {
         if base.count < start + length { return nil }
@@ -233,8 +233,8 @@ public extension SLEx where Base == String {
         return String(base[range])
     }
     
-    /// 获取开头到指定位置的字符串
-    func subStringFrom0To(_ index: Int) -> String? {
+    /// 获取指定位置的字符串
+    func subStringWith(_ index: Int) -> String? {
         if base.count <= index { return nil }
         let index = base.index(base.startIndex, offsetBy: index)
         return String(base[index])
@@ -334,7 +334,7 @@ public extension String {
     /// 通过下标访问或赋值
     subscript(index:Int) -> String {
         get {
-            return String(self[self.index(self.startIndex, offsetBy: index)])
+            String(self[self.index(startIndex, offsetBy: index)])
         }
         set {
             let tmp = self
