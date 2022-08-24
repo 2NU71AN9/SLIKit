@@ -12,7 +12,12 @@ import HXPhotoPicker
 
 public struct SL {
     public static var WINDOW: UIWindow? {
-        return UIApplication.shared.delegate?.window ?? UIApplication.shared.windows.first
+        if let window = UIApplication.shared.delegate?.window {
+            return window
+        }
+        let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let window = scene?.windows.first(where: { $0.isKeyWindow })
+        return window ?? UIApplication.shared.windows.first
     }
     public static var SCREEN_BOUNS: CGRect { UIScreen.main.bounds }
     public static var SCREEN_SIZE: CGSize { SCREEN_BOUNS.size }
