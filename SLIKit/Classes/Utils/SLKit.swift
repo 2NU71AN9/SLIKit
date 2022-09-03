@@ -12,12 +12,16 @@ import HXPhotoPicker
 
 public struct SL {
     public static var WINDOW: UIWindow? {
-        if let window = UIApplication.shared.delegate?.window {
-            return window
+        if #available(iOS 13.0, *) {
+            if let window = UIApplication.shared.delegate?.window {
+                return window
+            }
+            let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
+            let window = scene?.windows.first(where: { $0.isKeyWindow })
+            return window ?? UIApplication.shared.windows.first
+        } else {
+            return UIApplication.shared.keyWindow
         }
-        let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-        let window = scene?.windows.first(where: { $0.isKeyWindow })
-        return window ?? UIApplication.shared.windows.first
     }
     public static var SCREEN_BOUNS: CGRect { UIScreen.main.bounds }
     public static var SCREEN_SIZE: CGSize { SCREEN_BOUNS.size }
