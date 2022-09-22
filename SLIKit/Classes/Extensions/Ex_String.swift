@@ -169,8 +169,7 @@ public extension SLEx where Base == String {
     
     /// 时间, 距今多久
     func dateBeforeNow() -> String? {
-        return base.toDate()?.convertTo(timezone: Zones.asiaShanghai)
-            .toRelative(style: RelativeFormatter.defaultStyle(), locale: Locales.chinese)
+        return base.toDate()?.convertTo(timezone: Zones.asiaShanghai).toRelative(since: DateInRegion(Date(), region: .current))
     }
     
     /// 时间转换
