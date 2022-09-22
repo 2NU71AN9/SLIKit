@@ -30,7 +30,7 @@ public class SLHUD {
             let messageView = MessageView.viewFromNib(layout: .cardView)
 //            messageView.id = "10086"
             messageView.configureTheme(.info)
-            messageView.configureContent(title: title, body: desc, iconImage: SLAssets.bundledImage(named: "alert_info22"), iconText: nil, buttonImage: nil, buttonTitle: btnTitle) { _ in
+            messageView.configureContent(title: title, body: desc, iconImage: nil, iconText: nil, buttonImage: nil, buttonTitle: btnTitle) { _ in
                 SwiftMessages.hide()
                 complete?()
             }
