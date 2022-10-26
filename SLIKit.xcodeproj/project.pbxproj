@@ -12,6 +12,7 @@
 		D21B38D6269E804A009D96CB /* SLDisplayModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B38D5269E804A009D96CB /* SLDisplayModeManager.swift */; };
 		D21B38F2269ECA47009D96CB /* IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B38F1269ECA47009D96CB /* IBInspectable.swift */; };
 		D21B38F4269EEFBE009D96CB /* SLLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B38F3269EEFBE009D96CB /* SLLanguageManager.swift */; };
+		D21C72472909129700AEC787 /* SLExpandLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C72462909129700AEC787 /* SLExpandLabel.swift */; };
 		D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */; };
 		D21D65F225FB6653001C971F /* SLDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */; };
 		D2377EA126A2824700F0A5E6 /* SLHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2377EA026A2824700F0A5E6 /* SLHUD.swift */; };
@@ -86,6 +87,7 @@
 		D21B38D5269E804A009D96CB /* SLDisplayModeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDisplayModeManager.swift; sourceTree = "<group>"; };
 		D21B38F1269ECA47009D96CB /* IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBInspectable.swift; sourceTree = "<group>"; };
 		D21B38F3269EEFBE009D96CB /* SLLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLLanguageManager.swift; sourceTree = "<group>"; };
+		D21C72462909129700AEC787 /* SLExpandLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLExpandLabel.swift; sourceTree = "<group>"; };
 		D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLDatePickerViewController.xib; sourceTree = "<group>"; };
 		D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDatePickerViewController.swift; sourceTree = "<group>"; };
 		D2377EA026A2824700F0A5E6 /* SLHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLHUD.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				D21B38F3269EEFBE009D96CB /* SLLanguageManager.swift */,
 				D2377EA026A2824700F0A5E6 /* SLHUD.swift */,
 				D210B8DE2823C93B00051EFF /* IBeaconManager.swift */,
+				D21C72462909129700AEC787 /* SLExpandLabel.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				D24C450025FB4A270042DF9E /* Ex_Double.swift in Sources */,
 				D2D34CAC2685B880001C2B10 /* SLQRCodeViewController.swift in Sources */,
 				D24C44FE25FB4A270042DF9E /* Ex_Array.swift in Sources */,
+				D21C72472909129700AEC787 /* SLExpandLabel.swift in Sources */,
 				D24C44EC25FB4A270042DF9E /* SLWebViewController.swift in Sources */,
 				D28A40C725FF46AA008D9186 /* LocationService.swift in Sources */,
 				D24C44EE25FB4A270042DF9E /* SLTagPickerViewController.swift in Sources */,
