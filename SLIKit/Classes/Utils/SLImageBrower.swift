@@ -18,38 +18,44 @@ public extension SL {
 
 public class SLImageBrower {
     
-    public static func browser(_ images: [String], index: Int = 0) -> JXPhotoBrowser {
+    public static func browser(_ images: [String], index: Int = 0, isSave: Bool = true, transView: ((Int) -> UIView?)? = nil) -> JXPhotoBrowser {
         let browser = JXPhotoBrowser()
         browser.numberOfItems = { images.count }
-        let urls = images.compactMap { URL(string: $0) }
         browser.cellClassAtIndex = { _ in
             LoadingImageCell.self
         }
         browser.reloadCellAtIndex = { context in
-            let browserCell = context.cell as? JXPhotoBrowserImageCell
-            // 用Kingfisher加载
-            browserCell?.imageView.kf.setImage(with: urls[context.index], placeholder: nil, options: [], completionHandler: { _ in
-                browserCell?.setNeedsLayout()
-            })
-            browserCell?.longPressedAction = { cell, _ in
-                save(cell)
+            let browserCell = context.cell as? LoadingImageCell
+            browserCell?.reloadData(placeholder: nil, urlString: images[context.index])
+            if isSave {
+                browserCell?.longPressedAction = { cell, _ in
+                    save(cell)
+                }
             }
         }
         browser.pageIndex = index
+        if let transView = transView {
+            browser.transitionAnimator = JXPhotoBrowserZoomAnimator(previousView: transView)
+        }
         return browser
     }
     
-    public static func browser(_ images: [UIImage], index: Int = 0) -> JXPhotoBrowser {
+    public static func browser(_ images: [UIImage], index: Int = 0, isSave: Bool = true, transView: ((Int) -> UIView?)? = nil) -> JXPhotoBrowser {
         let browser = JXPhotoBrowser()
         browser.numberOfItems = { images.count }
         browser.reloadCellAtIndex = { context in
             let browserCell = context.cell as? JXPhotoBrowserImageCell
             browserCell?.imageView.image = images[context.index]
-            browserCell?.longPressedAction = { cell, _ in
-                save(cell)
+            if isSave {
+                browserCell?.longPressedAction = { cell, _ in
+                    save(cell)
+                }
             }
         }
         browser.pageIndex = index
+        if let transView = transView {
+            browser.transitionAnimator = JXPhotoBrowserZoomAnimator(previousView: transView)
+        }
         return browser
     }
     

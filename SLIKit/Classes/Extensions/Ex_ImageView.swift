@@ -80,7 +80,9 @@ public extension UIImageView {
     
     @objc fileprivate func sl_show() {
         if let image = image {
-            SLImageBrower.browser([image]).show()
+            SLImageBrower.browser([image], transView: { [weak self] _ in
+                self
+            }).show()
         }
     }
 }
