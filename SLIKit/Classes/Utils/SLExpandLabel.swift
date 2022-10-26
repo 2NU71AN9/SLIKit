@@ -44,7 +44,10 @@ public class SLExpandLabel: UILabel {
             return
         }
         let allText = getLines()
-        guard allText.count > minline else { return }
+        guard allText.count > minline else {
+            self.text = text
+            return
+        }
         var textArray = Array(allText[0 ..< minline])
         var lastText = textArray.last ?? ""
         lastText.removeLast(expandText.count + 3)
