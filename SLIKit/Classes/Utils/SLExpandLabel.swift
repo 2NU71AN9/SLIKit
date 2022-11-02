@@ -21,41 +21,60 @@ public class SLExpandLabel: UILabel {
     }()
     
     @objc private func moreClick() {
-        expandAction?()
+        expand ? closeAction?() : expandAction?()
     }
     
     private var expand = false
     private var allText: String?
     private var minline = 3
     private var expandText = "展开"
+    private var closeText = "收起"
     private var expandTextColor: UIColor = .orange
     private var expandAction: (() -> Void)?
-    
-    public func setExpandLines(text: String?, expand: Bool, minline: Int, expandText: String = "展开", expandTextColor: UIColor, expandAction: @escaping () -> Void) {
+    private var closeAction: (() -> Void)?
+
+    public func setExpandLines(text: String?, expand: Bool, minline: Int, expandText: String = "展开", closeText: String = "收起", expandTextColor: UIColor, expandAction: @escaping () -> Void, closeAction: @escaping () -> Void) {
         self.allText = text
         self.expand = expand
         self.minline = minline
         self.expandText = expandText
+        self.closeText = closeText
         self.expandTextColor = expandTextColor
         self.expandAction = expandAction
+        self.closeAction = closeAction
         expandBtn.isHidden = true
-        guard !expand else {
-            self.text = text
-            return
+        
+        if expand {
+            // 展开状态
+            guard let text else {
+                self.text = text
+                return
+            }
+            let allText = getLines(allText)
+            guard allText.count > minline else {
+                self.text = text
+                return
+            }
+            self.text = text + "\n"
+            expandBtn.text = closeText
+            expandBtn.isHidden = false
+        } else {
+            // 收起状态
+            let allText = getLines(allText)
+            guard allText.count > minline else {
+                self.text = text
+                return
+            }
+            var textArray = Array(allText[0 ..< minline])
+            var lastText = textArray.last ?? ""
+            lastText.removeLast(expandText.count + 3)
+            lastText.append("...")
+            textArray.removeLast()
+            textArray.append(lastText)
+            self.text = textArray.joined()
+            expandBtn.text = expandText
+            expandBtn.isHidden = false
         }
-        let allText = getLines()
-        guard allText.count > minline else {
-            self.text = text
-            return
-        }
-        var textArray = Array(allText[0 ..< minline])
-        var lastText = textArray.last ?? ""
-        lastText.removeLast(expandText.count + 3)
-        lastText.append("...")
-        textArray.removeLast()
-        textArray.append(lastText)
-        self.text = textArray.joined()
-        expandBtn.isHidden = false
     }
     
     public override func awakeFromNib() {
@@ -74,9 +93,9 @@ public class SLExpandLabel: UILabel {
 }
 
 extension SLExpandLabel {
-    func getLines() -> [String] {
-        guard let allText, let font else { return [] }
-        let attributedString = NSMutableAttributedString(string: allText)
+    func getLines(_ text: String?) -> [String] {
+        guard let text, let font else { return [] }
+        let attributedString = NSMutableAttributedString(string: text)
         let realFont = CTFontCreateWithName(font.fontName as CFString, font.pointSize, nil)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .byCharWrapping
@@ -93,7 +112,7 @@ extension SLExpandLabel {
             let lineRef = line
             let lineRange: CFRange? = CTLineGetStringRange(lineRef)
             let range = NSRange(location: lineRange?.location ?? 0, length: lineRange?.length ?? 0)
-            let lineString = (allText as NSString).substring(with: range)
+            let lineString = (text as NSString).substring(with: range)
             lineArray.append(lineString)
         }
         return lineArray

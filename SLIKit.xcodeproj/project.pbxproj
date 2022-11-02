@@ -15,6 +15,7 @@
 		D21C72472909129700AEC787 /* SLExpandLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C72462909129700AEC787 /* SLExpandLabel.swift */; };
 		D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */; };
 		D21D65F225FB6653001C971F /* SLDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */; };
+		D223C7B329120A5F00BDDF69 /* SLGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */; };
 		D2377EA126A2824700F0A5E6 /* SLHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2377EA026A2824700F0A5E6 /* SLHUD.swift */; };
 		D24C44A125FB49DC0042DF9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A025FB49DC0042DF9E /* AppDelegate.swift */; };
 		D24C44A525FB49DC0042DF9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A425FB49DC0042DF9E /* ViewController.swift */; };
@@ -90,6 +91,7 @@
 		D21C72462909129700AEC787 /* SLExpandLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLExpandLabel.swift; sourceTree = "<group>"; };
 		D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLDatePickerViewController.xib; sourceTree = "<group>"; };
 		D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDatePickerViewController.swift; sourceTree = "<group>"; };
+		D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLGCDTimer.swift; sourceTree = "<group>"; };
 		D2377EA026A2824700F0A5E6 /* SLHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLHUD.swift; sourceTree = "<group>"; };
 		D24C449D25FB49DC0042DF9E /* SLIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24C44A025FB49DC0042DF9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				D2377EA026A2824700F0A5E6 /* SLHUD.swift */,
 				D210B8DE2823C93B00051EFF /* IBeaconManager.swift */,
 				D21C72462909129700AEC787 /* SLExpandLabel.swift */,
+				D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				D2D720652689636500B87422 /* SLFileBrowser.swift in Sources */,
 				D24C450925FB4A280042DF9E /* SLEx.swift in Sources */,
 				D2377EA126A2824700F0A5E6 /* SLHUD.swift in Sources */,
+				D223C7B329120A5F00BDDF69 /* SLGCDTimer.swift in Sources */,
 				D24C44F825FB4A270042DF9E /* Ex_TextField.swift in Sources */,
 				D24C450225FB4A280042DF9E /* Ex_Int.swift in Sources */,
 				D24C44E825FB4A270042DF9E /* SLPickerViewController.swift in Sources */,
