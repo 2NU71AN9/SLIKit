@@ -166,4 +166,61 @@ public extension SLEx where Base: UIView {
     static var reuseIdentifier: String {
         return String(describing: Base.self)
     }
+    
+    
+    /// SwifterSwift: 摇动视图的方向
+    ///
+    /// - horizontal: 水平
+    /// - vertical: 垂直
+    enum ShakeDirection {
+        case horizontal
+        case vertical
+    }
+    /// SwifterSwift: 摇动动画类型
+    ///
+    /// - linear: 线性动画
+    /// - easeIn: 缓入动画
+    /// - easeOut: 缓出动画
+    /// - easeInOut: 缓入缓出动画
+    enum ShakeAnimationType {
+        case linear
+        case easeIn
+        case easeOut
+        case easeInOut
+    }
+    
+    /// SwifterSwift: 摇动视图.
+    ///
+    /// - Parameters:
+    ///   - direction: 摇动方向（水平或垂直），（默认为 .horizontal）
+    ///   - duration: 以秒为单位的动画持续时间（默认为 1 秒）。
+    ///   - animationType: 摇动动画类型（默认为 .easeOut）。
+    ///   - completion: 在动画完成时运行的可选完成处理程序（默认值为 nil）。
+    @discardableResult
+    func shake(direction: ShakeDirection = .horizontal, duration: TimeInterval = 0.6, animationType: ShakeAnimationType = .easeOut, completion:(() -> Void)? = nil) -> SLEx? {
+        CATransaction.begin()
+        let animation: CAKeyframeAnimation
+        switch direction {
+        case .horizontal:
+            animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        case .vertical:
+            animation = CAKeyframeAnimation(keyPath: "transform.translation.y")
+        }
+        switch animationType {
+        case .linear:
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        case .easeIn:
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+        case .easeOut:
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        case .easeInOut:
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        }
+        CATransaction.setCompletionBlock(completion)
+        animation.duration = duration
+        animation.values = [-15.0, 12.0, -8.0, 8.0, -3.0, 3.0, 0.0]
+        base.layer.add(animation, forKey: "shake")
+        CATransaction.commit()
+        return self
+    }
 }
