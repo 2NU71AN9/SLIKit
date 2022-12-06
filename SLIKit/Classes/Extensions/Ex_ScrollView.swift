@@ -216,6 +216,7 @@ public extension SLEx where Base: UIScrollView {
     @discardableResult
     func refreshFooter(_ loadMore: @escaping () -> Void) -> SLEx {
         let footer = MJRefreshBackNormalFooter(refreshingBlock: loadMore)
+        footer.isAutomaticallyChangeAlpha = true
         footer.arrowView?.image = nil
         footer.stateLabel?.textColor = UIColor.lightGray
         footer.setTitle("- end -", for: .noMoreData)

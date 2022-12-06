@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haptica
 
 public extension SLEx where Base: UIImage {
     /// 保存图片到相册
@@ -24,6 +25,7 @@ public extension UIImage {
             print("保存失败")
         }else{
             print("保存成功")
+            Haptic.impact(.light).generate()
             SLHUD.message(title: nil, desc: "保存成功")
         }
     }
