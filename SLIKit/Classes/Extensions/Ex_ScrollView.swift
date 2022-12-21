@@ -219,7 +219,7 @@ public extension SLEx where Base: UIScrollView {
         footer.isAutomaticallyChangeAlpha = true
         footer.arrowView?.image = nil
         footer.stateLabel?.textColor = UIColor.lightGray
-        footer.setTitle("- end -", for: .noMoreData)
+        footer.setTitle("- 到底了 -", for: .noMoreData)
         base.mj_footer = footer
         return self
     }
