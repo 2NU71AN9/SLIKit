@@ -67,6 +67,7 @@
 		D24C451325FB4A280042DF9E /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E625FB4A270042DF9E /* StringInterpolation.swift */; };
 		D24C451425FB4A280042DF9E /* SLOperatorCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E725FB4A270042DF9E /* SLOperatorCustom.swift */; };
 		D24C452A25FB4B150042DF9E /* SLIKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D24C452925FB4B150042DF9E /* SLIKit.podspec */; };
+		D255AB9E299B5E5A00C876E4 /* SLWaveAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255AB9D299B5E5A00C876E4 /* SLWaveAnimationView.swift */; };
 		D27C71EE26895B6300A72ACC /* SLFilePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C71ED26895B6300A72ACC /* SLFilePickerViewController.swift */; };
 		D2846F4927FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2846F4727FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift */; };
 		D2846F4A27FD8C7600BA0A36 /* Ex_CLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2846F4827FD8C7600BA0A36 /* Ex_CLPlacemark.swift */; };
@@ -145,6 +146,7 @@
 		D24C44E625FB4A270042DF9E /* StringInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
 		D24C44E725FB4A270042DF9E /* SLOperatorCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLOperatorCustom.swift; sourceTree = "<group>"; };
 		D24C452925FB4B150042DF9E /* SLIKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SLIKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D255AB9D299B5E5A00C876E4 /* SLWaveAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLWaveAnimationView.swift; sourceTree = "<group>"; };
 		D27C71ED26895B6300A72ACC /* SLFilePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFilePickerViewController.swift; sourceTree = "<group>"; };
 		D2846F4727FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		D2846F4827FD8C7600BA0A36 /* Ex_CLPlacemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_CLPlacemark.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				D210B8DE2823C93B00051EFF /* IBeaconManager.swift */,
 				D21C72462909129700AEC787 /* SLExpandLabel.swift */,
 				D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */,
+				D255AB9D299B5E5A00C876E4 /* SLWaveAnimationView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				D21B38D6269E804A009D96CB /* SLDisplayModeManager.swift in Sources */,
 				D24C44F925FB4A270042DF9E /* Ex_ViewController.swift in Sources */,
 				D24C44F725FB4A270042DF9E /* Ex_Label.swift in Sources */,
+				D255AB9E299B5E5A00C876E4 /* SLWaveAnimationView.swift in Sources */,
 				D24C450E25FB4A280042DF9E /* Ex_SnapKit.swift in Sources */,
 				D24C44F225FB4A270042DF9E /* SLTools.swift in Sources */,
 				D24C450A25FB4A280042DF9E /* Ex_StackView.swift in Sources */,
