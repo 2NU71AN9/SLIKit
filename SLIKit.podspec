@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
   }
   
   s.subspec 'Lite' do |ss|
-      ss.source       = { :git => "https://github.com/2NU71AN9/SLIKit.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
       ss.source_files = "SLIKit/Classes/**/*.{h,m,swift,xib,xcassets}"
       ss.resources    = "SLIKit/Classes/Resource/*.bundle"
       ss.resource_bundles = {
@@ -26,7 +25,6 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Full' do |ss|
-      ss.source       = { :git => "https://github.com/2NU71AN9/SLIKit.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
       ss.source_files = "SLIKit/Classes/**/*.{h,m,swift,xib,xcassets}"
       ss.resources    = "SLIKit/Classes/Resource/*.bundle"
       ss.resource_bundles = {
