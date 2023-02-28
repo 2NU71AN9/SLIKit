@@ -16,23 +16,27 @@ Pod::Spec.new do |s|
     'SLIKit' => ['SLIKit/Classes/**/*.xcassets', 'SLIKit/Classes/**/*.xib']
   }
   
-  s.requires_arc = true #是否支持ARC
-  s.dependency "RxSwift"
-  s.dependency "RxCocoa"
-  s.dependency "Then"
-  s.dependency "SnapKit"
-  s.dependency "pop"
-  s.dependency "MJRefresh"
-  s.dependency "SwiftDate"
-  s.dependency "JXPhotoBrowser"
-  s.dependency "Kingfisher"
-  s.dependency "FSTextView"
-  s.dependency "Haptica"
-  s.dependency "TagListView"
-  s.dependency "HXPhotoPicker"
-  s.dependency "swiftScan"
-  s.dependency "SwiftMessages"
-  s.dependency "ProgressHUD"
-  s.dependency "Toaster"
+  s.subspec 'Lite' do |ss|
+  end
+  
+  s.subspec 'Full' do |ss|
+      ss.requires_arc = true #是否支持ARC
+      ss.dependency "RxSwift"
+      ss.dependency "RxCocoa"
+      ss.dependency "Then"
+      ss.dependency "SnapKit"
+      ss.dependency "MJRefresh"
+      ss.dependency "SwiftDate"
+      ss.dependency "JXPhotoBrowser"
+      ss.dependency "Kingfisher"
+      ss.dependency "FSTextView"
+      ss.dependency "Haptica"
+      ss.dependency "TagListView"
+      ss.dependency "HXPhotoPicker"
+      ss.dependency "swiftScan"
+      ss.dependency "SwiftMessages"
+      ss.dependency "ProgressHUD"
+      ss.dependency "Toaster"
+  end
   
 end
