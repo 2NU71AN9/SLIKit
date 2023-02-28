@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 #if os(iOS)
 import UIKit
 #elseif os(macOS)
@@ -72,6 +70,10 @@ func nonMarkedText(_ textInput: UITextInput) -> String? {
     return (textInput.text(in: startRange) ?? "") + (textInput.text(in: endRange) ?? "")
 }
 
+
+#if canImport(RxSwift) && canImport(RxCocoa)
+import RxSwift
+import RxCocoa
 func <-> <Base>(textInput: TextInput<Base>, relay: BehaviorRelay<String>) -> Disposable {
     let bindToUIDisposable = relay.asObservable().bind(to: textInput.text)
     
@@ -171,7 +173,7 @@ func <-> <T> (property: BehaviorRelay<T>, relay: BehaviorRelay<T>) -> Disposable
     return Disposables.create(bindToUIDisposable, bindToRelay)
 }
 
-
+#endif
 
 infix operator ^-^ : DefaultPrecedence
 

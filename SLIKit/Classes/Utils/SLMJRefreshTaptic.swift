@@ -5,9 +5,12 @@
 //  Created by 孙梁 on 2021/3/9.
 //
 
+#if canImport(MJRefresh)
 import UIKit
 import MJRefresh
+#if canImport(Haptica)
 import Haptica
+#endif
 
 public extension SL {
     static var refresh: SLMJRefreshTaptic.Type {
@@ -34,8 +37,11 @@ public class SLMJRefreshTaptic: NSObject {
 extension MJRefreshComponent {
     @objc func sl_setState(_ state: MJRefreshState) {
         sl_setState(state)
+        #if canImport(Haptica)
         if state == .pulling {
             Haptic.impact(.light).generate()
         }
+        #endif
     }
 }
+#endif

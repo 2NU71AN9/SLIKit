@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SLTagPickerViewController" customModule="SLIKit" customModuleProvider="target">
             <connections>
-                <outlet property="bottomGap" destination="KAf-H2-94Z" id="cEb-gW-oK1"/>
                 <outlet property="cancelBtn" destination="zas-2V-ssk" id="nAC-Fq-vSj"/>
                 <outlet property="confirmBtn" destination="ke7-wV-rRZ" id="I4H-C7-Dpo"/>
+                <outlet property="contentView" destination="Tjm-wn-D7m" id="ZG8-5p-VZK"/>
                 <outlet property="scrollView" destination="mhF-Pi-7BV" id="XwL-Bw-H5T"/>
                 <outlet property="tagListView" destination="a5b-Ol-e28" id="yxL-FJ-N9h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjm-wn-D7m">
-                    <rect key="frame" x="0.0" y="796" width="414" height="300"/>
+                    <rect key="frame" x="0.0" y="557" width="414" height="339"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-Dk-1aD">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
@@ -64,10 +64,10 @@
                                 <constraint firstItem="OXW-xG-3mi" firstAttribute="top" secondItem="gZb-Dk-1aD" secondAttribute="top" id="sNK-wH-OxB"/>
                             </constraints>
                         </view>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhF-Pi-7BV">
-                            <rect key="frame" x="15" y="45" width="384" height="255"/>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhF-Pi-7BV">
+                            <rect key="frame" x="15" y="45" width="384" height="260"/>
                             <subviews>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-Ol-e28" customClass="TagListView" customModule="TagListView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-Ol-e28" customClass="TagListView" customModule="TagListView">
                                     <rect key="frame" x="0.0" y="0.0" width="384" height="32"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <userDefinedRuntimeAttributes>
@@ -112,6 +112,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="a5b-Ol-e28" firstAttribute="bottom" secondItem="mhF-Pi-7BV" secondAttribute="bottom" id="IIj-1k-UCL"/>
+                                <constraint firstAttribute="height" constant="260" id="U0c-iL-aCs"/>
                                 <constraint firstItem="a5b-Ol-e28" firstAttribute="leading" secondItem="mhF-Pi-7BV" secondAttribute="leading" id="dOh-pI-g2l"/>
                                 <constraint firstItem="a5b-Ol-e28" firstAttribute="top" secondItem="mhF-Pi-7BV" secondAttribute="top" id="mOi-GB-byW"/>
                                 <constraint firstItem="a5b-Ol-e28" firstAttribute="width" secondItem="mhF-Pi-7BV" secondAttribute="width" id="tVG-pE-sah"/>
@@ -125,11 +126,9 @@
                     <constraints>
                         <constraint firstItem="gZb-Dk-1aD" firstAttribute="top" secondItem="Tjm-wn-D7m" secondAttribute="top" id="7zl-gf-ufQ"/>
                         <constraint firstItem="gZb-Dk-1aD" firstAttribute="leading" secondItem="Tjm-wn-D7m" secondAttribute="leading" id="85h-6E-92i"/>
-                        <constraint firstAttribute="bottom" secondItem="mhF-Pi-7BV" secondAttribute="bottom" id="RMA-fl-4P9"/>
                         <constraint firstAttribute="trailing" secondItem="mhF-Pi-7BV" secondAttribute="trailing" constant="15" id="W6S-UV-1zs"/>
                         <constraint firstAttribute="trailing" secondItem="gZb-Dk-1aD" secondAttribute="trailing" id="Xc3-bf-2MS"/>
                         <constraint firstItem="mhF-Pi-7BV" firstAttribute="leading" secondItem="Tjm-wn-D7m" secondAttribute="leading" constant="15" id="d1Y-4a-Hzs"/>
-                        <constraint firstAttribute="height" constant="300" id="hI6-yL-Pzg"/>
                         <constraint firstItem="mhF-Pi-7BV" firstAttribute="top" secondItem="gZb-Dk-1aD" secondAttribute="bottom" id="kZU-g2-Qf9"/>
                     </constraints>
                 </view>
@@ -138,18 +137,24 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.60101934774032495" colorSpace="custom" customColorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tjm-wn-D7m" secondAttribute="trailing" id="JAd-YQ-7lb"/>
-                <constraint firstAttribute="bottom" secondItem="Tjm-wn-D7m" secondAttribute="bottom" constant="-200" id="KAf-H2-94Z"/>
+                <constraint firstAttribute="bottom" secondItem="Tjm-wn-D7m" secondAttribute="bottom" id="KAf-H2-94Z"/>
                 <constraint firstItem="Tjm-wn-D7m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hCP-BC-rxO"/>
+                <constraint firstItem="mhF-Pi-7BV" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="p89-V6-TYM"/>
             </constraints>
             <point key="canvasLocation" x="-155.07246376811597" y="140.625"/>
         </view>
     </objects>
+    <designables>
+        <designable name="a5b-Ol-e28">
+            <size key="intrinsicContentSize" width="384" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="sl_view_gray1">
             <color red="0.92100000381469727" green="0.92100000381469727" blue="0.92100000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

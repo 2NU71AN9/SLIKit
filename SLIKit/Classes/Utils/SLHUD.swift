@@ -5,6 +5,7 @@
 //  Created by 孙梁 on 2021/7/17.
 //
 
+#if canImport(SwiftMessages) && canImport(ProgressHUD) && canImport(Toaster)
 import UIKit
 import SwiftMessages
 import ProgressHUD
@@ -102,3 +103,5 @@ public class SLHUD {
         }
     }
 }
+
+#endif

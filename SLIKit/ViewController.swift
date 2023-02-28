@@ -43,14 +43,14 @@ class ViewController: UIViewController {
 //            .minDate(Date())
 //            .show()
         
-//        SL.pickerTag()
+//        SL.pickerTag
 //            .titles(["dasdadasc", "dajisdapskdncn", "dsada", "vlp[lpcclpxc"])
 //            .maxNum(2)
 //            .primeColor(.blue)
 //            .font(SL.PingFang.font(name: .中粗, size: 12))
 //            .show()
         
-//        SL.pickerNormal()
+//        SL.pickerNormal
 //            .titles(["123123", "dsadasdadasd", "vxv24141"])
 //            .show()
         
@@ -79,14 +79,14 @@ class ViewController: UIViewController {
 //            SLFileBrowser(url).show()
 //        }.show()
         
-//        let vc = SLAddressPickerViewController(.area) { p, c, a in
-//            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
-//        }
-//        present(vc, animated: true, completion: nil)
-        a = !a
-        SLHUD.message(title: a ? "提交成功" : "提交失败", desc: nil) {
-
+        let vc = SLAddressPickerViewController(.area) { p, c, a in
+            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
         }
+        present(vc, animated: true, completion: nil)
+//        a = !a
+//        SLHUD.message(title: a ? "提交成功" : "提交失败", desc: nil) {
+//
+//        }
     }
 }
 

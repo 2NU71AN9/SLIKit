@@ -6,6 +6,8 @@
 //  Copyright © 2020 SL. All rights reserved.
 //
 
+#if canImport(RxSwift) && canImport(RxCocoa)
+
 import UIKit
 import RxSwift
 import RxCocoa
@@ -71,3 +73,5 @@ public extension Reactive where Base: UITableView {
         }
     }
 }
+
+#endif

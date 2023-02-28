@@ -6,6 +6,7 @@
 //  Copyright © 2020 SL. All rights reserved.
 //
 
+#if canImport(RxSwift) && canImport(FSTextView)
 import UIKit
 import RxSwift
 import FSTextView
@@ -336,3 +337,5 @@ extension SLEditView {
         tapEvent?()
     }
 }
+
+#endif

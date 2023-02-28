@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import pop
 
 public extension SLEx where Base: SLAddressPickerViewController {
     @discardableResult
@@ -40,6 +39,7 @@ public class SLAddressPickerViewController: UIViewController {
     fileprivate var complete: ((SLAddressModel?, SLAddressModel?, SLAddressModel?) -> Void)?
     fileprivate var type: AddressType = .area
     
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var picker: UIPickerView! {
@@ -48,12 +48,6 @@ public class SLAddressPickerViewController: UIViewController {
             picker.dataSource = self
         }
     }
-    @IBOutlet weak var viewHeight: NSLayoutConstraint! {
-        didSet {
-            viewHeight.constant = 266 + SL.bottomHeight
-        }
-    }
-    @IBOutlet weak var bottomGap: NSLayoutConstraint!
     
     private var dataArray: [SLAddressModel] = []
     private var p_index = 0 {
@@ -105,8 +99,13 @@ public class SLAddressPickerViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        showAnim()
+        contentView.transform = CGAffineTransform(translationX: 0, y: 300)
         loadData()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showAnim()
     }
 
     @IBAction func cancelAction(_ sender: UIButton) {
@@ -178,15 +177,15 @@ public extension SLAddressPickerViewController {
     }
     
     private func showAnim() {
-        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = 0
-        bottomGap.pop_add(anim, forKey: nil)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.contentView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
     }
     @objc private func hide() {
-        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = -266
-        bottomGap.pop_add(anim, forKey: nil)
-        dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.contentView.transform = CGAffineTransform(translationX: 0, y: 500)
+            self?.dismiss(animated: true)
+        }
     }
     
     func show() {

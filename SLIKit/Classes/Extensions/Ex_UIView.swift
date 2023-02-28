@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+
+#if canImport(RxSwift) && canImport(RxCocoa)
 import RxSwift
 import RxCocoa
+#endif
 
 public extension SLEx where Base: UIView {
     
@@ -89,13 +92,15 @@ public extension SLEx where Base: UIView {
         return self
     }
     
+    #if canImport(RxSwift) && canImport(RxCocoa)
     var tap: ControlEvent<UITapGestureRecognizer> {
         base.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer()
         base.addGestureRecognizer(tap)
         return tap.rx.event
     }
-    
+    #endif
+
     /// 设置阴影
     @discardableResult
     func makeShadow(_ cornerRadius: CGFloat = 5,

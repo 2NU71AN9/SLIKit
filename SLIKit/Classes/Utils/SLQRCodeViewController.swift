@@ -5,6 +5,7 @@
 //  Created by 孙梁 on 2021/6/25.
 //
 
+#if canImport(swiftScan)
 import UIKit
 import swiftScan
 
@@ -117,3 +118,4 @@ extension SLQRCodeViewController {
         }
     }
 }
+#endif

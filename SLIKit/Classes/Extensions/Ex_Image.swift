@@ -7,7 +7,9 @@
 //
 
 import UIKit
+#if canImport(Haptica)
 import Haptica
+#endif
 
 public extension SLEx where Base: UIImage {
     /// 保存图片到相册
@@ -25,8 +27,10 @@ public extension UIImage {
             print("保存失败")
         }else{
             print("保存成功")
+            #if canImport(Haptica) && canImport(SwiftMessages) && canImport(ProgressHUD) && canImport(Toaster)
             Haptic.impact(.light).generate()
             SLHUD.message(title: nil, desc: "保存成功")
+            #endif
         }
     }
 }

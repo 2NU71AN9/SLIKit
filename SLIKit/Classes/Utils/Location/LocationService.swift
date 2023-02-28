@@ -8,7 +8,9 @@
 
 import UIKit
 import CoreLocation
+#if canImport(RxCocoa)
 import RxCocoa
+#endif
 
 public extension SL {
     static var location: SLEx<SLLocationService> {
@@ -54,7 +56,9 @@ public final class SLLocationService: NSObject {
     
     @objc public static let shared = SLLocationService()
     
+    #if canImport(RxCocoa)
     public let locationSubject = BehaviorRelay<Location?>(value: nil)
+    #endif
     public var complete: ((Location?) -> Void)?
     public var curLocation: Location?
     /// 定位精确度
@@ -109,7 +113,9 @@ public extension SLLocationService {
 
 extension SLLocationService: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        #if canImport(RxCocoa)
         locationSubject.accept(nil)
+        #endif
         complete?(nil)
     }
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -120,7 +126,9 @@ extension SLLocationService: CLLocationManagerDelegate {
         if let oldLocation = curLocation {
             let distance = newLocation.distance(from: oldLocation.location)
             if distance < minMeter {
+                #if canImport(RxCocoa)
                 locationSubject.accept(lt)
+                #endif
                 complete?(lt)
                 return
             }
@@ -130,7 +138,9 @@ extension SLLocationService: CLLocationManagerDelegate {
             DispatchQueue.global().sync { [weak self] in
                 guard let `self` = self else { return }
                 if error != nil {
+                    #if canImport(RxCocoa)
                     self.locationSubject.accept(nil)
+                    #endif
                     self.complete?(nil)
                 } else {
                     if !self.continued { self.stop() }
@@ -138,7 +148,9 @@ extension SLLocationService: CLLocationManagerDelegate {
                         if let firstPlacemark = placemarks.first {
                             lt.placemark = firstPlacemark
                             self.curLocation = lt
+                            #if canImport(RxCocoa)
                             self.locationSubject.accept(lt)
+                            #endif
                             self.complete?(lt)
                         }
                     }

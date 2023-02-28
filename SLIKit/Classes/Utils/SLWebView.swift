@@ -36,21 +36,19 @@ public class SLWebView: WKWebView {
         view.alpha = 0
         return view
     }()
-
-    private var config = WKWebViewConfiguration().then {
-        let jScript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content','width=device-width,initial-scale=1.0,user-scalable=no');document.getElementsByTagName('head')[0].appendChild(meta);var imgs = document.getElementsByTagName('img');for (var i in imgs){imgs[i].setAttribute('width', '100%');imgs[i].style.height='auto';}"
-        let wkUScript = WKUserScript(source: jScript, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        let wkUController = WKUserContentController()
-        wkUController.addUserScript(wkUScript)
-        $0.userContentController = wkUController
-    }
     
-    public init(_ url: URL?) {
-        super.init(frame: CGRect.zero, configuration: config)
+    public convenience init(_ url: URL?) {
+        self.init()
         requestUrl = url
         setup()
     }
     public init() {
+        let config = WKWebViewConfiguration()
+        let jScript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content','width=device-width,initial-scale=1.0,user-scalable=no');document.getElementsByTagName('head')[0].appendChild(meta);var imgs = document.getElementsByTagName('img');for (var i in imgs){imgs[i].setAttribute('width', '100%');imgs[i].style.height='auto';}"
+        let wkUScript = WKUserScript(source: jScript, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        let wkUController = WKUserContentController()
+        wkUController.addUserScript(wkUScript)
+        config.userContentController = wkUController
         super.init(frame: CGRect.zero, configuration: config)
         setup()
     }

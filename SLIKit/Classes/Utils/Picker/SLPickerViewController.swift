@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import pop
 
 public extension SLEx where Base: SLPickerViewController {
     @discardableResult
@@ -35,6 +34,7 @@ public class SLPickerViewController: UIViewController {
     fileprivate var complete: ((Int, String) -> Void)?
     fileprivate var titles: [String] = []
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var picker: UIPickerView! {
@@ -42,14 +42,7 @@ public class SLPickerViewController: UIViewController {
             picker.delegate = self
             picker.dataSource = self
         }
-    }
-    @IBOutlet weak var viewHeight: NSLayoutConstraint! {
-        didSet {
-            viewHeight.constant = 266 + SL.bottomHeight
-        }
-    }
-    @IBOutlet weak var bottomGap: NSLayoutConstraint!
-    
+    }    
     convenience public init(_ titles: [String], complete: ((Int, String) -> Void)?) {
         self.init(titles: titles, complete: complete)
     }
@@ -75,6 +68,10 @@ public class SLPickerViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.transform = CGAffineTransform(translationX: 0, y: 300)
+    }
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         showAnim()
     }
 
@@ -102,15 +99,15 @@ extension SLPickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 public extension SLPickerViewController {
     private func showAnim() {
-        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = 0
-        bottomGap.pop_add(anim, forKey: nil)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.contentView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
     }
     @objc private func hide() {
-        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = -266
-        bottomGap.pop_add(anim, forKey: nil)
-        dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.contentView.transform = CGAffineTransform(translationX: 0, y: 500)
+            self?.dismiss(animated: true)
+        }
     }
     
     func show() {

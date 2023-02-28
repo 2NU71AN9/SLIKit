@@ -6,6 +6,8 @@
 //  Copyright © 2018年 SL. All rights reserved.
 //
 
+#if canImport(RxSwift) && canImport(RxCocoa)
+
 import Foundation
 import UIKit
 import RxSwift
@@ -166,3 +168,5 @@ public extension UITextField {
         }
     }
 }
+
+#endif

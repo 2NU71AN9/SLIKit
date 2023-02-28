@@ -35,7 +35,6 @@
 		D24C44F225FB4A270042DF9E /* SLTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C225FB4A270042DF9E /* SLTools.swift */; };
 		D24C44F325FB4A270042DF9E /* SLLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C325FB4A270042DF9E /* SLLineView.swift */; };
 		D24C44F425FB4A270042DF9E /* SLPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24C44C425FB4A270042DF9E /* SLPickerViewController.xib */; };
-		D24C44F525FB4A270042DF9E /* SLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C525FB4A270042DF9E /* SLAlertView.swift */; };
 		D24C44F625FB4A270042DF9E /* SLTagPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24C44C625FB4A270042DF9E /* SLTagPickerViewController.xib */; };
 		D24C44F725FB4A270042DF9E /* Ex_Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C825FB4A270042DF9E /* Ex_Label.swift */; };
 		D24C44F825FB4A270042DF9E /* Ex_TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44C925FB4A270042DF9E /* Ex_TextField.swift */; };
@@ -114,7 +113,6 @@
 		D24C44C225FB4A270042DF9E /* SLTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLTools.swift; sourceTree = "<group>"; };
 		D24C44C325FB4A270042DF9E /* SLLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLLineView.swift; sourceTree = "<group>"; };
 		D24C44C425FB4A270042DF9E /* SLPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLPickerViewController.xib; sourceTree = "<group>"; };
-		D24C44C525FB4A270042DF9E /* SLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLAlertView.swift; sourceTree = "<group>"; };
 		D24C44C625FB4A270042DF9E /* SLTagPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLTagPickerViewController.xib; sourceTree = "<group>"; };
 		D24C44C825FB4A270042DF9E /* Ex_Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_Label.swift; sourceTree = "<group>"; };
 		D24C44C925FB4A270042DF9E /* Ex_TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_TextField.swift; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 				D2846F4B27FD8DCE00BA0A36 /* CodeInputView.swift */,
 				D24C44C225FB4A270042DF9E /* SLTools.swift */,
 				D24C44C325FB4A270042DF9E /* SLLineView.swift */,
-				D24C44C525FB4A270042DF9E /* SLAlertView.swift */,
 				D2D34CAB2685B880001C2B10 /* SLQRCodeViewController.swift */,
 				D2E922F3268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift */,
 				D21B38D5269E804A009D96CB /* SLDisplayModeManager.swift */,
@@ -483,7 +480,6 @@
 				D24C44EB25FB4A270042DF9E /* SLKit.swift in Sources */,
 				D2846F4927FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift in Sources */,
 				D24C450125FB4A280042DF9E /* Ex_UserDefaults.swift in Sources */,
-				D24C44F525FB4A270042DF9E /* SLAlertView.swift in Sources */,
 				D24C450525FB4A280042DF9E /* Ex_String.swift in Sources */,
 				D24C44EF25FB4A270042DF9E /* SLMJRefreshTaptic.swift in Sources */,
 				D2E922F4268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift in Sources */,

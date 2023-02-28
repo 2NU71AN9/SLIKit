@@ -6,6 +6,8 @@
 //  Copyright © 2021 SL. All rights reserved.
 //
 
+#if canImport(RxSwift)
+
 import UIKit
 import RxSwift
 
@@ -83,3 +85,4 @@ public extension UITextView {
         }
     }
 }
+#endif

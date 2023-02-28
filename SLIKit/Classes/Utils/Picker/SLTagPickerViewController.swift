@@ -8,7 +8,6 @@
 
 import UIKit
 import TagListView
-import pop
 
 public extension SLEx where Base: SLTagPickerViewController {
     @discardableResult
@@ -64,6 +63,7 @@ public class SLTagPickerViewController: UIViewController {
     /// 最多选择多少, 0代表无限
     fileprivate var maxNum = 0
     
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView! {
@@ -76,7 +76,6 @@ public class SLTagPickerViewController: UIViewController {
             tagListView.delegate = self
         }
     }
-    @IBOutlet weak var bottomGap: NSLayoutConstraint!
     
     convenience public init(_ titles: [String], maxNum: Int = 0, complete: (([(Int, String)]) -> Void)?) {
         self.init(titles: titles.compactMap{($0, false)}, maxNum: maxNum, complete: complete)
@@ -107,14 +106,19 @@ public class SLTagPickerViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.transform = CGAffineTransform(translationX: 0, y: 300)
         setUI()
-        showAnim()
         for (index, item) in titles.enumerated() {
             let tagView = tagListView.addTag(item.0)
             tagView.isSelected = item.1
             tagView.tag = 200 + index
             tagView.onLongPress = nil
         }
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showAnim()
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {
@@ -148,15 +152,15 @@ extension SLTagPickerViewController: TagListViewDelegate {
 
 public extension SLTagPickerViewController {
     private func showAnim() {
-        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = 0
-        bottomGap.pop_add(anim, forKey: nil)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.contentView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
     }
     @objc private func hide() {
-        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = -200
-        bottomGap.pop_add(anim, forKey: nil)
-        dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.contentView.transform = CGAffineTransform(translationX: 0, y: 500)
+            self?.dismiss(animated: true)
+        }
     }
     
     private func setUI() {

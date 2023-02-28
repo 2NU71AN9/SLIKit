@@ -6,6 +6,8 @@
 //  Copyright © 2020 SL. All rights reserved.
 //
 
+#if canImport(SnapKit)
+
 import UIKit
 import SnapKit
 
@@ -36,3 +38,4 @@ public extension SLEx where Base == ConstraintViewDSL {
         base.updateConstraints(closure)
     }
 }
+#endif

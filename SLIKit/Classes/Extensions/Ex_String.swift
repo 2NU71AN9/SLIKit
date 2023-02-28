@@ -8,7 +8,10 @@
 
 import Foundation
 import UIKit
+
+#if canImport(SwiftDate)
 import SwiftDate
+#endif
 
 public let dateFormatter = DateFormatter()
 
@@ -167,6 +170,7 @@ public extension SLEx where Base == String {
         return dateFormatter.date(from: base)
     }
     
+    #if canImport(SwiftDate)
     /// 时间, 距今多久
     func dateBeforeNow() -> String? {
         return base.toDate()?.convertTo(timezone: Zones.asiaShanghai).toRelative(since: DateInRegion(Date(), region: .current))
@@ -176,6 +180,7 @@ public extension SLEx where Base == String {
     func date(_ format: String = "yyyy-MM-dd HH:mm:ss") -> String? {
         return base.toDate()?.convertTo(timezone: Zones.asiaShanghai).toFormat(format, locale: Locales.chinese)
     }
+    #endif
     
     /// base64转image
     func string2Image() -> UIImage? {

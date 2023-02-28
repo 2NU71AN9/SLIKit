@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import pop
 
 public extension SLEx where Base: SLDatePickerViewController {
     @discardableResult
@@ -56,25 +55,24 @@ public class SLDatePickerViewController: UIViewController {
     fileprivate var maxDate: Date?
     fileprivate var complete: ((Date) -> Void)?
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var viewHeight: NSLayoutConstraint! {
-        didSet {
-//            viewHeight.constant = 455 + SL.bottomHeight
-        }
-    }
-    @IBOutlet weak var bottomGap: NSLayoutConstraint!
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.transform = CGAffineTransform(translationX: 0, y: 500)
         datePicker.datePickerMode = mode
         datePicker.date = initDate
         datePicker.minimumDate = minDate
         datePicker.maximumDate = maxDate
-        showAnim()
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showAnim()
+    }
     convenience public init(_ mode: UIDatePicker.Mode, initDate: Date? = nil, minDate: Date? = nil, maxDate: Date? = nil, complete: ((Date) -> Void)?) {
         self.init(mode: mode, initDate: initDate, minDate: minDate, maxDate: maxDate, complete: complete)
     }
@@ -116,16 +114,16 @@ extension SLDatePickerViewController: UIPickerViewDelegate {
 
 public extension SLDatePickerViewController {
     private func showAnim() {
-        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = 0
-        bottomGap.pop_add(anim, forKey: nil)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.contentView.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
     }
     
     @objc private func hide() {
-        let anim = POPSpringAnimation(propertyNamed: kPOPLayoutConstraintConstant)
-        anim?.toValue = -300
-        bottomGap.pop_add(anim, forKey: nil)
-        dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            self?.contentView.transform = CGAffineTransform(translationX: 0, y: 500)
+            self?.dismiss(animated: true)
+        }
     }
     
     func show() {

@@ -7,7 +7,9 @@
 //
 
 import UIKit
+#if canImport(MJRefresh)
 import MJRefresh
+#endif
 
 public extension SLEx where Base: UITableView {
     
@@ -203,6 +205,7 @@ public extension SLEx where Base: UIScrollView {
         return self
     }
     
+    #if canImport(MJRefresh)
     @discardableResult
     func refreshHeader(_ ignoredTop: CGFloat = 0, _ refresh: @escaping () -> Void) -> SLEx {
         let header = MJRefreshNormalHeader(refreshingBlock: refresh)
@@ -223,6 +226,7 @@ public extension SLEx where Base: UIScrollView {
         base.mj_footer = footer
         return self
     }
+    #endif
     
     /// 上拉下拉都有的时候才可以调用
     @discardableResult

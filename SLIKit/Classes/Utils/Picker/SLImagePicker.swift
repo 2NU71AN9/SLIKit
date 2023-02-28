@@ -5,6 +5,7 @@
 //  Created by 孙梁 on 2021/3/13.
 //
 
+#if canImport(HXPhotoPicker)
 import UIKit
 import HXPhotoPicker
 
@@ -126,3 +127,5 @@ public extension HXPhotoModel {
         return image
     }
 }
+
+#endif

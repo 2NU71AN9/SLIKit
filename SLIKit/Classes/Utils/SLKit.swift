@@ -8,7 +8,9 @@
 
 import Foundation
 import UIKit
+#if canImport(HXPhotoPicker)
 import HXPhotoPicker
+#endif
 
 public struct SL {
     public static var WINDOW: UIWindow? {
@@ -243,6 +245,7 @@ public extension SL {
         SLDatePickerViewController(.date, complete: nil).sl
     }
     
+    #if canImport(HXPhotoPicker)
     static var pickerImage: SLEx<HXPhotoManager>? {
         let configuration = HXPhotoConfiguration()
         configuration.openCamera = true
@@ -251,6 +254,7 @@ public extension SL {
         manager?.configuration = configuration
         return manager?.sl
     }
+    #endif
     
     static var pickerFile: SLEx<SLFilePickerViewController> {
         SLFilePickerViewController(nil).sl

@@ -6,6 +6,7 @@
 //  Copyright © 2020 SL. All rights reserved.
 //
 
+#if canImport(JXPhotoBrowser) && canImport(Kingfisher)
 import UIKit
 import JXPhotoBrowser
 import Kingfisher
@@ -174,3 +175,5 @@ open class JXPhotoBrowserProgressView: UIView {
         return path
     }
 }
+
+#endif

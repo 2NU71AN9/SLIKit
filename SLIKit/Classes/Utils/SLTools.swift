@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 import SystemConfiguration.CaptiveNetwork
+
+#if canImport(swiftScan)
 import swiftScan
+#endif
 
 public extension SL {
     static var tools: SLTools.Type {
@@ -95,6 +98,7 @@ public class SLTools {
         return (ssid, mac)
     }
     
+    #if canImport(swiftScan)
     /// 创建二维码
     /// - Parameters:
     ///   - codeString: 内容
@@ -120,4 +124,5 @@ public class SLTools {
     public static func makeBarCode(content: String, size: CGSize) -> UIImage? {
         LBXScanWrapper.createCode128(codeString: content, size: size, qrColor: .black, bkColor: .white)
     }
+    #endif
 }
