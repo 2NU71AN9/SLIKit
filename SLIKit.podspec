@@ -11,11 +11,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "13.0"
   s.requires_arc = true #是否支持ARC
   s.source       = { :git => "https://github.com/2NU71AN9/SLIKit.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
-  s.source_files = "SLIKit/Classes/**/*.{h,m,swift,xib,xcassets}"
-  s.resources    = "SLIKit/Classes/Resource/*.bundle"
-  s.resource_bundles = {
-    'SLIKit' => ['SLIKit/Classes/**/*.xcassets', 'SLIKit/Classes/**/*.xib']
-  }
   s.default_subspec = 'Full'
   
   s.subspec 'Lite' do |ss|
