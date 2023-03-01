@@ -237,9 +237,11 @@ public extension SL {
         SLPickerViewController(titles: [], complete: nil).sl
     }
     
+    #if canImport(TagListView)
     static var pickerTag: SLEx<SLTagPickerViewController> {
         SLTagPickerViewController([""], complete: nil).sl
     }
+    #endif
     
     static var pickerDate: SLEx<SLDatePickerViewController> {
         SLDatePickerViewController(.date, complete: nil).sl

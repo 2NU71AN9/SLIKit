@@ -6,6 +6,8 @@
 //  Copyright © 2021 SL. All rights reserved.
 //
 
+#if canImport(TagListView)
+
 import UIKit
 import TagListView
 
@@ -175,3 +177,5 @@ public extension SLTagPickerViewController {
         SL.visibleVC?.present(self, animated: true, completion: nil)
     }
 }
+
+#endif

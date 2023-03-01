@@ -44,7 +44,9 @@ public func += <KeyType, ValueType> ( left: inout Dictionary<KeyType, ValueType>
 
 
 
-
+#if canImport(RxSwift) && canImport(RxCocoa)
+import RxSwift
+import RxCocoa
 // Two way binding operator between control property and relay, that's all it takes.
 infix operator <-> : DefaultPrecedence
 
@@ -70,10 +72,6 @@ func nonMarkedText(_ textInput: UITextInput) -> String? {
     return (textInput.text(in: startRange) ?? "") + (textInput.text(in: endRange) ?? "")
 }
 
-
-#if canImport(RxSwift) && canImport(RxCocoa)
-import RxSwift
-import RxCocoa
 func <-> <Base>(textInput: TextInput<Base>, relay: BehaviorRelay<String>) -> Disposable {
     let bindToUIDisposable = relay.asObservable().bind(to: textInput.text)
     

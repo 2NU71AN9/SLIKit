@@ -42,17 +42,10 @@ public class SLWebViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        webView.frame = view.bounds
         view.addSubview(webView)
         if navigationController?.viewControllers.count == 1 {
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
-        }
-    }
-    
-    public override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        webView.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.size.equalToSuperview()
         }
     }
     

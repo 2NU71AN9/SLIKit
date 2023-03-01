@@ -59,21 +59,13 @@ public class SLWebView: WKWebView {
     }
     
     private func setup() {
+        progress.frame = CGRect(x: 0, y: safeAreaInsets.top, width: SL.SCREEN_WIDTH, height: progressHeight)
         addSubview(progress)
         addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         addObserver(self, forKeyPath: "title", options: .new, context: nil)
         addObserver(self, forKeyPath: "URL", options: .new, context: nil)
         guard let url = requestUrl else { return }
         load(URLRequest(url: url))
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        progress.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(safeAreaInsets.top)
-            make.left.right.equalToSuperview()
-            make.height.equalTo(progressHeight)
-        }
     }
     
     deinit {

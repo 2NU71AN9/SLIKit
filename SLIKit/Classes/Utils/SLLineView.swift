@@ -6,6 +6,7 @@
 //  Copyright © 2020 SL. All rights reserved.
 //
 
+#if canImport(SnapKit)
 import UIKit
 
 @IBDesignable
@@ -45,3 +46,4 @@ public class SLLineView: UIView {
         }
     }
 }
+#endif

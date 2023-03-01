@@ -5,6 +5,8 @@
 //  Created by 孙梁 on 2022/10/26.
 //
 
+#if canImport(SnapKit)
+
 import UIKit
 import CoreText
 
@@ -118,3 +120,5 @@ extension SLExpandLabel {
         return lineArray
     }
 }
+
+#endif

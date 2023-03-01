@@ -226,7 +226,6 @@ public extension SLEx where Base: UIScrollView {
         base.mj_footer = footer
         return self
     }
-    #endif
     
     /// 上拉下拉都有的时候才可以调用
     @discardableResult
@@ -237,4 +236,5 @@ public extension SLEx where Base: UIScrollView {
             : base.mj_footer?.endRefreshing()
         return self
     }
+    #endif
 }

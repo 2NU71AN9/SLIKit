@@ -23,6 +23,7 @@ public extension SLEx where Base: UIImageView {
         return self
     }
     
+#if canImport(JXPhotoBrowser) && canImport(Kingfisher)
     @discardableResult
     func browseEnable(_ a: Bool) -> SLEx {
         base.sl_browseEnable = a
@@ -34,8 +35,10 @@ public extension SLEx where Base: UIImageView {
         base.sl_show()
         return self
     }
+#endif
 }
 
+#if canImport(JXPhotoBrowser) && canImport(Kingfisher)
 public extension UIImageView {
     private static let browseEnableKey = UnsafeRawPointer(bitPattern:"browseEnableKey".hashValue)!
     private static let browseTapKey = UnsafeRawPointer(bitPattern:"browseTapKey".hashValue)!
@@ -86,3 +89,4 @@ public extension UIImageView {
         }
     }
 }
+#endif

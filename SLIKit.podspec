@@ -9,12 +9,14 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" } #开源协议
   s.author       = { "2UN7" => "1491859758@qq.com" }
   s.platform     = :ios, "13.0"
+  s.requires_arc = true #是否支持ARC
   s.source       = { :git => "https://github.com/2NU71AN9/SLIKit.git", :tag => "v#{s.version}" } #存储库的git地址，以及tag值
   s.source_files = "SLIKit/Classes/**/*.{h,m,swift,xib,xcassets}"
   s.resources    = "SLIKit/Classes/Resource/*.bundle"
   s.resource_bundles = {
     'SLIKit' => ['SLIKit/Classes/**/*.xcassets', 'SLIKit/Classes/**/*.xib']
   }
+  s.default_subspec = 'Full'
   
   s.subspec 'Lite' do |ss|
       ss.source_files = "SLIKit/Classes/**/*.{h,m,swift,xib,xcassets}"
@@ -25,13 +27,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Full' do |ss|
-      ss.source_files = "SLIKit/Classes/**/*.{h,m,swift,xib,xcassets}"
-      ss.resources    = "SLIKit/Classes/Resource/*.bundle"
-      ss.resource_bundles = {
-        'SLIKit' => ['SLIKit/Classes/**/*.xcassets', 'SLIKit/Classes/**/*.xib']
-      }
-      
-      ss.requires_arc = true #是否支持ARC
+      ss.dependency "SLIKit/Lite"
       ss.dependency "RxSwift"
       ss.dependency "RxCocoa"
       ss.dependency "Then"
