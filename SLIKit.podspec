@@ -21,6 +21,12 @@ Pod::Spec.new do |s|
       }
   end
   
+  s.subspec 'ImageAbout' do |ss|
+      ss.dependency "SLIKit/Lite"
+      ss.dependency "JXPhotoBrowser"
+      ss.dependency "Kingfisher"
+  end
+  
   s.subspec 'Full' do |ss|
       ss.dependency "SLIKit/Lite"
       ss.dependency "RxSwift"
