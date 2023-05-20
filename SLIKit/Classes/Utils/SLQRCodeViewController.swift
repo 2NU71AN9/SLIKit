@@ -23,7 +23,7 @@ public class SLQRCodeViewController: LBXScanViewController {
         style.isNeedShowRetangle = false
         style.anmiationStyle = .LineMove
         style.colorAngle = UIColor(red: 0.0 / 255, green: 200.0 / 255.0, blue: 20.0 / 255.0, alpha: 1.0)
-        style.animationImage = SLAssets.bundledImage(named: "qrcode_Scan_Line")
+        style.animationImage = nil //SLAssets.bundledImage(named: "qrcode_Scan_Line")
         return style
     }()
     private lazy var closeBtn: UIButton = {
