@@ -26,7 +26,7 @@ public class SLWebViewController: UIViewController {
     
     private lazy var backBtn: UIButton = {
         let btn = UIButton()
-        btn.setImage(SLAssets.bundledImage(named: "sl_close24"), for: .normal)
+        btn.setImage(SLAssets.bundledImage(named: "sl_close_black_24"), for: .normal)
         btn.addTarget(self, action: #selector(dismissAction), for: .touchUpInside)
         return btn
     }()

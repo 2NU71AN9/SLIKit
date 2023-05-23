@@ -8,22 +8,30 @@
 
 import UIKit
 
-public class SLAssets: NSObject {
-    public class func bundledImage(named name: String) -> UIImage {
-        let primaryBundle = Bundle(for: SLAssets.self)
-        if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
-            return image
-        } else if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
-            return image
-        } else if let subBundleUrl = primaryBundle.url(forResource: "SLIKit", withExtension: "bundle"),
-                  let subBundle = Bundle(url: subBundleUrl),
-                  let image = UIImage(named: name, in: subBundle, compatibleWith: nil) {
-            return image
+class SLAssets: NSObject {
+    class func bundledImage(named name: String) -> UIImage? {
+        let bundle = Bundle(for: SLAssets.self)
+        guard let url = bundle.url(forResource: "SLIKit", withExtension: "bundle"),
+                let imageBundle = Bundle(url: url),
+                let path = imageBundle.path(forResource: name, ofType: "png") else {
+            return nil
         }
-        return UIImage()
+        let image = UIImage(contentsOfFile: path)
+        return image
+//        let primaryBundle = Bundle(for: SLAssets.self)
+//        if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
+//            return image
+//        } else if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
+//            return image
+//        } else if let subBundleUrl = primaryBundle.url(forResource: "SLIKit", withExtension: "bundle"),
+//                  let subBundle = Bundle(url: subBundleUrl),
+//                  let image = UIImage(named: name, in: subBundle, compatibleWith: nil) {
+//            return image
+//        }
+//        return UIImage()
     }
     
-    public class func bundledColor(named name: String) -> UIColor? {
+    class func bundledColor(named name: String) -> UIColor? {
         let primaryBundle = Bundle(for: SLAssets.self)
         if let color = UIColor(named: name, in: .module, compatibleWith: nil) {
             return color

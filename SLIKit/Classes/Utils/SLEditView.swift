@@ -52,9 +52,9 @@ public class SLEditView: UIView {
         didSet {
             arrowView.isHidden = !(arrowType == 1 || arrowType == 2 || arrowType == 3)
             arrowView.image =
-                arrowType == 1 ? SLAssets.bundledImage(named: "sl_arrowRight15") :
-                arrowType == 2 ? SLAssets.bundledImage(named: "sl_arrowDown15") :
-                arrowType == 3 ? SLAssets.bundledImage(named: "sl_arrowUp15") : nil
+                arrowType == 1 ? SLAssets.bundledImage(named: "arrow_right_black_15") :
+                arrowType == 2 ? SLAssets.bundledImage(named: "arrow_down_black_15") :
+                arrowType == 3 ? SLAssets.bundledImage(named: "arrow_up_black_15") : nil
         }
     }
     @IBInspectable public dynamic var titleColor: UIColor? = SLAssets.bundledColor(named: "sl_text_gray1") {
@@ -166,7 +166,7 @@ public class SLEditView: UIView {
     }
     
     private lazy var requiredView: UIImageView = {
-        let view = UIImageView(image: SLAssets.bundledImage(named: "sl_required6"))
+        let view = UIImageView(image: SLAssets.bundledImage(named: "required6"))
         view.isHidden = !required
         view.setContentHuggingPriority(UILayoutPriority(rawValue: 252), for: .horizontal)
         view.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 252), for: .horizontal)
@@ -215,9 +215,9 @@ public class SLEditView: UIView {
         imageView.contentMode = .scaleAspectFit
         imageView.isHidden = !(arrowType == 1 || arrowType == 2 || arrowType == 3)
         imageView.image =
-            arrowType == 1 ? SLAssets.bundledImage(named: "sl_arrowRight15") :
-            arrowType == 2 ? SLAssets.bundledImage(named: "sl_arrowDown15") :
-            arrowType == 3 ? SLAssets.bundledImage(named: "sl_arrowUp15") : nil
+            arrowType == 1 ? SLAssets.bundledImage(named: "arrow_right_black_15") :
+            arrowType == 2 ? SLAssets.bundledImage(named: "arrow_down_black_15") :
+            arrowType == 3 ? SLAssets.bundledImage(named: "arrow_up_black_15") : nil
         return imageView
     }()
     
