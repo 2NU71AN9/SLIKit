@@ -10,25 +10,17 @@ import UIKit
 
 class SLAssets: NSObject {
     class func bundledImage(named name: String) -> UIImage? {
-        let bundle = Bundle(for: SLAssets.self)
-        guard let url = bundle.url(forResource: "SLIKit", withExtension: "bundle"),
-                let imageBundle = Bundle(url: url),
-                let path = imageBundle.path(forResource: name, ofType: "png") else {
-            return nil
+        let primaryBundle = Bundle(for: SLAssets.self)
+        if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
+            return image
+        } else if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
+            return image
+        } else if let subBundleUrl = primaryBundle.url(forResource: "SLIKit", withExtension: "bundle"),
+                  let subBundle = Bundle(url: subBundleUrl),
+                  let image = UIImage(named: name, in: subBundle, compatibleWith: nil) {
+            return image
         }
-        let image = UIImage(contentsOfFile: path)
-        return image
-//        let primaryBundle = Bundle(for: SLAssets.self)
-//        if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
-//            return image
-//        } else if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
-//            return image
-//        } else if let subBundleUrl = primaryBundle.url(forResource: "SLIKit", withExtension: "bundle"),
-//                  let subBundle = Bundle(url: subBundleUrl),
-//                  let image = UIImage(named: name, in: subBundle, compatibleWith: nil) {
-//            return image
-//        }
-//        return UIImage()
+        return nil
     }
     
     class func bundledColor(named name: String) -> UIColor? {

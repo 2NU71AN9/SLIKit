@@ -76,7 +76,7 @@
 		D2D720652689636500B87422 /* SLFileBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D720642689636500B87422 /* SLFileBrowser.swift */; };
 		D2DC426B25FCA566007B43AE /* SLImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DC426A25FCA566007B43AE /* SLImagePicker.swift */; };
 		D2E922F4268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E922F3268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift */; };
-		D2F52957268F149F00C92FDD /* my.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2F52956268F149F00C92FDD /* my.bundle */; };
+		D2F11B8D2A1CBE1C00770545 /* SLIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2F11B8C2A1CBE1C00770545 /* SLIKit.bundle */; };
 		D2F5295A268F150500C92FDD /* SLAddressPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F52958268F150500C92FDD /* SLAddressPickerViewController.swift */; };
 		D2F5295B268F150500C92FDD /* SLAddressPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F52959268F150500C92FDD /* SLAddressPickerViewController.xib */; };
 /* End PBXBuildFile section */
@@ -154,7 +154,7 @@
 		D2D720642689636500B87422 /* SLFileBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFileBrowser.swift; sourceTree = "<group>"; };
 		D2DC426A25FCA566007B43AE /* SLImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLImagePicker.swift; sourceTree = "<group>"; };
 		D2E922F3268C4C7500933146 /* SLFaceIDWithTouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLFaceIDWithTouchIDManager.swift; sourceTree = "<group>"; };
-		D2F52956268F149F00C92FDD /* my.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = my.bundle; sourceTree = "<group>"; };
+		D2F11B8C2A1CBE1C00770545 /* SLIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SLIKit.bundle; sourceTree = "<group>"; };
 		D2F52958268F150500C92FDD /* SLAddressPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLAddressPickerViewController.swift; sourceTree = "<group>"; };
 		D2F52959268F150500C92FDD /* SLAddressPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SLAddressPickerViewController.xib; sourceTree = "<group>"; };
 		E0B6500762D3590BE4414BC9 /* Pods-SLIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SLIKit.debug.xcconfig"; path = "Target Support Files/Pods-SLIKit/Pods-SLIKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		D2F52955268F148F00C92FDD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D2F52956268F149F00C92FDD /* my.bundle */,
+				D2F11B8C2A1CBE1C00770545 /* SLIKit.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -411,13 +411,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D24C452A25FB4B150042DF9E /* SLIKit.podspec in Resources */,
-				D2F52957268F149F00C92FDD /* my.bundle in Resources */,
 				D24C44AD25FB49DD0042DF9E /* LaunchScreen.storyboard in Resources */,
 				D24C44AA25FB49DD0042DF9E /* Assets.xcassets in Resources */,
 				D24C44F625FB4A270042DF9E /* SLTagPickerViewController.xib in Resources */,
 				D24C451225FB4A280042DF9E /* Images.xcassets in Resources */,
 				D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */,
 				D24C44A825FB49DC0042DF9E /* Main.storyboard in Resources */,
+				D2F11B8D2A1CBE1C00770545 /* SLIKit.bundle in Resources */,
 				D2F5295B268F150500C92FDD /* SLAddressPickerViewController.xib in Resources */,
 				D24C44F425FB4A270042DF9E /* SLPickerViewController.xib in Resources */,
 			);

@@ -79,14 +79,18 @@ class ViewController: UIViewController {
 //            SLFileBrowser(url).show()
 //        }.show()
         
-        let vc = SLAddressPickerViewController(.area) { p, c, a in
-            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
-        }
-        present(vc, animated: true, completion: nil)
+//        let vc = SLAddressPickerViewController(.area) { p, c, a in
+//            print((p?.name ?? "") + (c?.name ?? "") + (a?.name ?? ""))
+//        }
+//        present(vc, animated: true, completion: nil)
 //        a = !a
 //        SLHUD.message(title: a ? "提交成功" : "提交失败", desc: nil) {
 //
 //        }
+        let vc2 = SLQRCodeViewController { _ in
+            
+        }
+        present(vc2, animated: true)
     }
 }
 

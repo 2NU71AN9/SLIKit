@@ -28,7 +28,7 @@ public class SLQRCodeViewController: LBXScanViewController {
     }()
     private lazy var closeBtn: UIButton = {
         let btn = UIButton()
-        btn.setImage(SLAssets.bundledImage(named: "navi_back_black"), for: .normal)
+        btn.setImage(SLAssets.bundledImage(named: "navi_back_white"), for: .normal)
         btn.addTarget(self, action: #selector(dismissAnimatedAction), for: .touchUpInside)
         return btn
     }()
