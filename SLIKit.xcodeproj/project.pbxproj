@@ -212,7 +212,6 @@
 		D24C449F25FB49DC0042DF9E /* SLIKit */ = {
 			isa = PBXGroup;
 			children = (
-				D22B161D2A31D95A00388E35 /* SLIKit.bundle */,
 				D24C44B625FB4A270042DF9E /* Classes */,
 				D24C44A025FB49DC0042DF9E /* AppDelegate.swift */,
 				D24C44A425FB49DC0042DF9E /* ViewController.swift */,
@@ -329,6 +328,7 @@
 		D2F52955268F148F00C92FDD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D22B161D2A31D95A00388E35 /* SLIKit.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
