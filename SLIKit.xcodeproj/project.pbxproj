@@ -16,7 +16,7 @@
 		D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */; };
 		D21D65F225FB6653001C971F /* SLDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */; };
 		D223C7B329120A5F00BDDF69 /* SLGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */; };
-		D22B161E2A31D95A00388E35 /* SLIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D22B161D2A31D95A00388E35 /* SLIKit.bundle */; };
+		D22B16222A31E14200388E35 /* SLIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D22B16212A31E14200388E35 /* SLIKit.bundle */; };
 		D2377EA126A2824700F0A5E6 /* SLHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2377EA026A2824700F0A5E6 /* SLHUD.swift */; };
 		D24C44A125FB49DC0042DF9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A025FB49DC0042DF9E /* AppDelegate.swift */; };
 		D24C44A525FB49DC0042DF9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A425FB49DC0042DF9E /* ViewController.swift */; };
@@ -92,7 +92,7 @@
 		D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLDatePickerViewController.xib; sourceTree = "<group>"; };
 		D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDatePickerViewController.swift; sourceTree = "<group>"; };
 		D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLGCDTimer.swift; sourceTree = "<group>"; };
-		D22B161D2A31D95A00388E35 /* SLIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SLIKit.bundle; sourceTree = "<group>"; };
+		D22B16212A31E14200388E35 /* SLIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SLIKit.bundle; sourceTree = "<group>"; };
 		D2377EA026A2824700F0A5E6 /* SLHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLHUD.swift; sourceTree = "<group>"; };
 		D24C449D25FB49DC0042DF9E /* SLIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24C44A025FB49DC0042DF9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		D2F52955268F148F00C92FDD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D22B161D2A31D95A00388E35 /* SLIKit.bundle */,
+				D22B16212A31E14200388E35 /* SLIKit.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 				D24C451225FB4A280042DF9E /* Images.xcassets in Resources */,
 				D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */,
 				D24C44A825FB49DC0042DF9E /* Main.storyboard in Resources */,
-				D22B161E2A31D95A00388E35 /* SLIKit.bundle in Resources */,
+				D22B16222A31E14200388E35 /* SLIKit.bundle in Resources */,
 				D2F5295B268F150500C92FDD /* SLAddressPickerViewController.xib in Resources */,
 				D24C44F425FB4A270042DF9E /* SLPickerViewController.xib in Resources */,
 			);
