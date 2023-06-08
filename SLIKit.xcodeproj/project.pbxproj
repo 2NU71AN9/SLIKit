@@ -16,6 +16,7 @@
 		D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */; };
 		D21D65F225FB6653001C971F /* SLDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */; };
 		D223C7B329120A5F00BDDF69 /* SLGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */; };
+		D22B161E2A31D95A00388E35 /* SLIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D22B161D2A31D95A00388E35 /* SLIKit.bundle */; };
 		D2377EA126A2824700F0A5E6 /* SLHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2377EA026A2824700F0A5E6 /* SLHUD.swift */; };
 		D24C44A125FB49DC0042DF9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A025FB49DC0042DF9E /* AppDelegate.swift */; };
 		D24C44A525FB49DC0042DF9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A425FB49DC0042DF9E /* ViewController.swift */; };
@@ -66,7 +67,6 @@
 		D24C451325FB4A280042DF9E /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E625FB4A270042DF9E /* StringInterpolation.swift */; };
 		D24C451425FB4A280042DF9E /* SLOperatorCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44E725FB4A270042DF9E /* SLOperatorCustom.swift */; };
 		D24C452A25FB4B150042DF9E /* SLIKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = D24C452925FB4B150042DF9E /* SLIKit.podspec */; };
-		D251AAB72A1DB29D00AA3B84 /* SLIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D251AAB62A1DB29D00AA3B84 /* SLIKit.bundle */; };
 		D255AB9E299B5E5A00C876E4 /* SLWaveAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255AB9D299B5E5A00C876E4 /* SLWaveAnimationView.swift */; };
 		D27C71EE26895B6300A72ACC /* SLFilePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C71ED26895B6300A72ACC /* SLFilePickerViewController.swift */; };
 		D2846F4927FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2846F4727FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift */; };
@@ -92,6 +92,7 @@
 		D21D65EF25FB6653001C971F /* SLDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLDatePickerViewController.xib; sourceTree = "<group>"; };
 		D21D65F025FB6653001C971F /* SLDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLDatePickerViewController.swift; sourceTree = "<group>"; };
 		D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLGCDTimer.swift; sourceTree = "<group>"; };
+		D22B161D2A31D95A00388E35 /* SLIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SLIKit.bundle; sourceTree = "<group>"; };
 		D2377EA026A2824700F0A5E6 /* SLHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLHUD.swift; sourceTree = "<group>"; };
 		D24C449D25FB49DC0042DF9E /* SLIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24C44A025FB49DC0042DF9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +145,6 @@
 		D24C44E625FB4A270042DF9E /* StringInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
 		D24C44E725FB4A270042DF9E /* SLOperatorCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLOperatorCustom.swift; sourceTree = "<group>"; };
 		D24C452925FB4B150042DF9E /* SLIKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SLIKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D251AAB62A1DB29D00AA3B84 /* SLIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SLIKit.bundle; sourceTree = "<group>"; };
 		D255AB9D299B5E5A00C876E4 /* SLWaveAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLWaveAnimationView.swift; sourceTree = "<group>"; };
 		D27C71ED26895B6300A72ACC /* SLFilePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLFilePickerViewController.swift; sourceTree = "<group>"; };
 		D2846F4727FD8C7600BA0A36 /* Ex_CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ex_CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
@@ -212,6 +212,7 @@
 		D24C449F25FB49DC0042DF9E /* SLIKit */ = {
 			isa = PBXGroup;
 			children = (
+				D22B161D2A31D95A00388E35 /* SLIKit.bundle */,
 				D24C44B625FB4A270042DF9E /* Classes */,
 				D24C44A025FB49DC0042DF9E /* AppDelegate.swift */,
 				D24C44A425FB49DC0042DF9E /* ViewController.swift */,
@@ -328,7 +329,6 @@
 		D2F52955268F148F00C92FDD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				D251AAB62A1DB29D00AA3B84 /* SLIKit.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 				D24C451225FB4A280042DF9E /* Images.xcassets in Resources */,
 				D21D65F125FB6653001C971F /* SLDatePickerViewController.xib in Resources */,
 				D24C44A825FB49DC0042DF9E /* Main.storyboard in Resources */,
-				D251AAB72A1DB29D00AA3B84 /* SLIKit.bundle in Resources */,
+				D22B161E2A31D95A00388E35 /* SLIKit.bundle in Resources */,
 				D2F5295B268F150500C92FDD /* SLAddressPickerViewController.xib in Resources */,
 				D24C44F425FB4A270042DF9E /* SLPickerViewController.xib in Resources */,
 			);

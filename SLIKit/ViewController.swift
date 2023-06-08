@@ -50,9 +50,9 @@ class ViewController: UIViewController {
 //            .font(SL.PingFang.font(name: .中粗, size: 12))
 //            .show()
         
-//        SL.pickerNormal
-//            .titles(["123123", "dsadasdadasd", "vxv24141"])
-//            .show()
+        SL.pickerNormal
+            .titles(["123123", "dsadasdadasd", "vxv24141"])
+            .show()
         
 //        SL.pickerImage?.selectPortrait { [weak self] (image, _) in
 //            self?.imageView.image = image
@@ -87,10 +87,10 @@ class ViewController: UIViewController {
 //        SLHUD.message(title: a ? "提交成功" : "提交失败", desc: nil) {
 //
 //        }
-        let vc2 = SLQRCodeViewController { _ in
-            
-        }
-        present(vc2, animated: true)
+//        let vc2 = SLQRCodeViewController { _ in
+//
+//        }
+//        present(vc2, animated: true)
     }
 }
 
