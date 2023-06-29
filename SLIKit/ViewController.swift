@@ -38,10 +38,10 @@ class ViewController: UIViewController {
     var a = true
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        SL.pickerDate
+        SL.pickerDate
 //            .mode(.dateAndTime)
-//            .minDate(Date())
-//            .show()
+            .minDate(Date())
+            .show()
         
 //        SL.pickerTag
 //            .titles(["dasdadasc", "dajisdapskdncn", "dsada", "vlp[lpcclpxc"])
@@ -50,9 +50,9 @@ class ViewController: UIViewController {
 //            .font(SL.PingFang.font(name: .中粗, size: 12))
 //            .show()
         
-        SL.pickerNormal
-            .titles(["123123", "dsadasdadasd", "vxv24141"])
-            .show()
+//        SL.pickerNormal
+//            .titles(["123123", "dsadasdadasd", "vxv24141"])
+//            .show()
         
 //        SL.pickerImage?.selectPortrait { [weak self] (image, _) in
 //            self?.imageView.image = image
