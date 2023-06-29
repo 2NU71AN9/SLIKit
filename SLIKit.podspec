@@ -16,9 +16,9 @@ Pod::Spec.new do |s|
   s.subspec 'Lite' do |ss|
       ss.source_files = "SLIKit/Classes/**/*.{h,m,swift,xib,xcassets}"
       ss.resources    = "SLIKit/Classes/Resource/*.bundle"
-      ss.resource_bundles = {
-        'SLIKit' => ['SLIKit/Classes/**/*.xcassets', 'SLIKit/Classes/**/*.xib']
-      }
+#      ss.resource_bundles = {
+#        'SLIKit' => ['SLIKit/Classes/**/*.xcassets', 'SLIKit/Classes/**/*.xib']
+#      }
   end
   
   s.subspec 'ImageAbout' do |ss|
