@@ -18,6 +18,7 @@
 		D223C7B329120A5F00BDDF69 /* SLGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */; };
 		D22B16222A31E14200388E35 /* SLIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D22B16212A31E14200388E35 /* SLIKit.bundle */; };
 		D2377EA126A2824700F0A5E6 /* SLHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2377EA026A2824700F0A5E6 /* SLHUD.swift */; };
+		D2399CEF2A835EA1006E9A2F /* SLCustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2399CEE2A835EA1006E9A2F /* SLCustomPresentationController.swift */; };
 		D24C44A125FB49DC0042DF9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A025FB49DC0042DF9E /* AppDelegate.swift */; };
 		D24C44A525FB49DC0042DF9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C44A425FB49DC0042DF9E /* ViewController.swift */; };
 		D24C44A825FB49DC0042DF9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24C44A625FB49DC0042DF9E /* Main.storyboard */; };
@@ -94,6 +95,7 @@
 		D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLGCDTimer.swift; sourceTree = "<group>"; };
 		D22B16212A31E14200388E35 /* SLIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SLIKit.bundle; sourceTree = "<group>"; };
 		D2377EA026A2824700F0A5E6 /* SLHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLHUD.swift; sourceTree = "<group>"; };
+		D2399CEE2A835EA1006E9A2F /* SLCustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLCustomPresentationController.swift; sourceTree = "<group>"; };
 		D24C449D25FB49DC0042DF9E /* SLIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24C44A025FB49DC0042DF9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D24C44A425FB49DC0042DF9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				D21C72462909129700AEC787 /* SLExpandLabel.swift */,
 				D223C7B229120A5F00BDDF69 /* SLGCDTimer.swift */,
 				D255AB9D299B5E5A00C876E4 /* SLWaveAnimationView.swift */,
+				D2399CEE2A835EA1006E9A2F /* SLCustomPresentationController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				D24C44FF25FB4A270042DF9E /* Ex_Rx.swift in Sources */,
 				D24C450F25FB4A280042DF9E /* Ex_Color.swift in Sources */,
 				D24C44F125FB4A270042DF9E /* SLEditView.swift in Sources */,
+				D2399CEF2A835EA1006E9A2F /* SLCustomPresentationController.swift in Sources */,
 				D24C44FB25FB4A270042DF9E /* Ex_Button.swift in Sources */,
 				D24C44F325FB4A270042DF9E /* SLLineView.swift in Sources */,
 			);
