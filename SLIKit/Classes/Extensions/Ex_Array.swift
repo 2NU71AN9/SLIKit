@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 public extension Array {
+    subscript(safe index: Index) -> Element? {
+        indices.contains(index) ? self[index] : nil
+    }
+    
     /// 数组去重
     func sl_filter<E: Equatable>(_ repeated: (Element) -> E) -> [Element] {
         var result = [Element]()
